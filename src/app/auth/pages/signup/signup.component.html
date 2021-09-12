@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>
+        Welcome Player
+    </h2>
+    <img style="width:100px;margin-bottom: 50px;" src="https://play-lh.googleusercontent.com/_1MFftx1Wt1f4Nivx2FbD4KvhnClssYV9yTXNYBCf3yD1IIRoFEWus5SwzXOe29jHQ" alt="">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <h3 style="text-align: left;">signup with email</h3>
+        <mat-form-field style="width: 100%;" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input type="email" matInput name="email" placeholder="Enter your Email" #emailInput required ngModel/>
+            <mat-icon matPrefix>email</mat-icon>
+            <mat-error *ngIf=""></mat-error>
+            <mat-error></mat-error>
+        </mat-form-field>
+        <mat-form-field style="width: 100%;" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input [type]="isVisible?'text':'password'" matInput name="password" #passwordInput placeholder="Enter your password" required ngModel/>
+            <mat-icon matPrefix (click)="toggleVisibility()">
+                {{isVisible ? 
+                    "visibility"
+                    : "visibility_off"}}
+            </mat-icon>
+        </mat-form-field>   
+        <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button >Signup</button>
+    </form>
+    <button style="margin:5px 0px 5px" mat-flat-button [routerLink]="['/login']">alredy have an account? sing in here.</button>
+</div>
+<app-footer style="position: fixed;bottom: 0px;z-index:1;"></app-footer>

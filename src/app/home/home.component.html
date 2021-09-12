@@ -1,0 +1,35 @@
+<div class="cst-container">
+    <app-header (clickEvent)="drawer.toggle()"></app-header>
+    <mat-drawer-container class="drawer-container">
+        <mat-drawer #drawer position="end">
+            asldjflsadjflsad
+            asldfjsadljflasdjflasdf
+            saldfjsaldfjlsadjflsad
+        </mat-drawer>
+        <mat-drawer-content class="drawer-content" >
+            <div class="container">
+                <div>
+                    <h3 style="text-align: left;" i18n="Question | are you realy want to play the game.@@Question">Playing a game?</h3>
+                    <div class="game-code-container" [ngClass]="{red:!f.valid && f.touched}">
+                        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                            <mat-form-field appearance="outline" style="width: 100%;">
+                                <!-- <mat-label>form field</mat-label> -->
+                                <input matInput placeholder="Enter a game code" name="gamecode" errorState="false" required ngModel/>
+                                 <mat-icon matSuffix>info</mat-icon>
+                            </mat-form-field>
+                            <div >
+                                <button type="submit" mat-raised-button color="primary" style="width: 100%;" > Basic</button>
+                            </div>
+                        </form>
+                    </div>    
+                </div>
+                <div class="auth-route-container" >
+                    <h2>Let's get you started</h2>
+                    <app-cst-circularborder-button [routerLink]="['/login']" value="login"></app-cst-circularborder-button>
+                    <app-cst-circularborder-button [routerLink]="['/signup']" value="signup"></app-cst-circularborder-button>
+                </div> 
+                <!-- <app-cst-bottom-nav></app-cst-bottom-nav> -->
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
