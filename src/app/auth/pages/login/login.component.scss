@@ -3,3 +3,16 @@
     text-align: center;
     padding: 1rem;
 }
+.form-container{
+    mat-form-field{
+        width: 100%;
+    }
+}
+.auth-title{
+    text-align: left;
+}
+
+.forget-password-wrapper{
+    text-align: right;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,35 @@
+
+.user-activity-card{
+    margin: auto;
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 500px;
+    text-align: center;
+    
+    .user-avatar-and-title-wrapper{
+        margin: 1rem;
+        &>*{
+            vertical-align: middle;
+        }
+    }
+    .user-activity-card-title{
+        font-size: 1rem;
+    }
+    .user-avatar{
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 20px;
+        object-fit: cover;
+        width: 40px;
+        height: 40px;
+    }
+    .user-activity-card-action{
+    }
+    img{
+        width: 100%;
+    }
+    .auth-button{
+        margin: 2px;
+        min-width: 120px
+    }
+}

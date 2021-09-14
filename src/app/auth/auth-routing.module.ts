@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent, SignupComponent,OtpverifyComponent} from './pages';
 
 const routes: Routes = [
+  {path:'',pathMatch:'full',redirectTo:'login'},
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
   {path:"otpverify",component:OtpverifyComponent}

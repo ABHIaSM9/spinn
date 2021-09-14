@@ -10,6 +10,8 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 const materials = [
@@ -23,7 +25,9 @@ const materials = [
   MatSidenavModule,
   MatDividerModule,
   MatToolbarModule,
-  MatGridListModule
+  MatGridListModule,
+  MatStepperModule,
+  MatProgressSpinnerModule
 ];
 
 @NgModule({

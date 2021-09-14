@@ -6,19 +6,18 @@
         <span class="mrg-auto">Quize</span>
     </mat-toolbar>
     <mat-drawer-container class="drawer-container">
-        <mat-drawer #drawer position="start">
-            asldjflsadjflsad
-            asldfjsadljflasdjflasdf
-            saldfjsaldfjlsadjflsad
+        <mat-drawer class="mat-side-drawer" #drawer position="start">
+            <app-side-nav ></app-side-nav>
         </mat-drawer>
         <mat-drawer-content class="drawer-content" >
             <div style="width:100%">
-                <h2>Quize</h2>
-                <mat-grid-list cols="2">
+                <h2 style="text-align: center;">Choose your path</h2>
+                <!-- <mat-grid-list cols="2">
                     <mat-grid-tile *ngFor="let item of dataList">
                         {{item.title}}
                     </mat-grid-tile>
-                </mat-grid-list>
+                </mat-grid-list> -->
+                <img src="https://www.pngkey.com/png/full/367-3676905_rocket-icon-vector-circle.png" style="width: 200px;" alt="">
             </div>
         </mat-drawer-content>
     </mat-drawer-container>

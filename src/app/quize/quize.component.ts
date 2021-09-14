@@ -13,7 +13,7 @@ export class QuizeComponent implements OnInit {
           title:'abc2',ImageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy0KAR2XdMrLm9XJ0f02aJpw_8EAf_DTETVA&usqp=CAU',paths:[
             {
               title: 'abc3',ImageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy0KAR2XdMrLm9XJ0f02aJpw_8EAf_DTETVA&usqp=CAU',paths:[
-
+                
               ]
             }
           ]

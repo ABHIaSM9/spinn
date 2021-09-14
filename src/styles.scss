@@ -1,26 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~@angular/material/theming';
-
 @include mat-core();
+
+@import './styles/main.scss';
+@import './app/shared/layout/cst-circularborder-button/cst-circularborder-button.theming.scss';
+
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 
-$light-theme-primary: mat-palette($mat-indigo,A500);
-$light-theme-accent: mat-palette($mat-pink,A200,A100,A400);
+
+
+
+
+
+
 $light-theme: mat-light-theme($light-theme-primary,$light-theme-accent);
+$dark-theme: mat-dark-theme($light-theme-primary,$light-theme-accent);
 
 
-@mixin color($config-or-theme){
-    $config:mat-get-color-config(config-or-theme);
-    $primary: map-get($config, "primary");
-    $accent: map-get($congig, "accent");
-}
 
-@include angular-material-theme($light-theme);
+
 
 
 .cst-container{
@@ -39,6 +43,21 @@ $light-theme: mat-light-theme($light-theme-primary,$light-theme-accent);
 .space-box{
     flex: 1 1 auto;
 }
-.mrg-auto{
-    margin: auto;
+
+.container{
+    max-width: 450px;
+    padding: 1rem;
 }
+.mat-side-drawer{
+    width: 220px;
+}
+
+
+
+// .dark-theme{
+//     @include angular-material-theme($dark-theme);
+// }
+// .light-theme{
+//     @include angular-material-theme($light-theme);
+// }
+// @include customButtonTheme($light-theme);

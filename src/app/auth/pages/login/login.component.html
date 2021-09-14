@@ -1,29 +1,29 @@
 <div class="container">
-    <h2>
-        Welcome Player
-    </h2>
-    <img style="width:100px;margin-bottom: 50px;" src="https://play-lh.googleusercontent.com/_1MFftx1Wt1f4Nivx2FbD4KvhnClssYV9yTXNYBCf3yD1IIRoFEWus5SwzXOe29jHQ" alt="">
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <h3 style="text-align: left;">Login with username</h3>
-        <mat-form-field style="width: 100%;">
-            <mat-label>Username</mat-label>
-            <input type="email" matInput name="email" placeholder="Enter your Email" required #emailngModel/>
-            
-            <!-- <mat-error *ngIf="">please enter corrent email</mat-error> -->
-        </mat-form-field>
-        <mat-form-field style="width: 100%;">
-            <mat-label>Password</mat-label>
-            <input [type]="isVisible?'text':'password'" matInput name="password" placeholder="Enter your password" required ngModel/>
-            <mat-icon matSuffix (click)="toggleVisibility()">
-                {{isVisible ? 
-                    "visibility"
-                    : "visibility_off"}}
-            </mat-icon>
-        </mat-form-field>
-        <div style="text-align: right;">
-            <a [routerLink]="['']">Forget Password?</a>
-        </div>   
-        <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button>continue</button>
-    </form>
-    <button style="margin:5px 0px 5px" mat-flat-button [routerLink]="['/signup']">want an Account? Sign up here</button>
+    <div class="form-container">
+        <app-app-main-logo-title></app-app-main-logo-title>
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="mat-h3 auth-title" > Login with username</div>
+            <mat-form-field appearance="outline">
+                <mat-label for="emaili">Username</mat-label>
+                <input type="email" id="email" matInput name="email" placeholder="Enter your Email" #email="ngModel" required ngModel/>
+                <mat-error *ngIf="!email.valid && email.touched"> please enter valid email address</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label for="password">Password</mat-label>
+                <input id="password" [type]="isVisible?'text':'password'" matInput name="password" placeholder="Enter your password" #password="ngModel" required ngModel/>
+                <mat-icon matSuffix (click)="toggleVisibility()">
+                    {{isVisible ? 
+                        "visibility"
+                        : "visibility_off"}}
+                </mat-icon>
+                <mat-error *ngIf="!password.valid && password.touched"> please enter valid email address</mat-error>
+            </mat-form-field>
+            <div class="forget-password-wrapper">
+                <a class="forget-password-link" [routerLink]="['']">Forget Password?</a>
+            </div>   
+            <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button>continue</button>
+        </form>
+        <button style="margin:5px 0px 5px" mat-flat-button [routerLink]="['/auth/signup']">want an Account? Sign up here</button>
+    </div>
+    <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 </div>

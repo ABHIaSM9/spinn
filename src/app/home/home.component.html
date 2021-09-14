@@ -1,34 +1,33 @@
 <div class="cst-container">
     <app-header (clickEvent)="drawer.toggle()"></app-header>
     <mat-drawer-container class="drawer-container">
-        <mat-drawer #drawer position="end">
-            asldjflsadjflsad
-            asldfjsadljflasdjflasdf
-            saldfjsaldfjlsadjflsad
+        <mat-drawer class="mat-side-drawer" #drawer position="end">
+            <app-side-nav></app-side-nav>
         </mat-drawer>
         <mat-drawer-content class="drawer-content" >
             <div class="container">
                 <div>
-                    <h3 style="text-align: left;" i18n="Question | are you realy want to play the game.@@Question">Playing a game?</h3>
-                    <div class="game-code-container" [ngClass]="{red:!f.valid && f.touched}">
+                    <span class="initial-title mat-h3" i18n="Question | are you realy want to play the game.@@Question">Playing a game?</span>
+                    <div class="game-code-container mat-elevation-z3" [ngClass]="{red:!f.valid && f.touched}">
                         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                            <mat-form-field appearance="outline" style="width: 100%;">
-                                <!-- <mat-label>form field</mat-label> -->
-                                <input matInput placeholder="Enter a game code" name="gamecode" errorState="false" required ngModel/>
-                                 <mat-icon matSuffix>info</mat-icon>
+                            <mat-form-field appearance="outline">
+                                <input matInput placeholder="Enter a game code" name="gamecode" errorState="false" required #gameCode="ngModel" ngModel/>
+                                <mat-icon matSuffix [color]="!f.valid && f.touched ?'warn':''" >info</mat-icon>
+                                <mat-error *ngIf="!gameCode.valid && gameCode.touched">Enter the valid code</mat-error>
                             </mat-form-field>
                             <div >
-                                <button type="submit" mat-raised-button color="primary" style="width: 100%;" > Basic</button>
+                                <button type="submit" [disabled]="!f.valid" mat-raised-button color="primary"  > Basic</button>
                             </div>
                         </form>
                     </div>    
                 </div>
-                <div class="auth-route-container" >
-                    <h2>Let's get you started</h2>
-                    <app-cst-circularborder-button [routerLink]="['/login']" value="login"></app-cst-circularborder-button>
-                    <app-cst-circularborder-button [routerLink]="['/signup']" value="signup"></app-cst-circularborder-button>
+                <div class="auth-route-container mat-elevation-z3" >
+                    <div class="mat-h2">Let's get you started</div>
+                    <button class="auth-button" [routerLink]="['/auth/login']" mat-stroked-button color="primary">login</button>
+                    <button class="auth-button" [routerLink]="['/auth/signup']" mat-raised-button color="primary">signup</button>
+                    <!-- <app-cst-circularborder-button [routerLink]="['/login']" value="login"></app-cst-circularborder-button>
+                    <app-cst-circularborder-button [routerLink]="['/signup']" value="signup"></app-cst-circularborder-button> -->
                 </div> 
-                <!-- <app-cst-bottom-nav></app-cst-bottom-nav> -->
             </div>
         </mat-drawer-content>
     </mat-drawer-container>

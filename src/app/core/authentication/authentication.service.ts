@@ -16,11 +16,14 @@ export class AuthenticationService {
   constructor(private router: Router) { }
 
   onLogin(email:String,password:String){
-    console.log(email,"--",password);
+    console.log(email, password);
+    console.log('this.users',this.users);
     const user = this.users.find(u=>{
       return (email == u.email && password == u.password);
     });
+    console.log('onLogin',user);
     user?this.userSubject.next(user):this.userSubject.next();
+    user && this.router.navigate(['/quize']);
   }
 
   getUserListener(){
@@ -28,10 +31,9 @@ export class AuthenticationService {
   }
 
   onSignUp(email:String,password:String){
-    console.log(email,"--",password,"--");
     this.users.push({email,password});
     console.log(this.users);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/auth/login']);
 
     // this.toastr.success('successfully Registered');
   }

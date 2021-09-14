@@ -1,0 +1,28 @@
+<div class="cst-container">
+    <app-header (clickEvent)="drawer.toggle()"></app-header>
+    <mat-drawer-container class="drawer-container">
+        <mat-drawer class="mat-side-drawer" #drawer position="end">
+            <app-side-nav></app-side-nav>
+        </mat-drawer>
+        <mat-drawer-content class="drawer-content" >
+            <div class="container">
+                <h2>Welcome Player</h2>
+                <div class="user-subject-card" *ngFor="let item of userSelectedSubjects">
+                    <div class="user-selected-subject">
+                        <img src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt=""/>
+                    </div>
+                    <div class="user-progress-chart">
+                        <canvas baseChart
+                            [data]="pieChartData"
+                            [chartType]="pieChartType"
+                            [options]="pieChartOption"
+                            [plugins]="pieChartPlugin"
+                            [legend]="pieChartLegend"
+                        ></canvas>
+                    </div>
+                </div>
+                <button mat-raised-button color="primary" [routerLink]="['/quize']" routerLinkActive="router-link-active" > Add New Area</button>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

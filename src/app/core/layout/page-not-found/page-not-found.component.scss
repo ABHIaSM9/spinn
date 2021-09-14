@@ -1,0 +1,15 @@
+.not-found{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    .not-found-code{
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .not-found-text{
+        text-transform: uppercase;
+    }
+}

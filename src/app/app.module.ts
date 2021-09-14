@@ -9,17 +9,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule } from '@angular/forms';
 
-import { AuthModule } from './auth/auth.module';
+// import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { QuizeComponent } from './quize/quize.component';
 import { QuizeModule } from './quize/quize.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+
+
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -30,10 +35,11 @@ import { QuizeModule } from './quize/quize.module';
     FormsModule,
     CoreModule,
     HomeModule,
-    AuthModule,
+    // AuthModule,
     RouterModule,
     NgOtpInputModule,
-    QuizeModule
+    QuizeModule,
+    DashboardModule,
   ],
   providers: [HomeRoutingModule],
   bootstrap: [AppComponent]
