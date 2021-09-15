@@ -40,6 +40,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     NgOtpInputModule,
     QuizeModule,
     DashboardModule,
+    
   ],
   providers: [HomeRoutingModule],
   bootstrap: [AppComponent]

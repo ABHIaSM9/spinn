@@ -7,3 +7,10 @@ button{
     margin-top: 50px;
     width:100%;
 }
+.title-container{
+    text-align: left;
+    margin-bottom: 3rem;
+    .title{
+        max-width: 200px;
+    }
+}

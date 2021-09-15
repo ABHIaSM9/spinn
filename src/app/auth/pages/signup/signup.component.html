@@ -3,18 +3,18 @@
 
         <app-app-main-logo-title></app-app-main-logo-title>
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-            <div class="auth-title mat-h3">signup with email</div>
+            <div class="auth-title mat-h2">Signup</div>
             <mat-form-field appearance="outline">
                 <mat-label>Username</mat-label>
                 <input type="email" matInput name="email" placeholder="Enter your Email" #emailInput required ngModel/>
-                <mat-icon matPrefix>email</mat-icon>
+                <mat-icon matSuffix>email</mat-icon>
                 <mat-error *ngIf=""></mat-error>
                 <mat-error></mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
                 <input [type]="isVisible?'text':'password'" matInput name="password" #passwordInput placeholder="Enter your password" required ngModel/>
-                <mat-icon matPrefix (click)="toggleVisibility()">
+                <mat-icon matSuffix (click)="toggleVisibility()">
                     {{isVisible ? 
                         "visibility"
                         : "visibility_off"}}
@@ -22,7 +22,7 @@
             </mat-form-field>   
             <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button >Signup</button>
         </form>
-        <button style="margin:5px 0px 5px" mat-flat-button [routerLink]="['/auth/login']">alredy have an account? sing in here.</button>
+        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/login']">alredy have an account? sing in here.</button>
     </div>
 </div>
 <app-footer style="position: fixed;bottom: 0px;z-index:1;"></app-footer>

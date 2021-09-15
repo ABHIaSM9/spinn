@@ -7,3 +7,4 @@ export * from './footer/footer.component';
 export * from './app-main-logo-title/app-main-logo-title.component';
 export * from './side-nav/side-nav.component';
 export * from './loading-spinner/loading-spinner.component';
+export * from './bottom-navigation/bottom-navigation.component';

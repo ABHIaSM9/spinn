@@ -2,10 +2,13 @@
     <div class="form-container">
         <app-app-main-logo-title></app-app-main-logo-title>
         <form (ngSubmit)="onSubmit()" #f="ngForm">
-            <div class="mat-h3 auth-title" > Login with username</div>
+            <div class="aut-title-container">
+                <div class="mat-h2 auth-title" >Login </div>
+            </div>
             <mat-form-field appearance="outline">
                 <mat-label for="emaili">Username</mat-label>
                 <input type="email" id="email" matInput name="email" placeholder="Enter your Email" #email="ngModel" required ngModel/>
+                <mat-icon matSuffix>email</mat-icon>
                 <mat-error *ngIf="!email.valid && email.touched"> please enter valid email address</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
@@ -21,9 +24,9 @@
             <div class="forget-password-wrapper">
                 <a class="forget-password-link" [routerLink]="['']">Forget Password?</a>
             </div>   
-            <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button>continue</button>
+            <button type="submit" color="primary" [disabled]="!f.valid" mat-raised-button>continue</button>
         </form>
-        <button style="margin:5px 0px 5px" mat-flat-button [routerLink]="['/auth/signup']">want an Account? Sign up here</button>
+        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/signup']">want an Account? Sign up here</button>
     </div>
     <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 </div>

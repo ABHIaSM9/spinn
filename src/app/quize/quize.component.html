@@ -1,12 +1,11 @@
 <div class="cst-container">
-    <mat-toolbar>
-        <button mat-icon-button (click)="drawer.toggle()">
-            <mat-icon>menu</mat-icon>
-        </button>
+    <!-- <mat-toolbar>
+        <app-header (clickEvent)="drawer.toggle()"></app-header>
         <span class="mrg-auto">Quize</span>
-    </mat-toolbar>
+    </mat-toolbar> -->
+    <app-header (clickEvent)="drawer.toggle()"></app-header>
     <mat-drawer-container class="drawer-container">
-        <mat-drawer class="mat-side-drawer" #drawer position="start">
+        <mat-drawer class="mat-side-drawer" #drawer position="end">
             <app-side-nav ></app-side-nav>
         </mat-drawer>
         <mat-drawer-content class="drawer-content" >

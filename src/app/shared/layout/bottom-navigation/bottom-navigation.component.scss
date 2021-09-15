@@ -1,0 +1,14 @@
+.bottom-nav{
+    border-radius: 50px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1000;
+    display:flex;
+    justify-content: space-around;
+    padding: 2em;
+    button{
+        span{
+            display: block
+        }
+    }
+}

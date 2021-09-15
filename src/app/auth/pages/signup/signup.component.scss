@@ -7,8 +7,14 @@
     mat-form-field{
         width: 100%;
     }
+    button[type="submit"]{
+        margin-top: 3em;
+    }
 }
 .auth-title{
     text-align: left;
+}
+.auth-page-link{
+    margin:5px 0px 5px;
 }
 

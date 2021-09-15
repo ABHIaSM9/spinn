@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,8 +13,10 @@ import {
   CstCircularborderButtonComponent,
   FooterComponent,HeaderComponent,
   SideNavComponent,
-  AppMainLogoTitleComponent
+  AppMainLogoTitleComponent,
+  BottomNavigationComponent
 } from './layout';
+
 
 
 
@@ -27,6 +31,7 @@ import {
     LoadingSpinnerComponent,
     AppMainLogoTitleComponent,
     SideNavComponent,
+    BottomNavigationComponent,
 
   ],
   imports: [
@@ -49,7 +54,8 @@ import {
     LoadingSpinnerComponent,
     AppMainLogoTitleComponent,
     SideNavComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BottomNavigationComponent
   ]
 })
 export class SharedModule { }
