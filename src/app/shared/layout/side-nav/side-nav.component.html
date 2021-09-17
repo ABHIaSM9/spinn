@@ -1,9 +1,19 @@
 <div class="side-nav">
-    <button mat-button [routerLink]="['']">home</button>
+    <!-- <button mat-button [routerLink]="['']">home</button>
     <button mat-button [routerLink]="['/auth/login']">login</button>
     <button mat-button [routerLink]="['/auth/signup']">signup</button>
     <button mat-button [routerLink]="['/auth/otpverify']">otpverify</button>
     <button mat-button [routerLink]="['/dashboard/user-activity']">user activity</button>
     <button mat-button [routerLink]="['/dashboard/activities']">activities</button>
-    <button mat-button [routerLink]="['/quize']">quize</button>
+    <button mat-button [routerLink]="['/quize']">quize</button> -->
+    <mat-nav-list>
+        <mat-list-item [routerLink]="['/user/setting']" routerLinkActive>
+            <mat-icon mat-list-icon> settings</mat-icon>
+            setting
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/user/profile']" routerLinkActive>
+            <mat-icon mat-list-icon> face</mat-icon>
+            profile
+        </mat-list-item>
+    </mat-nav-list> 
 </div>

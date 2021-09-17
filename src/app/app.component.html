@@ -1,6 +1,8 @@
 <div 
+    class="main-wrapper" 
+    [ngClass]="{'mat-app-background dark-theme':isDorkMode}"
 >
 <!-- class="mat-app-background dark-theme" -->
     <router-outlet ></router-outlet>
-    
+
 </div>

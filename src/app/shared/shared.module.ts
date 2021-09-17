@@ -16,6 +16,10 @@ import {
   AppMainLogoTitleComponent,
   BottomNavigationComponent
 } from './layout';
+import { NgBottomNavigationModule } from 'ng-bottom-navigation';
+import { BottomNavModule } from 'ngx-bottom-nav';
+import { CounterModule } from 'angular-circle-counter';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
@@ -39,7 +43,9 @@ import {
     FormsModule,
     RouterModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BottomNavModule,
+    CarouselModule
   ],
   exports:[
     CommonModule,
@@ -55,7 +61,10 @@ import {
     AppMainLogoTitleComponent,
     SideNavComponent,
     ReactiveFormsModule,
-    BottomNavigationComponent
+    BottomNavigationComponent,
+    BottomNavModule,
+    CounterModule,
+    CarouselModule
   ]
 })
 export class SharedModule { }

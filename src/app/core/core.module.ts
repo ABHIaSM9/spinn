@@ -9,17 +9,18 @@ import { PageNotFoundComponent } from './layout';
 
 @NgModule({
   declarations:[
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+
   ],
   exports:[
     RouterModule,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ]
 })
 export class CoreModule {

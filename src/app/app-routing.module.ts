@@ -17,7 +17,14 @@ const routes: Routes = [
     path:'dashboard',
     loadChildren:()=>import('./dashboard/dashboard.module').then(m=>m.DashboardModule)
   },
-  {path:"quize",component:QuizeComponent},
+  {
+    path:'user',
+    loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)
+  },
+  {
+    path:"quize",
+    loadChildren:()=>import('./quize/quize.module').then(m=>m.QuizeModule)
+  },
   {path:"**",component:PageNotFoundComponent}
 ];
 

@@ -1,0 +1,21 @@
+.system-setting-option-card{
+    margin: 1em 0px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &>*{
+        vertical-align: middle;
+    }
+    .system-setting-option-icon{
+
+    }
+    .system-setting-option-title{
+        margin: 0;
+    }
+    .slide-toggler{
+        position: absolute;
+        right:10px;
+        top: 30%;  
+    }
+}

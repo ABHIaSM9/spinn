@@ -3,16 +3,15 @@
 
         <app-app-main-logo-title></app-app-main-logo-title>
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-            <div class="auth-title mat-h2">Signup</div>
+            <h2 class="auth-title mat-h2" i18n="signup title | it show that it is a signup page">Signup</h2>
             <mat-form-field appearance="outline">
-                <mat-label>Username</mat-label>
+                <mat-label  i18n="Username label | it show the user name label">Username</mat-label>
                 <input type="email" matInput name="email" placeholder="Enter your Email" #emailInput required ngModel/>
                 <mat-icon matSuffix>email</mat-icon>
                 <mat-error *ngIf=""></mat-error>
-                <mat-error></mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
+                <mat-label  i18n="Password label | it show the password label">Password</mat-label>
                 <input [type]="isVisible?'text':'password'" matInput name="password" #passwordInput placeholder="Enter your password" required ngModel/>
                 <mat-icon matSuffix (click)="toggleVisibility()">
                     {{isVisible ? 
@@ -20,9 +19,9 @@
                         : "visibility_off"}}
                 </mat-icon>
             </mat-form-field>   
-            <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button >Signup</button>
+            <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button i18n="sign up button">Signup</button>
         </form>
-        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/login']">alredy have an account? sing in here.</button>
+        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/login']" i18n="login up ancher">alredy have an account? sing in here.</button>
     </div>
 </div>
-<app-footer style="position: fixed;bottom: 0px;z-index:1;"></app-footer>
+<app-footer class="app-footer"></app-footer>

@@ -6,7 +6,7 @@ const routes: Routes = [
   {path:'',pathMatch:'full',redirectTo:'login'},
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
-  {path:"otpverify",component:OtpverifyComponent}
+  {path:"otp-verify",component:OtpverifyComponent}
 ];
 
 @NgModule({

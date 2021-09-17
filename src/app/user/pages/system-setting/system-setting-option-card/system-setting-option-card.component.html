@@ -1,0 +1,13 @@
+<div class="system-setting-option-card">
+    <div class="system-setting-option-icon">
+        <button mat-icon-button>
+            <mat-icon>{{icon}}</mat-icon>
+        </button>
+    </div>
+    <div class="system-setting-option-title h4" i18n>
+        {{title}}
+    </div>
+    <div class="slide-toggler">
+        <mat-slide-toggle [checked]="checked" (toggleChange)="onChange()" [disabled]="disabled"></mat-slide-toggle>
+    </div>
+</div>

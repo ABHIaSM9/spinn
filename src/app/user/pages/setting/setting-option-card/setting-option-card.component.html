@@ -1,0 +1,18 @@
+<div class="setting-option-card mat-card">
+    <div class="setting-option-icon">
+        <button mat-icon-button>
+            <mat-icon>{{icon}}</mat-icon>
+        </button>
+    </div>
+    <div class="setting-option-title-wrapper">
+        <div class="setting-option-title h4" i18n>
+            {{title}}
+        </div>
+        <div *ngIf="subTitle" class="settiong-option-subtitle mat-small" i18n>
+            {{subTitle}}
+        </div>
+    </div>
+    <div class="side-arrow">
+        <mat-icon>navigate_next</mat-icon>
+    </div>
+</div>

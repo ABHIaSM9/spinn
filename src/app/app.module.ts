@@ -16,6 +16,7 @@ import { NgOtpInputModule } from 'ng-otp-input';
 import { QuizeComponent } from './quize/quize.component';
 import { QuizeModule } from './quize/quize.module';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { BottomNavModule } from 'ngx-bottom-nav';
 
 
 
@@ -40,7 +41,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     NgOtpInputModule,
     QuizeModule,
     DashboardModule,
-    
+    BottomNavModule,
   ],
   providers: [HomeRoutingModule],
   bootstrap: [AppComponent]

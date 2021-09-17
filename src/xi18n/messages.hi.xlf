@@ -1,16 +1,136 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="hi-IN" datatype="plaintext" original="ng2.template">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="Question" datatype="html">
-        <source>Playing a game?</source>
-        <target>एक खेल खेलना चाहते हैं?</target>
+        <source>
+        Playing a game?
+        </source>
+        <target>
+        क्या तुम गेम खेलना चाहते हो
+        </target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/home/pages/home/home.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="description"> are you realy want to play the game.</note>
         <note priority="1" from="meaning">Question </note>
+      </trans-unit>
+      <trans-unit id="cdc09320ca2a2f2c7b2e11589fdf861f6a62a5c6" datatype="html">
+        <source>
+        Welcome Player
+        </source>
+        <target>
+        आपका स्वागत है प्लेयर
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layout/app-main-logo-title/app-main-logo-title.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description"> greeting to the user</note>
+        <note priority="1" from="meaning">greeting header </note>
+      </trans-unit>
+      <trans-unit id="1c96dfdb6d6adc9e785405a68f62443c852fd7bf" datatype="html">
+        <source>Login </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description"> it show that it is a login page</note>
+        <note priority="1" from="meaning">login title </note>
+      </trans-unit>
+      <trans-unit id="b5a08ab02e2f1bc86e075ad0d0c23c18e5a588c7" datatype="html">
+        <source>Username</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description"> it show the user name label</note>
+        <note priority="1" from="meaning">Username label </note>
+      </trans-unit>
+      <trans-unit id="1b3d56638ed8c67ec625932a539167e3fbad651b" datatype="html">
+        <source> please enter valid email address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description"> its a email error</note>
+        <note priority="1" from="meaning">email error </note>
+      </trans-unit>
+      <trans-unit id="1c05fe0db5c994f0e7dcdb42bdd839d49cedae66" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description"> it show the password label</note>
+        <note priority="1" from="meaning">Password label </note>
+      </trans-unit>
+      <trans-unit id="991e94ad9d7a6a5eb65f48f7bbdc25ec2883bb29" datatype="html">
+        <source> please enter valid password address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description"> its a pssoword error</note>
+        <note priority="1" from="meaning">password error </note>
+      </trans-unit>
+      <trans-unit id="a925f43e295771551546eb2635942954fdc3c467" datatype="html">
+        <source>Forget Password?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">forget ancher</note>
+      </trans-unit>
+      <trans-unit id="ac92738c50ac18bab774600d8358ff7082b747b8" datatype="html">
+        <source>continue</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">continue button</note>
+      </trans-unit>
+      <trans-unit id="7194fd96eeece0d7829a39860a2864557e675cc3" datatype="html">
+        <source>want an Account? Sign up here</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">signu ancher</note>
+      </trans-unit>
+      <trans-unit id="6c8b3eb19292bbdf0bcde80c01dba8758aa7889c" datatype="html">
+        <source>Signup</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description"> it show that it is a signup page</note>
+        <note priority="1" from="meaning">signup title </note>
+      </trans-unit>
+      <trans-unit id="717a5e3574fec754fbeb348c2d5561c4d81facc4" datatype="html">
+        <source>Signup</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">sign up button</note>
+      </trans-unit>
+      <trans-unit id="6d3ff1e1a07063cc87f53ff5575bea2b051a4366" datatype="html">
+        <source>alredy have an account? sing in here.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">login up ancher</note>
       </trans-unit>
     </body>
   </file>

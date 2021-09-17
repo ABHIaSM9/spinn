@@ -33,7 +33,7 @@ export class AuthenticationService {
   onSignUp(email:String,password:String){
     this.users.push({email,password});
     console.log(this.users);
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/auth/otp-verify']);
 
     // this.toastr.success('successfully Registered');
   }

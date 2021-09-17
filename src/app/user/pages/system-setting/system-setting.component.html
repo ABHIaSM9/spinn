@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="setting-options-wrapper mat-card">
+        <h3 class="mat-h3" i18n>
+            settings
+        </h3>
+        <app-system-setting-option-card icon="alarm" [checked]="false" title="timer"></app-system-setting-option-card>
+        <app-system-setting-option-card icon="dark_mode" [checked]="isDarkMode"  (onToggle)="onNightMode($event)" title="dark mode"></app-system-setting-option-card>
+    </div>
+    <div class="setting-options-wrapper mat-card">
+        <h3 class="mat-h3" i18n>
+            settings
+        </h3>
+        <app-system-setting-option-card icon="volume_up" [checked]="false" title="sound effects"></app-system-setting-option-card>
+        <app-system-setting-option-card icon="volume_up" [checked]="false" title="sound effets"></app-system-setting-option-card>
+    </div>
+</div>

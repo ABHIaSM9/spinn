@@ -1,0 +1,19 @@
+<div class="container">
+    <h4 class="mat-h4" i18n>Account</h4>
+    <app-setting-option-card
+    *ngFor="let item of accountOptions"
+    [icon]="item.icon"
+    [title]="item.title"
+    [subTitle]="item.subTitle"
+    [routerLink]="item.routerlink"
+    ></app-setting-option-card>
+    
+    <div class="mat-h4" i18n>other</div>
+    <app-setting-option-card
+    *ngFor="let item of otherOptions"
+    [icon]="item.icon"
+    [title]="item.title"
+    [subTitle]="item.subTitle"
+    [routerLink]="item.routerlink"
+    ></app-setting-option-card>
+</div>

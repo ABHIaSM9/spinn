@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-otpverify',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./otpverify.component.scss']
 })
 export class OtpverifyComponent implements OnInit {
-
-  constructor() { }
+  
+  @ViewChild('otp',{static:true}) otp;
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    const values = this.otp.otpForm.value;
+    if(values.ctrl_0 == 1 && values.ctrl_0 == 1 && values.ctrl_0 == 1 && values.ctrl_0 == 1){
+      console.log('match');
+      this.router.navigate(['/auth/login'])
+    }else{
+      console.log(values);
+      console.log('did not match');
+    }
+  }
 }

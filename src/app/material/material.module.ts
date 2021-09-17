@@ -13,6 +13,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatListModule } from '@angular/material/list';
 
 const materials = [
   CommonModule,
@@ -29,7 +31,9 @@ const materials = [
   MatGridListModule,
   MatStepperModule,
   MatProgressSpinnerModule,
-  MatCardModule
+  MatCardModule,
+  MatSlideToggleModule,
+  MatListModule
 ];
 
 @NgModule({

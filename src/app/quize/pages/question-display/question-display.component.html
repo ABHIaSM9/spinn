@@ -1,0 +1,54 @@
+<div class="clipped-div">
+    <div class="title-bar">
+        <button mat-icon-button (click)="onBack()">
+            <mat-icon>
+                arrow_back
+            </mat-icon>
+        </button>
+        <div class="title h4" i18n>
+            title
+        </div>
+        <button mat-icon-button>
+            <mat-icon>
+                more_vert
+            </mat-icon>
+        </button>
+    </div>
+</div>
+<div class="container">
+    <div class="question h4">
+        {{quizeQuestion.question}}
+    </div>
+    <app-option-list [options]="quizeQuestion.answers" (onSelect)="onClick($event)"></app-option-list>
+</div>
+
+<div class="quize-bottom-bar-wrapper">
+    <mat-toolbar class="quize-bottom-bar">
+        <button mat-icon-button [color]="isFlagSelected?'accent':''" (click)='onFlagSelect()'>
+            <mat-icon>
+                flag
+            </mat-icon>
+        </button>
+        <div class="space-box"></div>
+        <button mat-icon-button [color]="isLiked?'accent':''" (click)='onLike()'>
+            <mat-icon>
+                favorite
+            </mat-icon>
+        </button>
+        <div class="spinner-container">
+            <div class="spinner-wrapper">
+                <mat-progress-spinner
+                color="primary"
+                mode="determinate"
+                diameter="80"                
+                [value]="progressValue"
+                #progressSpinner
+                >
+                </mat-progress-spinner>
+                <div class="progress-value">
+                    {{progressSpinner.value}}
+                </div>
+            </div>
+        </div>
+    </mat-toolbar>
+</div>

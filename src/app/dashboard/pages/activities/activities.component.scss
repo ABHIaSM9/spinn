@@ -7,7 +7,7 @@
     text-align: center;
     
     .user-avatar-and-title-wrapper{
-        margin: 1rem;
+        margin: 1.5em;
         &>*{
             vertical-align: middle;
         }
@@ -29,7 +29,7 @@
         width: 100%;
     }
     .auth-button{
-        margin: 2px;
+        margin: 0.2em;
         min-width: 120px
     }
 }

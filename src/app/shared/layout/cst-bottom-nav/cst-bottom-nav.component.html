@@ -1,26 +1,18 @@
-<div class="bottom-nav">
-    <div class="n-link">
-        <mat-icon>home</mat-icon>
-        <div>
+<div class="bottom-nav mat-elevation-z4 mat-card">
+    <div class="n-link" >
+        <button mat-icon-button [routerLink]="['/dashboard']" #profileR [routerLinkActive] [routerLinkActiveOptions]="{exact:true}">
+            <mat-icon [color]="!profileR.active?'primary':''">home</mat-icon>
+        </button>
+        <!-- <div>
             <span>Home</span>
-        </div>
+        </div> -->
     </div>
-    <div class="n-link">
-        <mat-icon>home</mat-icon>
-        <div>
-            <span>Home</span>
-        </div>
-    </div>
-    <div class="n-link">
-        <mat-icon>home</mat-icon>
-        <div>
-            <span>Home</span>
-        </div>
-    </div>
-    <div class="n-link">
-        <mat-icon>home</mat-icon>
-        <div>
-            <span>Home</span>
-        </div>
+    <div class="n-link" >
+        <button mat-icon-button [routerLink]="['/user/setting']" #settingR routerLinkActive>
+            <mat-icon [color]="!settingR?'primary':''">settings</mat-icon>
+        </button>
+        <!-- <div>
+            <span>settings</span>
+        </div> -->
     </div>
 </div>

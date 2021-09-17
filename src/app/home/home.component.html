@@ -7,24 +7,24 @@
         <mat-drawer-content class="drawer-content" >
             <div class="container">
                 <div>
-                    <span class="initial-title mat-h3" i18n="Question | are you realy want to play the game.@@Question">Playing a game?</span>
+                    <span class="initial-title mat-h3" i18n="Question | are you realy want to play the game.@@Question" i18n>Playing a game?</span>
                     <mat-card class="game-code-container" [ngClass]="{red:!f.valid && f.touched}">
                         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                             <mat-form-field appearance="outline">
                                 <input matInput placeholder="Enter a game code" name="gamecode" errorState="false" required #gameCode="ngModel" ngModel/>
-                                <mat-icon matSuffix [color]="!f.valid && f.touched ?'warn':''" >info</mat-icon>
-                                <mat-error *ngIf="!gameCode.valid && gameCode.touched">Enter the valid code</mat-error>
+                                <mat-icon matSuffix [color]="!f.valid && f.touched ?'warn':''" i18n>info</mat-icon>
+                                <mat-error *ngIf="!gameCode.valid && gameCode.touched" i18n>Enter the valid code</mat-error>
                             </mat-form-field>
                             <div >
-                                <button type="submit" [disabled]="!f.valid" mat-raised-button color="primary"  > Basic</button>
+                                <button type="submit" [disabled]="!f.valid" mat-raised-button color="primary" i18n> Join a game</button>
                             </div>
                         </form>
                     </mat-card>    
                 </div>
                 <mat-card class="auth-route-container" >
-                    <div class="mat-h2">Let's get you started</div>
-                    <button class="auth-button" [routerLink]="['/auth/login']" mat-stroked-button color="primary">login</button>
-                    <button class="auth-button" [routerLink]="['/auth/signup']" mat-raised-button color="primary">signup</button>
+                    <h2 class="mat-h2" i18n>Let's get you started</h2>
+                    <button class="auth-button" [routerLink]="['/auth/login']" mat-stroked-button color="primary" i18n>login</button>
+                    <button class="auth-button" [routerLink]="['/auth/signup']" mat-raised-button color="primary" i18n>signup</button>
                     <!-- <app-cst-circularborder-button [routerLink]="['/login']" value="login"></app-cst-circularborder-button>
                     <app-cst-circularborder-button [routerLink]="['/signup']" value="signup"></app-cst-circularborder-button> -->
                 </mat-card> 
