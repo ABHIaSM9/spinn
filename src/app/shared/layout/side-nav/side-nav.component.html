@@ -15,5 +15,29 @@
             <mat-icon mat-list-icon> face</mat-icon>
             profile
         </mat-list-item>
+        <mat-list-item [routerLink]="['/auth/login']" routerLinkActive>
+            login
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/auth/signup']" routerLinkActive>
+            signup
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/auth/otp-verify']" routerLinkActive>
+            otp-verify
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/dashboard']" routerLinkActive>
+            user-activity
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/dashboard/activities']" routerLinkActive>
+            activities
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/quiz']" routerLinkActive>
+            quiz
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/quiz/question-display']" routerLinkActive>
+            question-display
+        </mat-list-item>
+        <mat-list-item [routerLink]="['/quiz/congrats']" routerLinkActive>
+            congrats
+        </mat-list-item>
     </mat-nav-list> 
 </div>

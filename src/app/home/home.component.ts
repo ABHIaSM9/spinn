@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(f:NgForm):void{
-
+  onSubmit(joinGameform:NgForm):void{
+    console.log(joinGameform);
   }
+
 }

@@ -12,16 +12,16 @@
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label  i18n="Password label | it show the password label">Password</mat-label>
-                <input [type]="isVisible?'text':'password'" matInput name="password" #passwordInput placeholder="Enter your password" required ngModel/>
-                <mat-icon matSuffix (click)="toggleVisibility()">
-                    {{isVisible ? 
+                <input [type]="isPasswordVisible?'text':'password'" matInput name="password" #passwordInput placeholder="Enter your password" required ngModel/>
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                    {{isPasswordVisible ? 
                         "visibility"
                         : "visibility_off"}}
                 </mat-icon>
             </mat-form-field>   
             <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button i18n="sign up button">Signup</button>
         </form>
-        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/login']" i18n="login up ancher">alredy have an account? sing in here.</button>
+        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/login']" i18n="login up ancher">already have an account? sing in here.</button>
     </div>
 </div>
 <app-footer class="app-footer"></app-footer>

@@ -5,8 +5,6 @@ import { AuthRoutingModule } from './auth-routing.module';
 
 import {LoginComponent,SignupComponent,OtpverifyComponent} from './pages';
 import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
-import { MaterialModule } from '../material/material.module';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { AuthComponent } from './auth.component';
 

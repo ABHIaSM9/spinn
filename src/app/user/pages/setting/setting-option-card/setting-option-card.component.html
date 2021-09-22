@@ -1,4 +1,4 @@
-<div class="setting-option-card mat-card">
+<div class="setting-option-card mat-card" mat-ripple>
     <div class="setting-option-icon">
         <button mat-icon-button>
             <mat-icon>{{icon}}</mat-icon>
@@ -8,7 +8,7 @@
         <div class="setting-option-title h4" i18n>
             {{title}}
         </div>
-        <div *ngIf="subTitle" class="settiong-option-subtitle mat-small" i18n>
+        <div *ngIf="subTitle" class="settiong-option-subtitle mat-caption" i18n>
             {{subTitle}}
         </div>
     </div>

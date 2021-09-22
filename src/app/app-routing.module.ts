@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthComponent } from './auth/auth.component';
 import { PageNotFoundComponent } from './core/layout';
-import { UserActivityComponent } from './dashboard';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
-import { QuizeComponent } from './quize/quize.component';
+
 
 const routes: Routes = [
   {path:'', pathMatch:'full', component:HomeComponent},
@@ -22,8 +19,8 @@ const routes: Routes = [
     loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)
   },
   {
-    path:"quize",
-    loadChildren:()=>import('./quize/quize.module').then(m=>m.QuizeModule)
+    path:"quiz",
+    loadChildren:()=>import('./quiz/quiz.module').then(m=>m.QuizModule)
   },
   {path:"**",component:PageNotFoundComponent}
 ];

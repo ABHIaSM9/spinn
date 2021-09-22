@@ -10,16 +10,15 @@ import { MaterialModule } from '../material/material.module';
 import { 
   CstButtonComponent,
   LoadingSpinnerComponent,
-  CstCircularborderButtonComponent,
   FooterComponent,HeaderComponent,
   SideNavComponent,
   AppMainLogoTitleComponent,
   BottomNavigationComponent
 } from './layout';
-import { NgBottomNavigationModule } from 'ng-bottom-navigation';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { CounterModule } from 'angular-circle-counter';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { WebcamModule } from 'ngx-webcam';
 
 
 
@@ -28,7 +27,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     CstButtonComponent,
-    CstCircularborderButtonComponent,
     CstBottomNavComponent,
     FooterComponent,
     HeaderComponent,
@@ -41,30 +39,31 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     MaterialModule,
-    ReactiveFormsModule,
     BottomNavModule,
-    CarouselModule
+    CarouselModule,
+    WebcamModule
   ],
   exports:[
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     MaterialModule,
     CstButtonComponent,
     CstBottomNavComponent,
-    CstCircularborderButtonComponent,
     FooterComponent,
     HeaderComponent,
     LoadingSpinnerComponent,
     AppMainLogoTitleComponent,
     SideNavComponent,
-    ReactiveFormsModule,
     BottomNavigationComponent,
     BottomNavModule,
     CounterModule,
-    CarouselModule
+    CarouselModule,
+    WebcamModule
   ]
 })
 export class SharedModule { }

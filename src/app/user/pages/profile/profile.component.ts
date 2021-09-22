@@ -7,9 +7,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  width:number;
 
   @ViewChild('f',{static:true}) form:NgForm;
-  constructor() { }
+  constructor() { 
+    this.width = document.body.clientWidth;
+  }
 
   ngOnInit(): void {
   }

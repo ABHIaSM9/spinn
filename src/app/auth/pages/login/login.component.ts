@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 
 @Component({
@@ -10,14 +11,14 @@ import { AuthenticationService } from 'src/app/core/authentication/authenticatio
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  @ViewChild('f',{static:true}) form:NgForm;
-  isVisible = false;
+  @ViewChild('loginform',{static:true}) form:NgForm;
+  userListenerSubscription:Subscription;
+  isPasswordVisible = false;
   isLoading = false;
   constructor(private authService:AuthenticationService, private snackbar:MatSnackBar,private router:ActivatedRoute) { }
 
   ngOnInit(): void {
-
-    this.authService.getUserListener().subscribe(value=>{
+    this.userListenerSubscription = this.authService.getUserListener().subscribe(value=>{
       console.log('value get',value);
       if(value){
         this.isLoading = false;
@@ -31,8 +32,9 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  toggleVisibility():void{
-    this.isVisible = !this.isVisible;
+  
+  togglePasswordVisibility():void{
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
   
   onSubmit():void{

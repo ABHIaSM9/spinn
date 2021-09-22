@@ -1,21 +1,21 @@
 <div class="container">
     <div class="form-container">
         <app-app-main-logo-title></app-app-main-logo-title>
-        <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <form (ngSubmit)="onSubmit()" #loginform="ngForm">
             <div class="aut-title-container">
                 <h2 class="mat-h2 auth-title" i18n="login title | it show that it is a login page">Login </h2>
             </div>
             <mat-form-field appearance="outline">
-                <mat-label for="emaili" i18n="Username label | it show the user name label">Username</mat-label>
+                <mat-label for="email" i18n="Username label | it show the user name label">Username</mat-label>
                 <input type="email" id="email" matInput name="email" placeholder="Enter your Email" #email="ngModel" required ngModel/>
                 <mat-icon matSuffix>email</mat-icon>
                 <mat-error *ngIf="!email.valid && email.touched" i18n="email error | its a email error"> please enter valid email address</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label for="password"  i18n="Password label | it show the password label">Password</mat-label>
-                <input id="password" [type]="isVisible?'text':'password'" matInput name="password" placeholder="Enter your password" #password="ngModel" required ngModel/>
-                <mat-icon matSuffix (click)="toggleVisibility()">
-                    {{isVisible ? 
+                <input id="password" [type]="isPasswordVisible?'text':'password'" matInput name="password" placeholder="Enter your password" #password="ngModel" required ngModel/>
+                <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                    {{isPasswordVisible ? 
                         "visibility"
                         : "visibility_off"}}
                 </mat-icon>
@@ -24,9 +24,9 @@
             <div class="forget-password-wrapper">
                 <a class="forget-password-link" [routerLink]="['']" i18n="forget ancher">Forget Password?</a>
             </div>   
-            <button type="submit" color="primary" [disabled]="!f.valid" mat-raised-button i18n="continue button">continue</button>
+            <button type="submit" color="primary" [disabled]="!loginform.valid" mat-raised-button i18n="continue button">continue</button>
         </form>
-        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/signup']" i18n="signu ancher">want an Account? Sign up here</button>
+        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/signup']" i18n="signup ancher">want an Account? Sign up here</button>
     </div>
     <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 </div>

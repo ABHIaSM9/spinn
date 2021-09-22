@@ -30,12 +30,12 @@ export class QuestionDisplayComponent implements OnInit {
     this.quizeQuestion = this.quizeQuestions[this.quizeIndex];
 
     setInterval(()=>{
-      if(this.quizeIndex < this.quizeQuestions.length-1){
-        this.quizeIndex++;
-        this.quizeQuestion = this.quizeQuestions[this.quizeIndex];
-      }else{
-        this.router.navigate(['/quize/congrats'])
-      }
+      // if(this.quizeIndex < this.quizeQuestions.length-1){
+      //   this.quizeIndex++;
+      //   this.quizeQuestion = this.quizeQuestions[this.quizeIndex];
+      // }else{
+      //   this.router.navigate(['/quize/congrats'])
+      // }
       // console.log(this.quizeIndex);
       
     },10000);

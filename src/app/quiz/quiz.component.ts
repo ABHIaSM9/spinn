@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-quize',
-  templateUrl: './quize.component.html',
-  styleUrls: ['./quize.component.scss']
+  selector: 'app-quiz',
+  templateUrl: './quiz.component.html',
+  styleUrls: ['./quiz.component.scss']
 })
-export class QuizeComponent implements OnInit {
+export class QuizComponent implements OnInit {
   items = [1,2,3];
+  subItems = [1,2,3,4,5];
   carouselOptions: OwlOptions = {
     loop:false,
     margin:2,

@@ -5,7 +5,7 @@
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @include mat.mat-core();
 @import './styles/main.scss';
-@import './app/shared/layout/cst-circularborder-button/cst-circularborder-button.theming.scss';
+
 
 
 
@@ -15,8 +15,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 
 
-$light-theme-primary: mat.mat-palette($mat-indigo,500);
-$light-theme-accent: mat.mat-palette($mat-pink,A200,A100,A400);
+$light-theme-primary: mat.mat-palette(mat.$mat-indigo,500);
+$light-theme-accent: mat.mat-palette(mat.$mat-pink,A200,A100,A400);
 $light-theme: mat.mat-light-theme($light-theme-primary,$light-theme-accent);
 $dark-theme: mat.mat-dark-theme($light-theme-primary,$light-theme-accent);
 
@@ -57,9 +57,9 @@ $dark-theme: mat.mat-dark-theme($light-theme-primary,$light-theme-accent);
 
 
 .dark-theme{
-    @include angular-material-theme($dark-theme);
+    @include mat.angular-material-theme($dark-theme);
 }
 .light-theme{
-    @include angular-material-theme($light-theme);
+    @include mat.angular-material-theme($light-theme);
 }
 // @include customButtonTheme($light-theme);

@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
-import { SettingComponent, ProfileComponent } from './pages';
+import { SettingComponent, ProfileComponent,SystemSettingComponent } from './pages';
 import { SharedModule } from '../shared/shared.module';
 import { SettingOptionCardComponent } from './pages/setting/setting-option-card/setting-option-card.component';
-import { SystemSettingComponent } from './pages/system-setting/system-setting.component';
 import { SystemSettingOptionCardComponent } from './pages/system-setting/system-setting-option-card/system-setting-option-card.component';
 
 
@@ -15,7 +14,7 @@ import { SystemSettingOptionCardComponent } from './pages/system-setting/system-
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class UserModule { }

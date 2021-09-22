@@ -1,7 +1,7 @@
 
 <div class="container">
     <h1 class="mat-h1" i18n>Welcome Player</h1>
-    <div class="user-subject-card" *ngFor="let item of userSelectedSubjects">
+    <div class="user-subject-card" *ngFor="let item of userSelectedSubjects" [routerLink]="['/quiz/question-display']">
         <div class="user-selected-subject">
             <img src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt=""/>
         </div>
@@ -15,5 +15,5 @@
             ></canvas>
         </div>
     </div>
-    <button mat-raised-button color="primary" [routerLink]="['/quize']" routerLinkActive="router-link-active" i18n> Add New Area</button>
+    <button mat-raised-button color="primary" [routerLink]="['/quiz']" routerLinkActive="router-link-active" i18n> Add New Area</button>
 </div>

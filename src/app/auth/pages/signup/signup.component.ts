@@ -9,14 +9,14 @@ import { AuthenticationService } from 'src/app/core/authentication/authenticatio
 })
 export class SignupComponent implements OnInit {
 
-  isVisible = false;
+  isPasswordVisible = false;
   constructor(private authService:AuthenticationService) { }
 
   ngOnInit(): void {
   }
 
-  toggleVisibility():void{
-    this.isVisible = !this.isVisible;
+  togglePasswordVisibility():void{
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
   
   

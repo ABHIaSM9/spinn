@@ -1,5 +1,3 @@
-export * from './cst-circularborder-button/cst-circularborder-button.component';
-export * from './cst-circularborder-button/cst-circularborder-button.component';
 export * from './cst-bottom-nav/cst-bottom-nav.component'
 export * from './cst-button/cst-button.component';
 export * from './header/header.component';
