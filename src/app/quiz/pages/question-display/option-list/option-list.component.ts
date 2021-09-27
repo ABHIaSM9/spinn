@@ -1,3 +1,5 @@
+import { Subscription } from 'rxjs';
+import { QuizService } from './../../../../core/services/quiz.service';
 import { Component, Input, OnInit, Output, EventEmitter, HostListener, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
@@ -11,41 +13,56 @@ export class OptionListComponent implements OnInit,OnChanges {
   @Output() onSelect = new EventEmitter();
   @Input() options:any[];
   
-  isSelected:boolean = false;
+  isSelected:boolean;
   selectedIndex:number;
 
-  @Input() set correctIndexSetter(value:number){
-    this.correctIndex = value;
-    console.log('setter',value);
-  }
+  correctAnswerSubscription:Subscription;
+  isOptionSelectedSubscription:Subscription;
+  selectedOptionIndexSubscription:Subscription;
 
-  constructor() { }
+
+  constructor(private quizService:QuizService) { }
 
   ngOnInit(): void {
-    
+
+    this.correctIndex = this.quizService.getCorrectAnswerIndex();
+    this.correctAnswerSubscription = this.quizService.getCorrectAnswerIndexListener().subscribe((correctAnswerIndex:number)=>{
+      this.correctIndex = correctAnswerIndex;
+    })
+    this.selectedIndex =  this.quizService.getSelectedOptionIndex();
+    this.quizService.getSelectedOptionIndexListener().subscribe((selectedOptionIndex:number)=>{
+      this.selectedIndex = selectedOptionIndex;
+    })
+    this.isSelected = this.quizService.getIsOptionSelected();
+    this.quizService.getIsOptionSelectedListener().subscribe((isOptionSelected:boolean)=>{
+      this.isSelected = isOptionSelected;
+    })
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChange');
-    console.log('correctIndex',this.correctIndex);
     if(changes.options && changes.options.currentValue != changes.options.previousValue){
       this.resetAll();
     }
   }
 
-
   private resetAll(){
-    this.isSelected = false;
-    this.selectedIndex = undefined;
-    this.correctIndex = undefined;
+    this.quizService.setIsOptionSelected(false);
+    this.quizService.setSelectedOptionIndex(undefined)
   }
 
   onClick(value){
     if(!this.isSelected){
-      this.isSelected=true;
-      this.selectedIndex = value;
+      this.quizService.setIsOptionSelected(true);
+      this.quizService.setSelectedOptionIndex(value)
       console.log(value);
       this.onSelect.emit(value);
     }
+  }
+
+
+  ngOnDestroy(): void {
+    this.correctAnswerSubscription?.unsubscribe();
+    this.isOptionSelectedSubscription?.unsubscribe();
+    this.selectedOptionIndexSubscription?.unsubscribe();
   }
 }

@@ -1,3 +1,3 @@
 <div class="options">
-    <app-option-card  [option]="option" [ngClass]="{'active':selectedIndex == i,'correct':correctIndex == i }"  *ngFor="let option of options;let i = index" (click)="onClick(i)"></app-option-card>
+    <app-option-card  [option]="option" [isRight]="correctIndex == i" [ngClass]="{'active':selectedIndex == i,'correct':correctIndex == i }"  *ngFor="let option of options;let i = index"  (click)="onClick(i)"></app-option-card>
 </div>

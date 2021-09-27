@@ -7,6 +7,7 @@ import { Component, HostListener, Input, OnInit, Optional } from '@angular/core'
 })
 export class OptionCardComponent implements OnInit {
   @Input() option:string;
+  @Input() isRight:boolean = false;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,5 @@
 .option{
+    position: relative;
     user-select: none;
     text-align: center;
     padding: 10px;
@@ -6,4 +7,10 @@
     min-height: 50px;
     max-width: 500px;
     margin: 5px 0px;
+}
+
+.right-icon{
+    position: absolute;
+    top:0;
+    right: 0px;
 }

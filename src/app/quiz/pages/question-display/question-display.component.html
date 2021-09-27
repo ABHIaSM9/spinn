@@ -16,7 +16,7 @@
     </div>
 </div> -->
 <mat-toolbar>
-    <button mat-icon-button (click)="onBack()">
+    <button mat-icon-button>
         <mat-icon>
             arrow_back
         </mat-icon>
@@ -26,7 +26,7 @@
             title
         </div>
         <div class="mat-small" style="margin-bottom: 0;">
-            {{quizeIndex+1}}/{{quizeQuestions.length}}
+            {{quizIndex+1}}/{{quizQuestions.length}}
         </div>
     </div>
     <div class="space-box">
@@ -40,21 +40,21 @@
 </mat-toolbar>
 <div class="container">
     <div class="question h4">
-        {{quizeQuestion.question}}
+        {{quizQuestion.question}}
     </div>
-    <app-option-list [options]="quizeQuestion.answers" [correctIndexSetter]="correctIndex"  (onSelect)="onClick($event)"></app-option-list>
+    <app-option-list [options]="quizQuestion.answers"  (onSelect)="onClick($event)"></app-option-list>
 </div>
 <!-- <ngx-mat-circle-counter [start]="0" [size]="'s'" [textColor]="''"  [color]="'primary'" [value]="30" [thickness]="20" [mode]="'pageinit'" [speed]="'1000'"></ngx-mat-circle-counter> -->
 
-<div class="quize-bottom-bar-wrapper">
-    <mat-toolbar class="quize-bottom-bar">
+<div class="quiz-bottom-bar-wrapper">
+    <mat-toolbar class="quiz-bottom-bar">
         <button mat-icon-button (click)='onFlagSelect()'>
             <mat-icon>
                 flag
             </mat-icon>
         </button>
         <div class="space-box"></div>
-        <button type="button" (click)="isCheckAnswer?onCheckAnswer():onNext()" mat-icon-button>
+        <button type="button" [disabled]="!isSelectedOption" (click)="isCheckAnswer?onCheckAnswer():onNext()" mat-icon-button>
             <mat-icon>
                 {{
                     isCheckAnswer?

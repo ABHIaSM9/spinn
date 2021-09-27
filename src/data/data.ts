@@ -1,4 +1,4 @@
-export const quizeData =  [
+export const quizData =  [
         {
             "question": "What is the scientific name of a butterfly?",
             "answers": [
