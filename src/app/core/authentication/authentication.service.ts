@@ -1,7 +1,7 @@
+import { AuthUser } from './../schema/AuthUser';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
-import { AuthUser } from '../schema/AuthUser';
+import { Observable, Subject } from 'rxjs';
 
 
 @Injectable({
@@ -10,11 +10,12 @@ import { AuthUser } from '../schema/AuthUser';
 export class AuthenticationService {
   private isAuth:boolean = false;
   private users:AuthUser[] = [];
-  private userSubject = new Subject();
+  private userSubject = new Subject<AuthUser>();
   
   constructor(private router: Router) { }
   
-  getUserListener(){
+  getUserListener():Observable<AuthUser>{
+    console.log('getUserListener',this.userSubject.asObservable());
     return this.userSubject.asObservable();
   }
 

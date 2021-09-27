@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
 
@@ -8,23 +8,24 @@ import { AuthenticationService } from 'src/app/core/authentication/authenticatio
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  @ViewChild('signupForm',{static:true}) signUpForm:NgForm;
 
   isPasswordVisible = false;
-  constructor(private authService:AuthenticationService) { }
+  constructor(public authService:AuthenticationService) { }
 
   ngOnInit(): void {
+    console.log('signupForm',this.signUpForm);
   }
 
   togglePasswordVisibility():void{
     this.isPasswordVisible = !this.isPasswordVisible;
   }
   
-  
-  onSubmit(ngform:NgForm):void{
-    const value = ngform.form.value;
-    console.log(ngform.form);
+  onSubmit():void{
+    const value = this.signUpForm.value;
+    console.log(this.signUpForm);
     this.authService.onSignUp(value.email,value.password);
-    ngform.resetForm();
+    this.signUpForm.resetForm()
   }
 
 }

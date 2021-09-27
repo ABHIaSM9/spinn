@@ -2,7 +2,7 @@
     <div class="form-container">
 
         <app-app-main-logo-title></app-app-main-logo-title>
-        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
             <h2 class="auth-title mat-h2" i18n="signup title | it show that it is a signup page">Signup</h2>
             <mat-form-field appearance="outline">
                 <mat-label  i18n="Username label | it show the user name label">Username</mat-label>
@@ -19,7 +19,7 @@
                         : "visibility_off"}}
                 </mat-icon>
             </mat-form-field>   
-            <button style="width: 100%;" type="submit" color="primary" [disabled]="!f.valid" mat-raised-button i18n="sign up button">Signup</button>
+            <button style="width: 100%;" type="submit" color="primary" [disabled]="!signupForm.valid" mat-raised-button i18n="sign up button">Signup</button>
         </form>
         <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/login']" i18n="login up ancher">already have an account? sing in here.</button>
     </div>

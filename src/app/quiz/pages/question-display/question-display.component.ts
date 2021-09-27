@@ -14,11 +14,12 @@ import { Location } from '@angular/common';
 })
 export class QuestionDisplayComponent implements OnInit {
   isFlagSelected = false;
-  isLiked = false;
+  isCheckAnswer:boolean = true;
   progressValue = 100;
   quizeIndex = 0;
   quizeQuestions = quizeData;
   quizeQuestion;
+  correctIndex:number;
   
   // timmerValue = 30;
   // selectedValue;
@@ -28,25 +29,6 @@ export class QuestionDisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.quizeQuestion = this.quizeQuestions[this.quizeIndex];
-
-    setInterval(()=>{
-      // if(this.quizeIndex < this.quizeQuestions.length-1){
-      //   this.quizeIndex++;
-      //   this.quizeQuestion = this.quizeQuestions[this.quizeIndex];
-      // }else{
-      //   this.router.navigate(['/quize/congrats'])
-      // }
-      // console.log(this.quizeIndex);
-      
-    },10000);
-
-    // setInterval(()=>{
-    //   this.timmerValue--;
-    //   // this.progressValue = Math.floor((this.timmerValue/100)*100);
-    //   if(this.timmerValue == 0){
-    //     this.timmerValue = 30;
-    //   }
-    // },1000)
   }
 
   onClick(value){
@@ -62,8 +44,24 @@ export class QuestionDisplayComponent implements OnInit {
     
   }
 
-  onLike(){
-    this.isLiked = !this.isLiked;
+  onCheckAnswer(){
+    this.correctIndex = this.quizeQuestions[this.quizeIndex].correctIndex;
+    this.isCheckAnswer = false;
+    console.log('correct index',this.correctIndex);
+  }
+
+
+  onNext(){
+    console.log('onClick');
+
+     if(this.quizeIndex < this.quizeQuestions.length-1){
+        this.quizeIndex++;
+        this.quizeQuestion = this.quizeQuestions[this.quizeIndex];
+      }else{
+        this.router.navigate(['/quiz/congrats'])
+      }
+      console.log(this.quizeIndex);
+      this.isCheckAnswer = true;
   }
   onFlagSelect(){
     this.isFlagSelected  = !this.isFlagSelected;

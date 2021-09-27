@@ -11,12 +11,21 @@ import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
-  declarations: [DashboardComponent, UserQuizeComponent, QuizeSelectionComponent, UserActivityComponent, ActivitiesComponent],
+  declarations: [
+    DashboardComponent, 
+    UserQuizeComponent, 
+    QuizeSelectionComponent, 
+    UserActivityComponent, 
+    ActivitiesComponent
+  ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
     ChartsModule
+  ],
+  exports:[
+    
   ]
 })
 export class DashboardModule { }

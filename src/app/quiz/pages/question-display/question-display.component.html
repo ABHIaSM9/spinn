@@ -1,4 +1,4 @@
-<div class="clipped-div">
+<!-- <div class="clipped-div">
     <div class="title-bar">
         <button mat-icon-button (click)="onBack()">
             <mat-icon>
@@ -14,29 +14,56 @@
             </mat-icon>
         </button>
     </div>
-</div>
+</div> -->
+<mat-toolbar>
+    <button mat-icon-button (click)="onBack()">
+        <mat-icon>
+            arrow_back
+        </mat-icon>
+    </button>
+    <div style="display: flex; flex-direction: column; line-height: 1em;">
+        <div class="mat-h3" style="margin-bottom: 0;" i18n>
+            title
+        </div>
+        <div class="mat-small" style="margin-bottom: 0;">
+            {{quizeIndex+1}}/{{quizeQuestions.length}}
+        </div>
+    </div>
+    <div class="space-box">
+
+    </div>
+    <button mat-icon-button>
+        <mat-icon>
+            more_vert
+        </mat-icon>
+    </button>
+</mat-toolbar>
 <div class="container">
     <div class="question h4">
         {{quizeQuestion.question}}
     </div>
-    <app-option-list [options]="quizeQuestion.answers" (onSelect)="onClick($event)"></app-option-list>
+    <app-option-list [options]="quizeQuestion.answers" [correctIndexSetter]="correctIndex"  (onSelect)="onClick($event)"></app-option-list>
 </div>
+<!-- <ngx-mat-circle-counter [start]="0" [size]="'s'" [textColor]="''"  [color]="'primary'" [value]="30" [thickness]="20" [mode]="'pageinit'" [speed]="'1000'"></ngx-mat-circle-counter> -->
 
 <div class="quize-bottom-bar-wrapper">
     <mat-toolbar class="quize-bottom-bar">
-        <button mat-icon-button [color]="isFlagSelected?'accent':''" (click)='onFlagSelect()'>
+        <button mat-icon-button (click)='onFlagSelect()'>
             <mat-icon>
                 flag
             </mat-icon>
         </button>
         <div class="space-box"></div>
-        <button mat-icon-button [color]="isLiked?'accent':''" (click)='onLike()'>
+        <button type="button" (click)="isCheckAnswer?onCheckAnswer():onNext()" mat-icon-button>
             <mat-icon>
-                arrow_forward
-                <!-- favorite -->
+                {{
+                    isCheckAnswer?
+                    'fact_check':
+                    'arrow_forward'
+                }}
             </mat-icon>
         </button>
-        <div class="spinner-container">
+        <!-- <div class="spinner-container">
             <div class="spinner-wrapper">
                 <mat-progress-spinner
                 color="primary"
@@ -50,6 +77,6 @@
                     {{progressSpinner.value}}
                 </div>
             </div>
-        </div>
+        </div> -->
     </mat-toolbar>
 </div>

@@ -42,6 +42,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BottomNavModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [HomeRoutingModule],
   bootstrap: [AppComponent]

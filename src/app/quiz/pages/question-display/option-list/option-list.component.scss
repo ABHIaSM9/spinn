@@ -2,5 +2,12 @@
     margin: auto;
 }
 ::ng-deep .active>.mat-card{
-    box-shadow: 0px 0px 3px 2px #485bc1 !important;
+    box-shadow: 0px 0px 3px 2px #1c51c4 !important;
+}
+
+::ng-deep .correct>.mat-card{
+    box-shadow: 0px 0px 3px 2px #21be2e !important;
+}
+::ng-deep .correct.active>.mat-card{
+    box-shadow: 0px 0px 3px 2px #21be2e !important;
 }

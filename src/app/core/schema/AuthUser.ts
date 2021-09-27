@@ -1,4 +1,5 @@
-export interface AuthUser{
+
+export class AuthUser{
     email:String;
     password:String;
 }

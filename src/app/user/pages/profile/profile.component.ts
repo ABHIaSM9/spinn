@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(){
+  onSubmit(){
     const value = this.form.value;
     console.log(value);
   }

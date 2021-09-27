@@ -10,12 +10,22 @@ import { AuthComponent } from './auth.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent, OtpverifyComponent, AuthComponent],
+  declarations: [
+    LoginComponent,
+    SignupComponent,
+    OtpverifyComponent, 
+    AuthComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
     SharedModule,
     NgOtpInputModule
+  ],
+  exports:[
+    LoginComponent,
+    SignupComponent,
+    OtpverifyComponent,
+    AuthComponent
   ]
 })
 export class AuthModule { }

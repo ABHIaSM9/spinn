@@ -16,7 +16,6 @@ import { PageNotFoundComponent } from './layout';
     FormsModule,
     RouterModule,
     SharedModule,
-
   ],
   exports:[
     RouterModule,
