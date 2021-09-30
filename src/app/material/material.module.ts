@@ -15,6 +15,7 @@ import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const materials = [
   CommonModule,
@@ -33,7 +34,8 @@ const materials = [
   MatProgressSpinnerModule,
   MatCardModule,
   MatSlideToggleModule,
-  MatListModule
+  MatListModule,
+  MatExpansionModule
 ];
 
 @NgModule({

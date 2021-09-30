@@ -1,7 +1,10 @@
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QuizComponent } from './quiz.component';
+import { MaterialModule } from '../material/material.module';
 
 describe('QuizeComponent', () => {
   let component: QuizComponent;
@@ -10,7 +13,7 @@ describe('QuizeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ QuizComponent ],
-      imports:[RouterTestingModule]
+      imports:[RouterTestingModule ]
     })
     .compileComponents();
   });

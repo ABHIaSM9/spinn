@@ -1,8 +1,10 @@
+import { NgOtpInputModule } from 'ng-otp-input';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OtpverifyComponent } from './otpverify.component';
 import { Router } from '@angular/router';
+import { MaterialModule } from 'src/app/material/material.module';
 
 describe('OtpverifyComponent', () => {
   let component: OtpverifyComponent;
@@ -12,7 +14,7 @@ describe('OtpverifyComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ OtpverifyComponent ],
-      imports:[RouterTestingModule],
+      imports:[RouterTestingModule,NgOtpInputModule],
       providers:[
         {provide:Router,useValue:routerSpy}
       ]

@@ -1,3 +1,5 @@
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 import { AuthUser } from './../../../core/schema/AuthUser';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthenticationService } from './../../../core/authentication/authentication.service';
@@ -8,6 +10,9 @@ import { LoginComponent } from './login.component';
 import { delay} from 'rxjs/operators';
 import { Observable, of, Subscription,pipe } from 'rxjs';
 import { AuthenticationServiceMock } from 'src/tests/mocks/services/authentication-service.mock';
+import { MaterialModule } from 'src/app/material/material.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 
 //describe and it is provided by jasmine
@@ -22,7 +27,7 @@ import { AuthenticationServiceMock } from 'src/tests/mocks/services/authenticati
 
 
 describe('LoginComponent',()=>{
-  
+
   let component:LoginComponent;
 
 
@@ -33,7 +38,7 @@ describe('LoginComponent',()=>{
 
   let matSnackBar = jasmine.createSpyObj('MatSnackBar',['open'])
   // let authenticationService = jasmine.createSpyObj('AuthenticationService',['onLogin','getUserListener']);
-  
+
 
   let authUser:AuthUser;
 
@@ -47,7 +52,9 @@ describe('LoginComponent',()=>{
         LoginComponent
       ],
       imports:[
-        FormsModule
+        FormsModule,
+        MatIconModule,
+        MatButtonModule
       ],
       providers:[
         {
@@ -61,7 +68,7 @@ describe('LoginComponent',()=>{
       ]
     })
   })
-  
+
   beforeEach(() => {
     //assign fixture for our component.
     fixture = TestBed.createComponent(LoginComponent);

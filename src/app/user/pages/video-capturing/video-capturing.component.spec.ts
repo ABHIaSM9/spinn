@@ -1,27 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MaterialModule } from 'src/app/material/material.module';
 
-import { ActivitiesComponent } from './activities.component';
+import { VideoCapturingComponent } from './video-capturing.component';
 
-describe('ActivitiesComponent', () => {
-  let component: ActivitiesComponent;
-  let fixture: ComponentFixture<ActivitiesComponent>;
+describe('VideoCapturingComponent', () => {
+  let component: VideoCapturingComponent;
+  let fixture: ComponentFixture<VideoCapturingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[
-        MatButtonModule,
-        MatIconModule
-      ],
-      declarations: [ ActivitiesComponent ]
+      imports:[MatIconModule,MatButtonModule],
+      declarations: [ VideoCapturingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ActivitiesComponent);
+    fixture = TestBed.createComponent(VideoCapturingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

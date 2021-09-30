@@ -8,11 +8,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit,OnDestroy {
-  title = 'angular-project';
   isDorkMode:boolean;
   private subscription:Subscription;
   constructor(private themeService:ThemeService){}
-  
+
   ngOnInit(): void {
     this.isDorkMode = this.themeService.getIsDarkMode();
     this.subscription =  this.themeService.getThemeListener().subscribe((isDarkMode:boolean)=>{
@@ -20,6 +19,6 @@ export class AppComponent implements OnInit,OnDestroy {
     })
   }
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    this.subscription?.unsubscribe();
   }
 }

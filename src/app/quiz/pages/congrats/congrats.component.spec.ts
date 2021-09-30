@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatButtonModule } from '@angular/material/button';
+import { MaterialModule } from 'src/app/material/material.module';
 
 import { CongratsComponent } from './congrats.component';
 
@@ -8,6 +10,9 @@ describe('CongratsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[
+        MatButtonModule
+      ],
       declarations: [ CongratsComponent ]
     })
     .compileComponents();

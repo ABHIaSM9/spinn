@@ -2,7 +2,9 @@
     width: 100%;
     position: fixed;
     bottom: 0;
+    z-index: 1000;
 }
+
 .active .mat-icon{
     color: inherit;
 }

@@ -1,5 +1,5 @@
 import { AuthUser } from './../../../core/schema/AuthUser';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
@@ -38,17 +38,21 @@ export class LoginComponent implements OnInit {
 
 
 
-  
+
   togglePasswordVisibility():void{
     this.isPasswordVisible = !this.isPasswordVisible;
   }
-  
+
   onSubmit():void{
     this.isLoading = true;
     const value = this.form.value;
     setTimeout(()=>{
       this.authService.onLogin(value.email,value.password);
     },5000);
+  }
+
+  OnDestroy(){
+    this.userListenerSubscription?.unsubscribe();
   }
 
 }

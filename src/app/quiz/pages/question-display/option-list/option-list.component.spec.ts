@@ -1,14 +1,23 @@
+import { QuizService } from './../../../../core/services/quiz.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OptionListComponent } from './option-list.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MaterialModule } from 'src/app/material/material.module';
 
 describe('OptionListComponent', () => {
   let component: OptionListComponent;
   let fixture: ComponentFixture<OptionListComponent>;
 
+  let quzeServiceSpy = jasmine.createSpyObj('QuizService',['getCorrectAnswerIndex','getSelectedOptionIndex','getIsOptionSelected','getIsCheckAnswer', 'setIsOptionSelected','.setSelectedOptionIndex']);
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OptionListComponent ]
+      imports:[RouterTestingModule],
+      declarations: [ OptionListComponent ],
+      providers:[
+        {provider:QuizService,useValue:quzeServiceSpy}
+      ]
     })
     .compileComponents();
   });

@@ -1,9 +1,10 @@
 import { Subscription } from 'rxjs';
 import { QuizService } from './../../../core/services/quiz.service';
 import { Router } from '@angular/router';
-import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy, ViewChild } from '@angular/core';
 import {quizData} from '../../../../data/data';
 import { Location } from '@angular/common';
+import { CounterComponent } from 'angular-circle-counter/src/app/counter/counter.component';
 
 
 interface QuizQuestion{
@@ -19,13 +20,26 @@ interface QuizQuestion{
   styleUrls: ['./question-display.component.scss']
 })
 export class QuestionDisplayComponent implements OnInit,OnChanges {
+  @ViewChild('counter',{static:true}) counter:CounterComponent;
+  of:number = 30;
+  from:number = 0;
+  to:number = this.of;
+  animationTime:number = (this.of*1000);
+  fontSize:number = 50;
+
+  
+  
   isFlagSelected = false;
-  isCheckAnswer:boolean = true;
+  isCheckMode:boolean = false;
   quizIndex:number;
   quizQuestions:QuizQuestion[];
   quizQuestion:QuizQuestion;
   correctIndex:number;
   isSelectedOption:boolean;
+
+
+
+
 
 
   quizIndexSubscription:Subscription;
@@ -50,26 +64,24 @@ export class QuestionDisplayComponent implements OnInit,OnChanges {
     this.quizService.getIsOptionSelectedListener().subscribe((isOptionSelected:boolean)=>{
       this.isSelectedOption = isOptionSelected;
     })
+    this.isCheckMode = this.quizService.getIsCheckAnswer();
+    this.quizService.getIsCheckAnswerLister().subscribe((value:boolean)=>{
+      this.isCheckMode = value;
+    })
   }
 
   ngOnChanges(): void {
-    console.log('index -->',this.quizIndex);
+    // console.log('index -->',this.quizIndex);
   }
 
   onClick(value){
-    // console.log(value);
-    // if(value == this.quizQuestion.correctIndex){
-    //   console.log('right');
-    // }else{
-    //   console.log('wrong');
-    // }
   }
 
 
   onCheckAnswer(){
     this.quizService.onCheckCorrectAnswer();
-    this.isCheckAnswer = false;
-    console.log('correct index',this.correctIndex);
+    // this.isCheckAnswer = true;
+    // console.log('correct index',this.correctIndex);
   }
 
 
@@ -77,12 +89,15 @@ export class QuestionDisplayComponent implements OnInit,OnChanges {
       console.log('onClick',this.quizIndex);
       this.quizService.onNext();
       console.log(this.quizIndex);
-      this.isCheckAnswer = true;
+      this.counter.restart();
+      // this.isCheckAnswer = false;
   }
   onFlagSelect(){
     this.isFlagSelected  = !this.isFlagSelected;
   }
-
+  timmerFinished(){
+    console.log('finished');
+  }
 
   ngOnDestroy(): void {
     this.quizIndexSubscription?.unsubscribe();

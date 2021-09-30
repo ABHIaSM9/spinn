@@ -1,7 +1,10 @@
+import { MatExpansionModule } from '@angular/material/expansion';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ProfileComponent } from './profile.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -10,7 +13,7 @@ describe('ProfileComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ ProfileComponent ],
-      imports:[FormsModule]
+      imports:[FormsModule,ReactiveFormsModule,MatButtonModule,MatIconModule]
     })
     .compileComponents();
   });

@@ -1,16 +1,20 @@
+import { ThemeService } from './core/services/theme.service';
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  const themeServiceSpy = jasmine.createSpyObj('ThemeService',['getIsDarkMode','getThemeListener'])
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
       declarations: [
         AppComponent
       ],
+      providers:[
+
+        {provide:ThemeService,useValue:themeServiceSpy}
+      ]
     }).compileComponents();
   });
 
@@ -19,6 +23,9 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+
+
+
 
   // it(`should have as title 'angular-project'`, () => {
   //   const fixture = TestBed.createComponent(AppComponent);

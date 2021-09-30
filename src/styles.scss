@@ -10,15 +10,18 @@
 
 
 html, body { height: 100%;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;} 
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 
 
 
 $light-theme-primary: mat.mat-palette(mat.$mat-indigo,500);
 $light-theme-accent: mat.mat-palette(mat.$mat-pink,A200,A100,A400);
+
+$dark-theme-primary: mat.mat-palette(mat.$mat-amber,A200);
+$dark-theme-accent: mat.mat-palette(mat.$mat-yellow,900);
 $light-theme: mat.mat-light-theme($light-theme-primary,$light-theme-accent);
-$dark-theme: mat.mat-dark-theme($light-theme-primary,$light-theme-accent);
+$dark-theme: mat.mat-dark-theme($dark-theme-primary,$dark-theme-accent);
 
 
 
@@ -32,7 +35,7 @@ $dark-theme: mat.mat-dark-theme($light-theme-primary,$light-theme-accent);
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 0;   
+    left: 0;
     right: 0;
 }
 .drawer-container{
@@ -47,7 +50,7 @@ $dark-theme: mat.mat-dark-theme($light-theme-primary,$light-theme-accent);
 
 
 
-.mat-side-drawer{ 
+.mat-side-drawer{
     width: 220px;
 }
 .cst-card-border-radius{

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatIconModule } from '@angular/material/icon';
 
 import { CstBottomNavComponent } from './cst-bottom-nav.component';
 
@@ -8,6 +9,7 @@ describe('CstBottomNavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[MatIconModule],
       declarations: [ CstBottomNavComponent ]
     })
     .compileComponents();

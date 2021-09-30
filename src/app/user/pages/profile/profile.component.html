@@ -1,6 +1,6 @@
 <div class="container">
     <div class="form-container">
-        <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
             <h2 class="profile-title mat-h2" i18n>
                 My Profile
             </h2>
@@ -9,30 +9,41 @@
             </div>
             <mat-form-field appearance="outline">
                 <mat-label for="firstName" i18n="Username label | it show the user name label" i18n>First Name</mat-label>
-                <input type="text" id="firstName" matInput name="firstName" placeholder="Enter First Name" #email="ngModel" required ngModel/>
-                <!-- <mat-icon matSuffix>email</mat-icon> -->
+                <input type="text" id="firstName" matInput name="firstName" placeholder="Enter First Name" formControlName="firstName"/>
+                <!-- <mat-icon matSuffix>{{}}</mat-icon> -->
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label for="lastName" i18n="Username label | it show the user name label" i18n>Last Name</mat-label>
-                <input type="text" id="lastName" matInput name="lastName" placeholder="Enter Last Name" #lastName="ngModel" required ngModel/>
+                <input type="text" id="lastName" matInput name="lastName" placeholder="Enter Last Name" formControlName="lastName"/>
                 <!-- <mat-icon matSuffix>email</mat-icon> -->
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label for="displayName" i18n="Username label | it show the user name label" i18n>Public Display Name</mat-label>
-                <input type="text" id="displayName" matInput name="displayName" placeholder="Enter Display Name" #displayName="ngModel" required ngModel/>
+                <input type="text" id="displayName" matInput name="displayName" placeholder="Enter Display Name" formControlName="displayName"/>
                 <!-- <mat-icon matSuffix>email</mat-icon> -->
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label for="about" i18n="Username label | it show the user name label" i18n>About Me</mat-label>
-                <textarea rows="5" type="textarea" id="about" matInput placeholder="about you" name="about" #about="ngModel" required ngModel></textarea>
+                <textarea rows="5" type="textarea" id="about" matInput placeholder="about you" name="about" formControlName="aboutMe"></textarea>
                 <!-- <mat-icon matSuffix>email</mat-icon> -->
             </mat-form-field>
-            
-            <button type="submit" mat-raised-button color="primary" i18n>submit</button>
-            
+
+            <mat-expansion-panel (opened)="panelOpenState == true" (closed)="panelOpenState == false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>videocam</mat-icon>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        record your video
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div>
+                    <app-video-capturing></app-video-capturing>
+                </div>
+            </mat-expansion-panel>
+
+            <button type="submit" [disabled]="!profileForm.valid" mat-raised-button color="primary" i18n>submit</button>
+
         </form>
     </div>
 </div>
-<video #videoElement>
-    <source *ngIf/>
-</video>

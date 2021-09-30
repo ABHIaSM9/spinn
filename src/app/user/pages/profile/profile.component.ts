@@ -1,6 +1,5 @@
-import { NgForm } from '@angular/forms';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { VideoRecordingService } from 'src/app/core/services/video-recording.service';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild, OnChanges } from '@angular/core';
 
 
 @Component({
@@ -9,39 +8,26 @@ import { VideoRecordingService } from 'src/app/core/services/video-recording.ser
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  @ViewChild('videoElement',{static:true}) videoElement:ElementRef;
-  video:any;
-  isVideoRecording = false;
-  
+  panelOpenState:boolean = false;
   width:number;
 
-  @ViewChild('f',{static:true}) form:NgForm;
-  constructor(private videoRecordingService:VideoRecordingService) { 
-    // setTimeout(()=>{
-    //   this.startVideoRecording();
-    // },5000)
-  } 
+  profileForm:FormGroup;
+  constructor() { }
 
   ngOnInit(): void {
-    this.video = this.videoElement.nativeElement;
+    this.profileForm = new FormGroup({
+      firstName:new FormControl('',Validators.required),
+      lastName:new FormControl('',Validators.required),
+      displayName:new FormControl('',Validators.required),
+      aboutMe:new FormControl(''),
+    })
   }
 
+  OnChanges(){
+
+  }
   onSubmit(){
-    const value = this.form.value;
-    console.log(value);
+    console.log('profileForm',this.profileForm);
   }
-  startVideoRecording(){
-    if(!this.isVideoRecording){
-      this.video.controls = false;
-      this.isVideoRecording = true;
-      this.videoRecordingService.startRecording({video:{ facingMode:'user',width:320},audio:true})
-      .then(stream=>{
-        this.video.srcObject = stream;
-        this.video.play();
-      })
-      .catch(err => {
-        console.log('error-------->',err);
-      })
-    }
-  }
+
 }

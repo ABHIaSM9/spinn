@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatButtonModule } from '@angular/material/button';
+import { MaterialModule } from 'src/app/material/material.module';
 
 import { UserActivityComponent } from './user-activity.component';
 
@@ -8,6 +10,9 @@ describe('UserActivityComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[
+        MatButtonModule
+      ],
       declarations: [ UserActivityComponent ]
     })
     .compileComponents();

@@ -1,5 +1,7 @@
 import { OptionCardComponent } from './option-card.component';
 import {ComponentFixture,TestBed} from '@angular/core/testing';
+import { MaterialModule } from 'src/app/material/material.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 describe('OptionCardComponent',()=>{
@@ -8,6 +10,7 @@ describe('OptionCardComponent',()=>{
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
+            imports:[MatIconModule],
             declarations:[OptionCardComponent]
         }).compileComponents()
     })

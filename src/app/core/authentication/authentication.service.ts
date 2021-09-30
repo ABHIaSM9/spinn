@@ -10,10 +10,11 @@ import { Observable, Subject } from 'rxjs';
 export class AuthenticationService {
   private isAuth:boolean = false;
   private users:AuthUser[] = [];
+  private isAuthSubject = new Subject<boolean>();
   private userSubject = new Subject<AuthUser>();
-  
+
   constructor(private router: Router) { }
-  
+
   getUserListener():Observable<AuthUser>{
     console.log('getUserListener',this.userSubject.asObservable());
     return this.userSubject.asObservable();
@@ -51,6 +52,10 @@ export class AuthenticationService {
 
   getIsAuth(){
     return this.isAuth;
+  }
+
+  getIsAuthListener(){
+    return this.isAuthSubject.asObservable();
   }
 
 }

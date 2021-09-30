@@ -1,5 +1,6 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
+import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { quizData } from 'src/data/data';
@@ -23,6 +24,7 @@ export class QuizService {
   private quizIndex = 0;
   private selectedOptionIndex:number;
   private isOptionSelected = false; 
+  private isCheckAnswer = false;
 
 
   private quizIndexSubject = new Subject<number>();
@@ -30,16 +32,27 @@ export class QuizService {
   private correctIndexSubject = new Subject();
   private selectedOptionIndexSubject = new Subject();
   private isOptionSelectedSubject = new Subject();
+  private isCheckAnswerSubject = new Subject();
 
 
   constructor(private router:Router) {
-    this.initialization();
+    this.initialLoad();
    }
 
 
-  initialization(){
+  private initialLoad(){
     this.selectedQuizQuestion = this.quizQuestions[this.quizIndex];
   }
+
+
+  getIsCheckAnswerLister(){
+    return this.isCheckAnswerSubject.asObservable();
+  }
+  getIsCheckAnswer(){
+    return this.isCheckAnswer;
+  }
+ 
+
 
   getQuestionData():QuizQuestion[]{
     return this.quizQuestions;
@@ -105,20 +118,25 @@ export class QuizService {
       this.quizIndex++;
       this.selectedQuizQuestion = this.quizQuestions[this.quizIndex];
       this.correctIndex = undefined;
+      this.isCheckAnswer = false;
       this.correctIndexSubject.next(this.correctIndex);
       this.quizIndexSubject.next(this.quizIndex);
       this.selectedQuizQuestionSubject.next(this.selectedQuizQuestion);
+      this.isCheckAnswerSubject.next(this.isCheckAnswer);
     }else{
       this.correctIndex = undefined;
-      this.correctIndexSubject.next(this.correctIndex);
       this.quizIndex = 0;
+      this.isCheckAnswer = false;
+      this.correctIndexSubject.next(this.correctIndex);
       this.quizIndexSubject.next(this.quizIndex);
+      this.isCheckAnswerSubject.next(this.isCheckAnswer);
       this.router.navigate(['/quiz/congrats'])
     }
   }
 
   onCheckCorrectAnswer(){
     this.correctIndex = this.quizQuestions[this.quizIndex].correctIndex;
+    this.isCheckAnswerSubject.next(true);
     this.correctIndexSubject.next(this.correctIndex);
   }
 }

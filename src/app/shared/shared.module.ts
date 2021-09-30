@@ -12,7 +12,7 @@ import {
   FooterComponent,HeaderComponent,
   SideNavComponent,
   AppMainLogoTitleComponent,
-  BottomNavigationComponent
+  BottomNavigationComponent,
 } from './layout';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { CounterModule } from 'angular-circle-counter';
@@ -45,7 +45,7 @@ import { WebcamModule } from 'ngx-webcam';
     BottomNavModule,
     CarouselModule,
     WebcamModule,
-    
+    CounterModule
   ],
   exports:[
     CommonModule,

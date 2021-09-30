@@ -54,15 +54,20 @@
             </mat-icon>
         </button>
         <div class="space-box"></div>
-        <button type="button" [disabled]="!isSelectedOption" (click)="isCheckAnswer?onCheckAnswer():onNext()" mat-icon-button>
+        <div>
+            <app-counter [from]="from" [to]="to" [of]="of" [fontSize]="fontSize" [animationTime]="animationTime"  (finished)="timmerFinished()" #counter></app-counter>
+        </div>
+        <div class="space-box"></div>
+        <button type="button" [disabled]="!isSelectedOption" (click)="isCheckMode?onNext():onCheckAnswer()" mat-icon-button>
             <mat-icon>
                 {{
-                    isCheckAnswer?
-                    'fact_check':
-                    'arrow_forward'
+                    isCheckMode?
+                    'arrow_forward':
+                    'fact_check'
                 }}
             </mat-icon>
         </button>
+        <!-- <app-counter [from]="0" [to]="30" [of]="30" (finished)="timmerFinished()"></app-counter> -->
         <!-- <div class="spinner-container">
             <div class="spinner-wrapper">
                 <mat-progress-spinner

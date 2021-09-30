@@ -1,54 +1,145 @@
 import { browser } from 'protractor';
 import { Injectable } from '@angular/core';
 import * as RecordRtc from 'recordrtc';
+import { Subject, Observable } from 'rxjs';
+import * as RecordRTC from 'recordrtc';
+
+
+
+
+interface RecordedVideoOutput{
+  blob: Blob,
+  url: any,
+  title: string
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class VideoRecordingService {
-  private recorder: any;
-  private stream: any;
+  private recorder: RecordRTC;
+  private stream: MediaStream;
+  private recordedMedia;
+
+
+  private streamSubject = new Subject<MediaStream>();
+  private recordUrlSubject = new Subject<string>();
+  private recordedSubject = new Subject<RecordedVideoOutput>();
+
+
+
+
+
+  getStreamListener():Observable<MediaStream>{
+    return this.streamSubject.asObservable();
+  }
+
+  getRecordUrlListener():Observable<string>{
+    return this.recordUrlSubject.asObservable();
+  }
+
+  getRecordedListener():Observable<RecordedVideoOutput>{
+    return this.recordedSubject.asObservable();
+  }
+
+
+
+
 
   constructor() { }
 
+
+
+
+
+
+  //start video media and recording
   startRecording(config:any):Promise<any>{
+    console.log('starting Recording');
     let browser = window.navigator;
+    //check is recording
     if(this.recorder){
-      //if already recording something
+      //if already recording something return;
       return;
     }
+    //this promise will return stream object if mediaDevices  exist in browser api
+    //if media not exist the this will throw error
     return new Promise((resolve, reject)=>{
       browser.mediaDevices.getUserMedia(config)
       .then(stream => {
         this.stream = stream;
-        this.record();
+        this.record();                // recording function
         resolve(this.stream);
       })
       .catch(error=>{
-        reject();
+        reject(error);
       })
     })
   }
 
+
+
+
+
+
+  //start Recording by RecordRTC
   private record(){
-    this.recorder = new RecordRtc(this.stream,{
-      type:'video',
-      mimeType: 'video/html',
-      audioBitsPerSecond: 128000,
-      videoBitsPerSecond: 128000
-    });
-
-    this.recorder.startRecording();
+    if(this.stream){
+      this.recorder = new RecordRtc(this.stream,{
+        type:'video',
+        mimeType: 'video/webm',
+        audioBitsPerSecond: 128000,
+        videoBitsPerSecond: 128000
+      });
+      this.recorder.startRecording();
+    }
   }
 
-  private processVideo(audioVideoWebUrl){
+
+
+
+  //process video and generate Blob and url
+  private processVideo(audioVideoWebUrl:any){
+    console.log('processVideo',audioVideoWebUrl);
     const recordedBlob = this.recorder.getBlob();
-    this.recorder.getDataURL((dataUrl)=>{});
-    const recordedName = encodeURIComponent('vide_'+new Date().getTime()+'.webm');
+    console.log('recordedBlob',recordedBlob);
+    // this.recorder.getDataURL();
+    const recordedName = encodeURIComponent('video_'+new Date().getTime()+'.webm');
+    this.recordedMedia = {
+      blob:recordedBlob,
+      url: audioVideoWebUrl,
+      title: recordedName
+    };
+
+    this.recordedSubject.next(this.recordedMedia);
+    this.stopMedia();
   }
 
-  // private stopRecording(){
-  //   this.recorder
-  // }
+
+
+  //stop recording and stop streaming
+  private stopMedia(){
+    if(this.recorder){
+      //stop recording
+      this.recorder = null;
+      //stop streaming
+      if(this.stream){
+        this.stream.getAudioTracks().forEach(track=>track.stop());
+        this.stream.getVideoTracks().forEach(track=>track.stop());
+        this.stream = null;
+      }
+    }
+  }
+
+  deleteMedia(){
+    this.recordedMedia = null;
+  }
+
+  stopRecording(){
+    if(this.recorder){
+      this.recorder.stopRecording(this.processVideo.bind(this));
+    }
+  }
 
 }
