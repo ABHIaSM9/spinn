@@ -1,8 +1,18 @@
 .container{
     width: 100%;
+    padding-left: 0.75rem;
+    padding-right:0.75rem;
+    padding-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mini-container{
+    width: 100%;
     max-width: 400px;
     padding-left: 0.75rem;
     padding-right:0.75rem;
+    padding-top: 1em;
     margin-left: auto;
     margin-right: auto;
 }

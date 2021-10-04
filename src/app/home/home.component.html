@@ -5,7 +5,7 @@
             <app-side-nav></app-side-nav>
         </mat-drawer>
         <mat-drawer-content class="drawer-content" >
-            <div class="container">
+            <div class="mini-container">
                 <div>
                     <span class="initial-title mat-h3" i18n="Question | are you realy want to play the game.@@Question" i18n>Playing a game?</span>
                     <mat-card class="game-code-container" [ngClass]="{red:!joinGameform.valid && joinGameform.touched}">
@@ -19,13 +19,13 @@
                                 <button type="submit" [disabled]="!joinGameform.valid" mat-raised-button color="primary" i18n> Join a game</button>
                             </div>
                         </form>
-                    </mat-card>    
+                    </mat-card>
                 </div>
                 <mat-card class="auth-route-container" >
                     <h2 class="mat-h2" i18n>Let's get you started</h2>
                     <button class="auth-button" [routerLink]="['/auth/login']" mat-stroked-button color="primary" i18n>login</button>
                     <button class="auth-button" [routerLink]="['/auth/signup']" mat-raised-button color="primary" i18n>signup</button>
-                </mat-card> 
+                </mat-card>
             </div>
         </mat-drawer-content>
     </mat-drawer-container>

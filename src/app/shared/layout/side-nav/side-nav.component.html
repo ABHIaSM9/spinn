@@ -7,11 +7,11 @@
     <button mat-button [routerLink]="['/dashboard/activities']">activities</button>
     <button mat-button [routerLink]="['/quize']">quize</button> -->
     <mat-nav-list>
-        <mat-list-item [routerLink]="['/user/setting']" routerLinkActive>
+        <mat-list-item [routerLink]="['/user/setting']" routerLinkActive i18n>
             <mat-icon mat-list-icon> settings</mat-icon>
             setting
         </mat-list-item>
-        <mat-list-item [routerLink]="['/user/profile']" routerLinkActive>
+        <mat-list-item [routerLink]="['/user']" routerLinkActive i18n>
             <mat-icon mat-list-icon> face</mat-icon>
             profile
         </mat-list-item>
@@ -39,5 +39,5 @@
         <mat-list-item [routerLink]="['/quiz/congrats']" routerLinkActive>
             congrats
         </mat-list-item>
-    </mat-nav-list> 
+    </mat-nav-list>
 </div>

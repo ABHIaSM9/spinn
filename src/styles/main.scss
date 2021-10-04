@@ -1,10 +1,16 @@
-@import './abstracts/variabes';
+//base
+@use './base' as *;
 
-@import './base/reset';
+//utilities
+@use './utilities' as *;
 
+//abstract
+@use './abstracts' as *;
 
 //component
-@import './components/button.scss';
+@use './components' as *;
+
+//layouts
+@use './layouts' as *;
 
 
-@import './utilities/container';

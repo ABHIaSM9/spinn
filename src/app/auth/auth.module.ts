@@ -7,6 +7,9 @@ import {LoginComponent,SignupComponent,OtpverifyComponent} from './pages';
 import { SharedModule } from '../shared/shared.module';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { AuthComponent } from './auth.component';
+import { UserTypeComponent } from './pages/user-type/user-type.component';
+import { BirthdayComponent } from './pages/birthday/birthday.component';
+import { SocialTypeComponent } from './pages/social-type/social-type.component';
 
 
 @NgModule({
@@ -14,7 +17,7 @@ import { AuthComponent } from './auth.component';
     LoginComponent,
     SignupComponent,
     OtpverifyComponent, 
-    AuthComponent],
+    AuthComponent, UserTypeComponent, BirthdayComponent, SocialTypeComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,

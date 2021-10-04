@@ -22,6 +22,10 @@ const routes: Routes = [
     path:"quiz",
     loadChildren:()=>import('./quiz/quiz.module').then(m=>m.QuizModule)
   },
+  {
+    path:"admin",
+    loadChildren:()=>import('./admin/admin.module').then(m=>m.AdminModule)
+  },
   {path:"**",component:PageNotFoundComponent}
 ];
 

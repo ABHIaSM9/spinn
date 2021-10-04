@@ -1,9 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { Injectable } from '@angular/core';
+import { ComponentFactoryResolver, Injectable } from '@angular/core';
 import { throwToolbarMixedModesError } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { quizData } from 'src/data/data';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -23,19 +25,19 @@ export class QuizService {
   private correctIndex:number;
   private quizIndex = 0;
   private selectedOptionIndex:number;
-  private isOptionSelected = false; 
+  private isOptionSelected = false;
   private isCheckAnswer = false;
 
 
-  private quizIndexSubject = new Subject<number>();
-  private selectedQuizQuestionSubject = new Subject<QuizQuestion>();
-  private correctIndexSubject = new Subject();
-  private selectedOptionIndexSubject = new Subject();
-  private isOptionSelectedSubject = new Subject();
-  private isCheckAnswerSubject = new Subject();
+  private _quizIndex = new Subject<number>();
+  private _selectedQuizQuestion = new Subject<QuizQuestion>();
+  private _correctIndex = new Subject();
+  private _selectedOptionIndex = new Subject();
+  private _isOptionSelected = new Subject();
+  private _isCheckAnswer = new Subject();
 
 
-  constructor(private router:Router) {
+  constructor(private router:Router, private http:HttpClient) {
     this.initialLoad();
    }
 
@@ -46,12 +48,12 @@ export class QuizService {
 
 
   getIsCheckAnswerLister(){
-    return this.isCheckAnswerSubject.asObservable();
+    return this._isCheckAnswer.asObservable();
   }
   getIsCheckAnswer(){
     return this.isCheckAnswer;
   }
- 
+
 
 
   getQuestionData():QuizQuestion[]{
@@ -63,18 +65,18 @@ export class QuizService {
   }
 
   getCorrectAnswerIndexListener(){
-    return this.correctIndexSubject.asObservable();
+    return this._correctIndex.asObservable();
   }
 
   getSelectedQuizQuestion():QuizQuestion{
     return this.selectedQuizQuestion;
   }
   getSelectedQuizQuestionListener():Observable<QuizQuestion>{
-    return this.selectedQuizQuestionSubject.asObservable();
+    return this._selectedQuizQuestion.asObservable();
   }
 
   getQuizIndexLitener():Observable<number>{
-    return this.quizIndexSubject.asObservable();
+    return this._quizIndex.asObservable();
   }
 
   getQuizIndex():number{
@@ -89,18 +91,18 @@ export class QuizService {
 
   setIsOptionSelected(isOptionSelected:boolean){
     this.isOptionSelected = isOptionSelected;
-    this.isOptionSelectedSubject.next(this.isOptionSelected);
+    this._isOptionSelected.next(this.isOptionSelected);
   }
 
   getIsOptionSelectedListener(){
-    return this.isOptionSelectedSubject.asObservable();
+    return this._isOptionSelected.asObservable();
   }
 
 
 
   setSelectedOptionIndex(selectedOptionIndex:number){
     this.selectedOptionIndex = selectedOptionIndex;
-    this.selectedOptionIndexSubject.next(this.selectedOptionIndex);
+    this._selectedOptionIndex.next(this.selectedOptionIndex);
   }
 
   getSelectedOptionIndex(){
@@ -108,8 +110,128 @@ export class QuizService {
   }
 
   getSelectedOptionIndexListener(){
-    return this.selectedOptionIndexSubject.asObservable();
+    return this._selectedOptionIndex.asObservable();
   }
+
+
+
+  //
+  getNextQuestion(){
+    this.http.get(`${environment.baseApiUrl}`).subscribe(
+      (value)=>{
+        console.log(value)
+      },
+      (err)=>{
+        console.log('error',err);
+        if(err.response){
+          if(err.response.status == 400){
+            console.log('Bad Request')
+          }
+          if(err.response.status == 401){
+            console.log('Unauthorized');
+          }
+          if(err.response.status == 403){
+            console.log('Forbidden');
+          }
+          if(err.response.status == 404){
+            console.log('NotFound');
+          }
+          if(err.response.status == 500){
+            console.log('Internal server error');
+          }
+        }
+      }
+    );
+  }
+
+  findByUserNotAttempted(){
+    this.http.get(`${environment.baseApiUrl}`).subscribe(
+      (value)=>{
+        console.log('error',value);
+      },
+      (err)=>{
+        console.log('error',err);
+        if(err.response){
+          if(err.response.status == 400){
+            console.log('Bad Request')
+          }
+          if(err.response.status == 401){
+            console.log('Unauthorized');
+          }
+          if(err.response.status == 403){
+            console.log('Forbidden');
+          }
+          if(err.response.status == 404){
+            console.log('NotFound');
+          }
+          if(err.response.status == 500){
+            console.log('Internal server error');
+          }
+        }
+      }
+    );
+  }
+
+  questionAreaFindById(){
+    this.http.get(`${environment.baseApiUrl}`).subscribe(
+      (value)=>{
+
+      },
+      (err)=>{
+        console.log('error',err);
+        if(err.response){
+          if(err.response.status == 400){
+            console.log('Bad Request')
+          }
+          if(err.response.status == 401){
+            console.log('Unauthorized');
+          }
+          if(err.response.status == 403){
+            console.log('Forbidden');
+          }
+          if(err.response.status == 404){
+            console.log('NotFound');
+          }
+          if(err.response.status == 500){
+            console.log('Internal server error');
+          }
+        }
+      }
+    );
+  }
+
+  findByAreaNotAttemptByUser(){
+    this.http.get(`${environment.baseApiUrl}/questionset/notattemptedbyuser/123`).subscribe(
+      (value)=>{
+        console.log(value);
+      },
+      (err)=>{
+        console.log('error',err);
+        if(err.response){
+          if(err.response.status == 400){
+            console.log('Bad Request')
+          }
+          if(err.response.status == 401){
+            console.log('Unauthorized');
+          }
+          if(err.response.status == 403){
+            console.log('Forbidden');
+          }
+          if(err.response.status == 404){
+            console.log('NotFound');
+          }
+          if(err.response.status == 500){
+            console.log('Internal server error');
+          }
+        }
+      }
+    );
+  }
+
+
+
+
+
 
 
 
@@ -119,24 +241,32 @@ export class QuizService {
       this.selectedQuizQuestion = this.quizQuestions[this.quizIndex];
       this.correctIndex = undefined;
       this.isCheckAnswer = false;
-      this.correctIndexSubject.next(this.correctIndex);
-      this.quizIndexSubject.next(this.quizIndex);
-      this.selectedQuizQuestionSubject.next(this.selectedQuizQuestion);
-      this.isCheckAnswerSubject.next(this.isCheckAnswer);
+      this._correctIndex.next(this.correctIndex);
+      this._quizIndex.next(this.quizIndex);
+      this._selectedQuizQuestion.next(this.selectedQuizQuestion);
+      this._isCheckAnswer.next(this.isCheckAnswer);
     }else{
       this.correctIndex = undefined;
       this.quizIndex = 0;
       this.isCheckAnswer = false;
-      this.correctIndexSubject.next(this.correctIndex);
-      this.quizIndexSubject.next(this.quizIndex);
-      this.isCheckAnswerSubject.next(this.isCheckAnswer);
+      this._correctIndex.next(this.correctIndex);
+      this._quizIndex.next(this.quizIndex);
+      this._isCheckAnswer.next(this.isCheckAnswer);
       this.router.navigate(['/quiz/congrats'])
     }
   }
 
   onCheckCorrectAnswer(){
     this.correctIndex = this.quizQuestions[this.quizIndex].correctIndex;
-    this.isCheckAnswerSubject.next(true);
-    this.correctIndexSubject.next(this.correctIndex);
+    this._isCheckAnswer.next(true);
+    this._correctIndex.next(this.correctIndex);
+  }
+
+  onTimeFinish(){
+    this.correctIndex = this.quizQuestions[this.quizIndex].correctIndex;
+    this._isCheckAnswer.next(true);
+    this._correctIndex.next(this.correctIndex);
+    this.isOptionSelected = true;
+    this._isOptionSelected.next(true);
   }
 }

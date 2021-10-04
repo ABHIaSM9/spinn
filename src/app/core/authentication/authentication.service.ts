@@ -1,7 +1,9 @@
+import { environment } from './../../../environments/environment';
 import { AuthUser } from './../schema/AuthUser';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -10,14 +12,14 @@ import { Observable, Subject } from 'rxjs';
 export class AuthenticationService {
   private isAuth:boolean = false;
   private users:AuthUser[] = [];
-  private isAuthSubject = new Subject<boolean>();
-  private userSubject = new Subject<AuthUser>();
+  private _isAuth = new Subject<boolean>();
+  private _user = new Subject<AuthUser>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private http:HttpClient) { }
 
   getUserListener():Observable<AuthUser>{
-    console.log('getUserListener',this.userSubject.asObservable());
-    return this.userSubject.asObservable();
+    console.log('getUserListener',this._user.asObservable());
+    return this._user.asObservable();
   }
 
   onLogin(email:String,password:String){
@@ -29,17 +31,45 @@ export class AuthenticationService {
     console.log('onLogin',user);
     if(user){
       this.isAuth = true;
-      this.userSubject.next(user);
+      this._user.next(user);
       this.router.navigate(['/quiz']);
     }else{
-      this.userSubject.next()
+      this._user.next()
     }
-    // user?this.userSubject.next(user):this.userSubject.next();
-    // user && this.router.navigate(['/quize']);
   }
 
 
   onSignUp(email:String,password:String){
+    //
+    this.http.post(`${environment.baseApiUrl}/user/sign-up`,{emailAddress:email,password}).subscribe(
+      (value)=>{
+        console.log(value);
+
+        this.users.push({email,password});
+        console.log(this.users);
+        this.router.navigate(['/auth/otp-verify']);
+      },
+      (err)=>{
+        console.log(err);
+        if(err.status == 400){
+          console.log('Bad Request')
+        }
+        if(err.status == 401){
+          console.log('Unauthorized');
+        }
+        if(err.status == 403){
+          console.log('Forbidden');
+        }
+        if(err.status == 404){
+          console.log('NotFound');
+        }
+        if(err.status == 500){
+          console.log('Internal server error');
+        }
+      }
+    );
+
+
     this.users.push({email,password});
     console.log(this.users);
     this.router.navigate(['/auth/otp-verify']);
@@ -55,7 +85,7 @@ export class AuthenticationService {
   }
 
   getIsAuthListener(){
-    return this.isAuthSubject.asObservable();
+    return this._isAuth.asObservable();
   }
 
 }

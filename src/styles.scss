@@ -1,16 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 @use '~@angular/material/theming' as mat;
-@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
-@include mat.mat-core();
-@import './styles/main.scss';
+@use '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel' as *;
+@use '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default' as *;
+@use './styles/main';
 
+@include mat.mat-core();
 
 
 
 html, body { height: 100%;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;min-height: 100vh;}
 
 
 
@@ -38,21 +38,12 @@ $dark-theme: mat.mat-dark-theme($dark-theme-primary,$dark-theme-accent);
     left: 0;
     right: 0;
 }
-.drawer-container{
-    flex: 1;
-}
-.drawer-content{
-    padding-bottom: 70px;
-}
+
 .space-box{
     flex: 1 1 auto;
 }
 
 
-
-.mat-side-drawer{
-    width: 220px;
-}
 .cst-card-border-radius{
     border-radius: 10px;
 }

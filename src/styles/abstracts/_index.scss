@@ -1,2 +1,2 @@
-@use './media';
-@use './variabes';
+@forward './breakpoints';
+@forward './variabes';

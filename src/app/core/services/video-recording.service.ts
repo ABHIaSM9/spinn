@@ -23,24 +23,24 @@ export class VideoRecordingService {
   private recordedMedia;
 
 
-  private streamSubject = new Subject<MediaStream>();
-  private recordUrlSubject = new Subject<string>();
-  private recordedSubject = new Subject<RecordedVideoOutput>();
+  private _stream = new Subject<MediaStream>();
+  private _recordUrl = new Subject<string>();
+  private _recorded = new Subject<RecordedVideoOutput>();
 
 
 
 
 
   getStreamListener():Observable<MediaStream>{
-    return this.streamSubject.asObservable();
+    return this._stream.asObservable();
   }
 
   getRecordUrlListener():Observable<string>{
-    return this.recordUrlSubject.asObservable();
+    return this._recordUrl.asObservable();
   }
 
   getRecordedListener():Observable<RecordedVideoOutput>{
-    return this.recordedSubject.asObservable();
+    return this._recorded.asObservable();
   }
 
 
@@ -112,7 +112,7 @@ export class VideoRecordingService {
       title: recordedName
     };
 
-    this.recordedSubject.next(this.recordedMedia);
+    this._recorded.next(this.recordedMedia);
     this.stopMedia();
   }
 

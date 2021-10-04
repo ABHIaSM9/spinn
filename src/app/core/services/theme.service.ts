@@ -6,15 +6,15 @@ import { Subject } from 'rxjs';
 })
 export class ThemeService {
   private isDarkMode;
-  private themeSubject = new Subject();
+  private _theme = new Subject();
 
-  constructor() { 
+  constructor() {
     this.initialLoad();
   }
 
 
   private initialLoad(){
-    this.isDarkMode =  this.getFromLocalStorage() ?? false; 
+    this.isDarkMode =  this.getFromLocalStorage() ?? false;
     this.saveLocally(this.isDarkMode);
   }
 
@@ -31,12 +31,12 @@ export class ThemeService {
 
   onThemeChange(isDarkMode:boolean){
     this.isDarkMode = isDarkMode;
-    this.themeSubject.next(isDarkMode);
+    this._theme.next(isDarkMode);
     this.saveLocally(isDarkMode);
   }
 
   getThemeListener(){
-    return this.themeSubject.asObservable();
+    return this._theme.asObservable();
   }
 
   getIsDarkMode(){

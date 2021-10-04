@@ -13,9 +13,9 @@ export class SystemSettingOptionCardComponent implements OnInit {
   @Output() onToggle = new EventEmitter();
   @Input() checked;
   disabled = false;
-  
+
   constructor() { }
-  
+
   ngOnInit(): void {
   }
 
@@ -24,7 +24,4 @@ export class SystemSettingOptionCardComponent implements OnInit {
     this.onToggle.emit(this.checked);
   }
 
-  ngAfterViewInit(): void {
-    // console.log('--',this.checked);
-  }
 }

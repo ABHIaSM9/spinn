@@ -1,3 +1,4 @@
+import { AdminModule } from './admin/admin.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -16,6 +17,7 @@ import { QuizModule } from './quiz/quiz.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -44,6 +46,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    HttpClientModule,
+    AdminModule
   ],
   providers: [HomeRoutingModule],
   bootstrap: [AppComponent]

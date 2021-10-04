@@ -78,6 +78,26 @@
         <note priority="1" from="description"> greeting to the user</note>
         <note priority="1" from="meaning">greeting header </note>
       </trans-unit>
+      <trans-unit id="99a2a10012617af7b61e08c0d9af17d495915453" datatype="html">
+        <source>
+            <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/> settings<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/>
+            setting
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layout/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cfe501ffe4e13a56831c54973bf2b403f81f08eb" datatype="html">
+        <source>
+            <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/> face<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/>
+            profile
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layout/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="1c96dfdb6d6adc9e785405a68f62443c852fd7bf" datatype="html">
         <source>Login </source>
         <context-group purpose="location">
@@ -296,7 +316,7 @@
         <source>submit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c7c071293e4f3e37a74a49dc1d86c2447c2d89a5" datatype="html">
@@ -345,7 +365,7 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/quiz/pages/question-display/question-display.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="866d6315456d0bd455973339afe99153332a195b" datatype="html">

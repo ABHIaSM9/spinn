@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingComponent implements OnInit {
   accountOptions = [
-    {icon:'home',title:'update profile',routerlink:['/user/profile']},
+    {icon:'account_circle',title:'update profile',routerlink:['/user']},
     {icon:'key',title:'change password',subTitle:'last change 2 weeks ago'},
   ]
   otherOptions = [

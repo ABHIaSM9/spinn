@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import { UserQuizeComponent,QuizeSelectionComponent,ActivitiesComponent,UserActivityComponent} from './pages';
+import { ActivitiesComponent,UserActivityComponent} from './pages';
 import { SharedModule } from '../shared/shared.module';
 import { ChartsModule } from 'ng2-charts';
 
@@ -12,10 +12,8 @@ import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
-    DashboardComponent, 
-    UserQuizeComponent, 
-    QuizeSelectionComponent, 
-    UserActivityComponent, 
+    DashboardComponent,
+    UserActivityComponent,
     ActivitiesComponent
   ],
   imports: [
@@ -25,7 +23,7 @@ import { ChartsModule } from 'ng2-charts';
     ChartsModule
   ],
   exports:[
-    
+
   ]
 })
 export class DashboardModule { }

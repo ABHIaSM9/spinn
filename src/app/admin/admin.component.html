@@ -1,0 +1,78 @@
+
+
+<div class="cst-container">
+  <mat-toolbar>
+    <h2>admin</h2>
+    <button mat-button>
+      <mat-icon>home</mat-icon>
+      Home
+    </button>
+    <button mat-button>
+      <mat-icon>explore</mat-icon>
+      Discover
+    </button>
+    <button mat-button>
+      <mat-icon>list</mat-icon>
+      Liabrary
+    </button>
+    <button mat-button>
+      <mat-icon>
+        stacked_bar_chart
+      </mat-icon>
+      Report
+    </button>
+    <div class="space-box"></div>
+    <button mat-raised-button>
+      Share
+    </button >
+    <button mat-raised-button>
+      Create
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu>
+      <button mat-menu-item>item1</button>
+      <button  mat-menu-item>item2</button>
+    </mat-menu>
+    <button mat-icon-button>
+      <mat-icon>notifications</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-sidenav-container class="drawer-container">
+      <mat-sidenav #drawer opened="true" mode="side" position="start">
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon> home</mat-icon>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon> home</mat-icon>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon> home</mat-icon>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon> home</mat-icon>
+          </mat-list-item>
+        </mat-list>
+
+      </mat-sidenav>
+      <mat-sidenav-content class="drawer-content" >
+        <div class="container">
+          <div style="width:100%">
+            <div>
+              <mat-grid-list cols="4" gutterSize="10">
+                <mat-grid-tile colspan="1" > abc</mat-grid-tile>
+                <mat-grid-tile colspan="2"> abc</mat-grid-tile>
+                <mat-grid-tile colspan="1"> abc</mat-grid-tile>
+                <mat-grid-tile> abc</mat-grid-tile>
+                <mat-grid-tile> abc</mat-grid-tile>
+                <mat-grid-tile> abc</mat-grid-tile>
+                <mat-grid-tile> abc</mat-grid-tile>
+              </mat-grid-list>
+            </div>
+          </div>
+        </div>
+      </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -27,8 +27,8 @@ export class QuestionDisplayComponent implements OnInit,OnChanges {
   animationTime:number = (this.of*1000);
   fontSize:number = 50;
 
-  
-  
+
+
   isFlagSelected = false;
   isCheckMode:boolean = false;
   quizIndex:number;
@@ -44,7 +44,7 @@ export class QuestionDisplayComponent implements OnInit,OnChanges {
 
   quizIndexSubscription:Subscription;
   isOptionSelectedSubscription:Subscription;
-  
+
 
   constructor(private router:Router,private location:Location,private quizService:QuizService) { }
 
@@ -64,8 +64,11 @@ export class QuestionDisplayComponent implements OnInit,OnChanges {
     this.quizService.getIsOptionSelectedListener().subscribe((isOptionSelected:boolean)=>{
       this.isSelectedOption = isOptionSelected;
     })
+
     this.isCheckMode = this.quizService.getIsCheckAnswer();
     this.quizService.getIsCheckAnswerLister().subscribe((value:boolean)=>{
+      console.log('isCheckMode',value);
+      console.log('isSelectedOption',this.isSelectedOption);
       this.isCheckMode = value;
     })
   }
@@ -97,6 +100,7 @@ export class QuestionDisplayComponent implements OnInit,OnChanges {
   }
   timmerFinished(){
     console.log('finished');
+    this.quizService.onTimeFinish();
   }
 
   ngOnDestroy(): void {

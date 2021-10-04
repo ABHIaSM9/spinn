@@ -6,7 +6,7 @@
     "start": "ng serve",
     "start:fr": "ng serve --configuration=fr",
     "start:hi": "ng serve --configuration=hi",
-    "build": "ng build",
+    "build": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
