@@ -20,12 +20,11 @@ export class SignupComponent implements OnInit {
   togglePasswordVisibility():void{
     this.isPasswordVisible = !this.isPasswordVisible;
   }
-  
+
   onSubmit():void{
     const value = this.signUpForm.value;
     console.log(this.signUpForm);
     this.authService.onSignUp(value.email,value.password);
     this.signUpForm.resetForm()
   }
-
 }

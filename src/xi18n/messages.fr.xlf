@@ -2,10 +2,24 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="20690353e3e61842a1404779944b55aa7c92e306" datatype="html">
+        <source>404</source>
+        <target>404</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e8bc51650e5a24e1418025163f33b5845c9dad4d" datatype="html">
+        <source>page-not-found!</source>
+        <target>Page non trouvée</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/layout/page-not-found/page-not-found.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="Question" datatype="html">
-        <source>
-        Playing a game?
-        </source>
+        <source>Playing a game?</source>
         <target>
         jouer à un jeu
         </target>
@@ -16,7 +30,67 @@
         <note priority="1" from="description"> are you realy want to play the game.</note>
         <note priority="1" from="meaning">Question </note>
       </trans-unit>
-      <trans-unit id="cdc09320ca2a2f2c7b2e11589fdf861f6a62a5c6" datatype="html">
+      <trans-unit id="d3f952f7e85f196637e4536a1939c01f8a68d7da" datatype="html">
+        <source>info</source>
+        <target>info</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a07cdf8c64ab5c38c3667c06dbab2bb6c1b46f8f" datatype="html">
+        <source>Enter the valid code</source>
+        <target>Entrez le code valide</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="834a4c58a9b6d16f7f6618c329dfd07128b2fe43" datatype="html">
+        <source> Join a game</source>
+        <target>
+rejoindre un jeu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="82f58b1622c470ed5ae15f0c5b4f32173e13639f" datatype="html">
+        <source>Let&apos;s get you started</source>
+        <traget>commençons</traget>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="801c464dfaabb8eb2c16f2cc0bf81435030174dd" datatype="html">
+        <source>login</source>
+        <target>connexion</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d57b07f9b2d4a45a6c73beab45670a068610f2f8" datatype="html">
+        <source>signup</source>
+        <target>
+s'inscrire</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="035fdca7dee5d88fe3412d7d47c6a3ddb8625dc3" datatype="html">
+        <source>By Signing up. you agree to Our <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Terms &amp; Privacy Policy.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target>
+En vous inscrivant. vous acceptez notre <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>
+terme andy politique de confidentialité.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layout/footer/footer.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d86b1b4d8cc1013b4f4609266e76b124296a3fc8" datatype="html">
         <source>
         Welcome Player
         </source>
@@ -25,17 +99,47 @@
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/layout/app-main-logo-title/app-main-logo-title.component.html</context>
-          <context context-type="linenumber">1</context>
+          <context context-type="linenumber">2</context>
         </context-group>
         <note priority="1" from="description"> greeting to the user</note>
         <note priority="1" from="meaning">greeting header </note>
+      </trans-unit>
+      <trans-unit id="99a2a10012617af7b61e08c0d9af17d495915453" datatype="html">
+        <source>
+            <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/> settings<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/>
+            setting
+        </source>
+        <target>
+            <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/> settings<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/>
+
+réglage
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layout/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cfe501ffe4e13a56831c54973bf2b403f81f08eb" datatype="html">
+        <source>
+            <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/> face<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/>
+            profile
+        </source>
+        <source>
+            <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/> face<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/>
+            profil
+        </source>
+
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/layout/side-nav/side-nav.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="1c96dfdb6d6adc9e785405a68f62443c852fd7bf" datatype="html">
         <source>Login </source>
         <target>connexion</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description"> it show that it is a login page</note>
         <note priority="1" from="meaning">login title </note>
@@ -45,11 +149,11 @@
         <target>Nom d'utilisateur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">9</context>
         </context-group>
         <note priority="1" from="description"> it show the user name label</note>
         <note priority="1" from="meaning">Username label </note>
@@ -59,7 +163,7 @@
         <target> veuillez entrer une adresse e-mail valide</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description"> its a email error</note>
         <note priority="1" from="meaning">email error </note>
@@ -69,11 +173,11 @@
         <target>e mot de passe</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">16</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <note priority="1" from="description"> it show the password label</note>
         <note priority="1" from="meaning">Password label </note>
@@ -83,17 +187,17 @@
         <target> veuillez entrer une adresse de mot de passe valide</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description"> its a pssoword error</note>
         <note priority="1" from="meaning">password error </note>
       </trans-unit>
-      <trans-unit id="a925f43e295771551546eb2635942954fdc3c467" datatype="html">
-        <source>Forget Password?</source>
+      <trans-unit id="9cbe4f6d10cd3c8811090d9cc9b58dba77815faa" datatype="html">
+        <source>Forget Passord?</source>
         <target>mot de passe oublié?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">forget ancher</note>
       </trans-unit>
@@ -102,7 +206,7 @@
         <target>Continuez</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">29</context>
         </context-group>
         <note priority="1" from="description">continue button</note>
       </trans-unit>
@@ -111,16 +215,16 @@
         <target> vous voulez un compte ? Inscrivez-vous ici</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/login/login.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">31</context>
         </context-group>
-        <note priority="1" from="description">signu ancher</note>
+        <note priority="1" from="description">signup ancher</note>
       </trans-unit>
       <trans-unit id="6c8b3eb19292bbdf0bcde80c01dba8758aa7889c" datatype="html">
         <source>Signup</source>
         <target>s'inscrire</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description"> it show that it is a signup page</note>
         <note priority="1" from="meaning">signup title </note>
@@ -130,18 +234,266 @@
         <target>s'inscrire</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">sign up button</note>
       </trans-unit>
-      <trans-unit id="6d3ff1e1a07063cc87f53ff5575bea2b051a4366" datatype="html">
-        <source>alredy have an account? sing in here.</source>
+      <trans-unit id="e2997469ca769a1c9bf8f78a10d4fbe906200d1d" datatype="html">
+        <source>already have an account? sing in here.</source>
         <target> avez déjà un compte? chante ici.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/signup/signup.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <note priority="1" from="description">login up ancher</note>
+      </trans-unit>
+      <trans-unit id="4852c6080ebe6edb6a55a81ed46d2979bdef68a1" datatype="html">
+        <source>Welcome Player</source>
+        <target>
+        joueur de bienvenue
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/pages/user-activity/user-activity.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93117ef30aacfd1684bda4889cce2e83e57fedff" datatype="html">
+        <source> Add New Area</source>
+        <target>
+ajouter une nouvelle zone</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/pages/user-activity/user-activity.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="90e9325d851a272ac7eec8ba13ffe8803bd4cd5c" datatype="html">
+        <source>
+                Someone&apos;s Name
+            </source>
+        <target>
+          le nom de quelqu'un
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/pages/activities/activities.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7962a01cc5bdc49d418712c23279eb2c0573b2fe" datatype="html">
+        <source>view acitivity</source>
+        <target>
+voir l'activité</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/pages/activities/activities.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d3781ad331fdd0bc9055c45a41664ac467de63af" datatype="html">
+        <source>Edit Profile</source>
+        <target>
+Editer le profil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/pages/activities/activities.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c3d58d1ecac4b4a9eb5bb13b3f4c72f570684ca1" datatype="html">
+        <source> 0-day, streck Start your streck play now</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/pages/activities/activities.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="29881a45dafbe5aa05cd9d0441a4c0c2fb06df92" datatype="html">
+        <source>Account</source>
+        <target>Compte</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/setting/setting.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9c58d6d8bce4efd23d527e8d7338edfa2150095b" datatype="html">
+        <source>other</source>
+        <target>autre</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/setting/setting.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2edc2510be745c7cf26ac3abb3c99ff7d2bd1fb2" datatype="html">
+        <source>
+                My Profile
+            </source>
+            <target>mon profil</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="588a7ec04a5f128a693a6e34ccea53ee1bbf308c" datatype="html">
+        <source>
+                This information will be display
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="60dc0832c38dd7239cf755efc7816b7899187814" datatype="html">
+        <source>First Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description"> it show the user name label</note>
+        <note priority="1" from="meaning">Username label </note>
+      </trans-unit>
+      <trans-unit id="9b45f09a385b537342c0a70df95eefe54375bb9c" datatype="html">
+        <source>Last Name</source>
+        <target>
+nom de famille</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <note priority="1" from="description"> it show the user name label</note>
+        <note priority="1" from="meaning">Username label </note>
+      </trans-unit>
+      <trans-unit id="1e020d5130949a0a707a94634fd15e6340c06222" datatype="html">
+        <source>Public Display Name</source>
+        <target>
+nom d'affichage publics</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description"> it show the user name label</note>
+        <note priority="1" from="meaning">Username label </note>
+      </trans-unit>
+      <trans-unit id="1352b18c192eadda8534b2042ba7cba0a94c9e07" datatype="html">
+        <source>About Me</source>
+        <target>
+À propos de moi</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="description"> it show the user name label</note>
+        <note priority="1" from="meaning">Username label </note>
+      </trans-unit>
+      <trans-unit id="ab1bba744a75b58354abd13e887d369f9e71f691" datatype="html">
+        <source>
+                        record your video
+                    </source>
+        <target>
+        enregistre ta vidéo
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c98077fe229df56d1df276acd22818bd2885eddc" datatype="html">
+        <source>submit</source>
+        <target>
+nous faire parvenir</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile/profile.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7c071293e4f3e37a74a49dc1d86c2447c2d89a5" datatype="html">
+        <source>
+            <x id="INTERPOLATION" equiv-text="{{title}}"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/setting/setting-option-card/setting-option-card.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4a446e53611bc95d3d885429f99f0ad1721a141a" datatype="html">
+        <source>
+            <x id="INTERPOLATION" equiv-text="{{subTitle}}"/>
+        </source>
+        <target>
+            <x id="INTERPOLATION" equiv-text="{{subTitle}}"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/setting/setting-option-card/setting-option-card.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="523461cb8a9d03a779c41c368491707f9b74d028" datatype="html">
+        <source>
+            settings
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/system-setting/system-setting.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/system-setting/system-setting.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="76e584270964f5a0a320a8cb0321dcd75895fe5c" datatype="html">
+        <source>
+        <x id="INTERPOLATION" equiv-text="{{title}}"/>
+    </source>
+    <target>
+        <x id="INTERPOLATION" equiv-text="{{title}}"/>
+    </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/system-setting/system-setting-option-card/system-setting-option-card.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7f785faf042a03c355b522aff0681794042f9418" datatype="html">
+        <source>
+            title
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quiz/pages/question-display/question-display.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="866d6315456d0bd455973339afe99153332a195b" datatype="html">
+        <source>Congrats!</source>
+        <traget>félicitations!</traget>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quiz/pages/congrats/congrats.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="40c093470ba1df604f0faacca29259cc02c93bf3" datatype="html">
+        <source>you unlocked the badge &amp; earn</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quiz/pages/congrats/congrats.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5003f4e3c096d6f254fa82a0d9e7ea218db6169a" datatype="html">
+        <source>100 free coins</source>
+        <target>100 pièce gratuite</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quiz/pages/congrats/congrats.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7db9a92bd182444455896e72a5a13a5abc1332b1" datatype="html">
+        <source> <x id="START_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;mat-icon&gt;"/>share<x id="CLOSE_TAG_MAT-ICON" ctype="x-mat-icon" equiv-text="&lt;/mat-icon&gt;"/> Share the Results</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quiz/pages/congrats/congrats.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="840581a207ba1f8a003d1b2014a3b108e63068c3" datatype="html">
+        <source>Take new Quize</source>
+        <target>Répondez à un nouveau quiz</target>
+        <target></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/quiz/pages/congrats/congrats.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>

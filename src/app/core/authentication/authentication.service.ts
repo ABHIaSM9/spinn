@@ -31,6 +31,7 @@ export class AuthenticationService {
     console.log('onLogin',user);
     if(user){
       this.isAuth = true;
+      this._isAuth.next(this.isAuth);
       this._user.next(user);
       this.router.navigate(['/quiz']);
     }else{
@@ -70,13 +71,14 @@ export class AuthenticationService {
     );
 
 
-    this.users.push({email,password});
-    console.log(this.users);
-    this.router.navigate(['/auth/otp-verify']);
+    // this.users.push({email,password});
+    // console.log(this.users);
+    // this.router.navigate(['/auth/otp-verify']);
   }
 
   onLogout(){
     this.isAuth = false;
+    this._isAuth.next(this.isAuth);
     console.log('logout',this.isAuth);
   }
 

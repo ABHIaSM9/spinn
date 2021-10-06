@@ -17,7 +17,7 @@ interface QuizQuestion{
 @Component({
   selector: 'app-question-display',
   templateUrl: './question-display.component.html',
-  styleUrls: ['./question-display.component.scss']
+  styleUrls: ['./question-display.component.scss'],
 })
 export class QuestionDisplayComponent implements OnInit,OnChanges {
   @ViewChild('counter',{static:true}) counter:CounterComponent;

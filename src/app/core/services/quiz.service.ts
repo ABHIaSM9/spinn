@@ -116,8 +116,9 @@ export class QuizService {
 
 
   //
-  getNextQuestion(){
-    this.http.get(`${environment.baseApiUrl}`).subscribe(
+  getNextQuestion(area:string,level:string,device:string,user:string){
+
+    this.http.get(`${environment.baseApiUrl}/questionset/area/${area}/level/${level}/device/${device}/user/${user}`).subscribe(
       (value)=>{
         console.log(value)
       },
@@ -144,8 +145,8 @@ export class QuizService {
     );
   }
 
-  findByUserNotAttempted(){
-    this.http.get(`${environment.baseApiUrl}`).subscribe(
+  findByUserNotAttempted(user:string){
+    this.http.get(`${environment.baseApiUrl}/questionset/notattemptedbyuser/${user}`).subscribe(
       (value)=>{
         console.log('error',value);
       },
@@ -172,8 +173,8 @@ export class QuizService {
     );
   }
 
-  questionAreaFindById(){
-    this.http.get(`${environment.baseApiUrl}`).subscribe(
+  questionAreaFindById(area:string){
+    this.http.get(`${environment.baseApiUrl}/questionset/${area}`).subscribe(
       (value)=>{
 
       },
@@ -200,8 +201,8 @@ export class QuizService {
     );
   }
 
-  findByAreaNotAttemptByUser(){
-    this.http.get(`${environment.baseApiUrl}/questionset/notattemptedbyuser/123`).subscribe(
+  findByAreaNotAttemptByUser(area:string,user:string){
+    this.http.get(`${environment.baseApiUrl}/questionset/${area}/notattemptedbyuser/${user}`).subscribe(
       (value)=>{
         console.log(value);
       },
