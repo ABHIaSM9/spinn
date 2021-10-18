@@ -98,7 +98,7 @@ export class QuestionDisplayComponent implements OnInit,OnChanges {
   onFlagSelect(){
     this.isFlagSelected  = !this.isFlagSelected;
   }
-  timmerFinished(){
+  timerFinished(){
     console.log('finished');
     this.quizService.onTimeFinish();
   }

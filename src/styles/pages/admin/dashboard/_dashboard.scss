@@ -1,0 +1,38 @@
+@use '../../../abstracts/mixins' as mixin;
+
+.admin-dashboard{
+  .title-wrapper{
+    display: flex;align-items: center;
+  }
+  .title{
+    font-weight:bolder;
+  }
+
+  .title-nav{
+    display: flex;
+    margin-bottom: 2em;
+  }
+
+  mat-card{
+    margin-bottom: 1em;
+  }
+
+  .user-description{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box!important;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+
+
+}
+
+@include mixin.for-phone-only{
+  .admin-dashboard{
+    .title-nav{
+      flex-wrap: wrap;
+    }
+  }
+}

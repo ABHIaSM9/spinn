@@ -1,0 +1,27 @@
+.profile_page{
+  mat-form-field{
+      width: 100%;
+      min-width: 10em;
+  }
+  .form-container{
+      button[type="submit"]{
+          width: 100%;
+          margin-top: 2em;
+      }
+      .profile-title{
+        margin-bottom: 0.2em;
+        font-weight: 700;
+      }
+      .profile-subtitle{
+        margin-bottom: 1em;
+      }
+  }
+  .mat-formfield-wrapper{
+    display: flex;
+  }
+  .mat-formfield-wrapper>*:not(:last-child){
+    margin-right: 1em;
+  }
+
+
+}

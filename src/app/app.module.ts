@@ -18,6 +18,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FileUploadModelComponent } from './components/file-upload-model/file-upload-model.component';
 
 
 
@@ -27,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-
+    FileUploadModelComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +48,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
-    AdminModule
+    AdminModule,
   ],
   providers: [HomeRoutingModule],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
 import { PageNotFoundComponent } from './core/layout';
 import { HomeComponent } from './home/home.component';
 
@@ -12,14 +13,17 @@ const routes: Routes = [
   },
   {
     path:'dashboard',
+    canActivate:[AuthGuard],
     loadChildren:()=>import('./dashboard/dashboard.module').then(m=>m.DashboardModule)
   },
   {
     path:'user',
+    canActivate:[AuthGuard],
     loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)
   },
   {
     path:"quiz",
+    canActivate:[AuthGuard],
     loadChildren:()=>import('./quiz/quiz.module').then(m=>m.QuizModule)
   },
   {

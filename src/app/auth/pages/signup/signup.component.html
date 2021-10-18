@@ -1,29 +1,106 @@
-<div class="mini-container">
-  <mat-card>
+<div class="mini-container signup_page">
+  <mat-card class="mat-elevation-z4">
     <div class="form-container">
+      <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+        <app-main-logo-title></app-main-logo-title>
+        <h2
+          class="auth-title mat-h2"
+          i18n="signup title | it show that it is a signup page"
+        >
+          Signup
+        </h2>
+        <mat-form-field appearance="outline">
+          <mat-label i18n>Name</mat-label>
+          <input
+            [type]="'text'"
+            matInput
+            name="name"
+            #nameInput
+            placeholder="Enter your name"
+            ngModel
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label i18n="Username label | it show the user name label"
+          >Username</mat-label
+          >
+          <input
+          type="email"
+          matInput
+          name="email"
+          placeholder="Enter your Email"
+          #emailInput
+          required
+          ngModel
+          />
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf=""></mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label i18n>Phone no.</mat-label>
+          <input
+            type="number"
+            matInput
+            name="password"
+            #phone
+            placeholder="Enter your number"
 
-        <app-app-main-logo-title></app-app-main-logo-title>
-        <form (ngSubmit)="onSubmit()" #signupForm="ngForm">
-            <h2 class="auth-title mat-h2" i18n="signup title | it show that it is a signup page">Signup</h2>
-            <mat-form-field appearance="outline">
-                <mat-label  i18n="Username label | it show the user name label">Username</mat-label>
-                <input type="email" matInput name="email" placeholder="Enter your Email" #emailInput required ngModel/>
-                <mat-icon matSuffix>email</mat-icon>
-                <mat-error *ngIf=""></mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label  i18n="Password label | it show the password label">Password</mat-label>
-                <input [type]="isPasswordVisible?'text':'password'" matInput name="password" #passwordInput placeholder="Enter your password" required ngModel/>
-                <mat-icon matSuffix (click)="togglePasswordVisibility()">
-                    {{isPasswordVisible ?
-                        "visibility"
-                        : "visibility_off"}}
-                </mat-icon>
-            </mat-form-field>
-            <button style="width: 100%;" type="submit" color="primary" [disabled]="!signupForm.valid" mat-raised-button i18n="sign up button">Signup</button>
-        </form>
-        <button class="auth-page-link" mat-flat-button [routerLink]="['/auth/login']" i18n="login up ancher">already have an account? sing in here.</button>
+            ngModel
+          />
+          <mat-icon matSuffix>local_phone</mat-icon>
+        </mat-form-field>
+        <div class="mat-formfield-wrapper">
+
+          <mat-form-field appearance="outline">
+            <mat-label i18n="Password label | it show the password label"
+              >Password</mat-label
+            >
+            <input
+              [type]="isPasswordVisible ? 'text' : 'password'"
+              matInput
+              name="password"
+              #passwordInput
+              placeholder="Enter your password"
+              required
+              ngModel
+            />
+            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+              {{ isPasswordVisible ? "visibility" : "visibility_off" }}
+            </mat-icon>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label i18n>Confirm Password</mat-label>
+            <input
+              [type]="'password'"
+              matInput
+              name="confPassword"
+              #confPasswordInput
+              placeholder="Re-Enter password"
+              ngModel
+            />
+          </mat-form-field>
+        </div>
+        <button
+          style="width: 100%"
+          type="submit"
+          color="primary"
+          [disabled]="!signupForm.valid"
+          mat-raised-button
+          i18n="sign up button"
+        >
+          Signup
+        </button>
+      </form>
+      <button
+        class="auth-page-link"
+        mat-flat-button
+        [routerLink]="['/auth/login']"
+        i18n="login up ancher"
+      >
+        already have an account? sing in here.
+      </button>
+      <div class="app-footer mat-small" i18n>By Signing up. you agree to Our <strong>Terms & Privacy Policy.</strong></div>
     </div>
   </mat-card>
 </div>
-<app-footer class="app-footer"></app-footer>
+<!-- <app-footer class="app-footer"></app-footer> -->

@@ -1,32 +1,81 @@
-<div class="cst-container">
-    <app-header (clickEvent)="drawer.toggle()"></app-header>
-    <mat-drawer-container class="drawer-container">
-        <mat-drawer class="mat-side-drawer" #drawer position="end">
-            <app-side-nav></app-side-nav>
-        </mat-drawer>
-        <mat-drawer-content class="drawer-content" >
-            <div class="mini-container">
-                <div>
-                    <span class="initial-title mat-h3" i18n="Question | are you realy want to play the game.@@Question" i18n>Playing a game?</span>
-                    <mat-card class="game-code-container" [ngClass]="{red:!joinGameform.valid && joinGameform.touched}">
-                        <form (ngSubmit)="onSubmit(joinGameform)" #joinGameform="ngForm">
-                            <mat-form-field appearance="outline">
-                                <input matInput placeholder="Enter a game code" name="gamecode" errorState="false" required #gameCode="ngModel" ngModel/>
-                                <mat-icon matSuffix [color]="!joinGameform.valid && joinGameform.touched ?'warn':''" i18n>info</mat-icon>
-                                <mat-error *ngIf="!gameCode.valid && gameCode.touched" i18n>Enter the valid code</mat-error>
-                            </mat-form-field>
-                            <div >
-                                <button type="submit" [disabled]="!joinGameform.valid" mat-raised-button color="primary" i18n> Join a game</button>
-                            </div>
-                        </form>
-                    </mat-card>
-                </div>
-                <mat-card class="auth-route-container" >
-                    <h2 class="mat-h2" i18n>Let's get you started</h2>
-                    <button class="auth-button" [routerLink]="['/auth/login']" mat-stroked-button color="primary" i18n>login</button>
-                    <button class="auth-button" [routerLink]="['/auth/signup']" mat-raised-button color="primary" i18n>signup</button>
-                </mat-card>
-            </div>
-        </mat-drawer-content>
-    </mat-drawer-container>
+<div class="cst-container home-page">
+  <app-header (clickEvent)="drawer.toggle()"></app-header>
+  <mat-drawer-container class="drawer-container">
+    <mat-drawer class="mat-side-drawer" #drawer position="end">
+      <app-side-nav></app-side-nav>
+    </mat-drawer>
+    <mat-drawer-content class="drawer-content">
+      <div class="mini-container">
+        <div class="game-code-wrapper">
+          <span
+            class="initial-title mat-h3"
+            i18n="Question | are you realy want to play the game.@@Question"
+            i18n
+            >Playing a game?</span
+          >
+          <mat-card
+            class="game-code-container"
+            [ngClass]="{ invalid: !joinGameform.valid && joinGameform.touched }"
+          >
+            <form (ngSubmit)="onSubmit(joinGameform)" #joinGameform="ngForm">
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  placeholder="Enter a game code"
+                  name="gamecode"
+                  errorState="false"
+                  required
+                  #gameCode="ngModel"
+                  ngModel
+                />
+                <mat-icon
+                  matSuffix
+                  [color]="
+                    !joinGameform.valid && joinGameform.touched ? 'warn' : ''
+                  "
+                  i18n
+                  >info</mat-icon
+                >
+                <mat-error *ngIf="!gameCode.valid && gameCode.touched" i18n
+                  >Enter the valid code</mat-error
+                >
+              </mat-form-field>
+              <div>
+                <button
+                  type="submit"
+                  [disabled]="!joinGameform.valid"
+                  mat-raised-button
+                  color="primary"
+                  i18n
+                >
+                  Join a game
+                </button>
+              </div>
+            </form>
+          </mat-card>
+        </div>
+        <mat-card class="auth-route-container">
+          <h2 class="mat-h2" i18n>Let's get you started</h2>
+          <button
+            class="auth-button"
+            [routerLink]="['/auth/login']"
+            mat-stroked-button
+            color="primary"
+            i18n
+          >
+            login
+          </button>
+          <button
+            class="auth-button"
+            [routerLink]="['/auth/signup']"
+            mat-raised-button
+            color="primary"
+            i18n
+          >
+            signup
+          </button>
+        </mat-card>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
 </div>

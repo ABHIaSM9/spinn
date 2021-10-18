@@ -1,0 +1,82 @@
+@use '../../../abstracts/mixins' as mixin;
+
+.add-game-page{
+  text-align: left;
+
+  .description-card{
+    border: 1px solid rgb(209, 209, 209);
+    max-width: 800px;
+    border-radius: 1em;
+    overflow: hidden;
+    display: flex;
+    .image{
+      position: relative;
+      width:10em;
+      height:10em;
+      img{
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+      }
+      video{
+        width: 100%;
+        height: 100%;
+      }
+      .image-overlay{
+        background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0), #000000ba);
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        input[type="file"]{
+          display: none;
+        }
+        .edit-options{
+          cursor: pointer;
+          display: none;
+        }
+
+        &:hover .edit-options{
+          display: inline-block;
+        }
+      }
+    }
+    .description{
+      flex: 1;
+      padding: 1em;
+      padding-left:2em;
+      textarea{
+        font-size: 1em;
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        resize: none;
+      }
+    }
+  }
+  .basic-detail{
+    display: flex;
+  }
+  .mat-formfield-wrapper>*:not(:last-child){
+    margin-right: 1em;
+  }
+}
+
+@include mixin.for-phone-only{
+  .add-game-page{
+    mat-form-field{
+      width: 100%;
+    }
+    .basic-detail{
+      flex-wrap: wrap;
+    }
+    .mat-formfield-wrapper>*:not(:last-child){
+      margin-right: 0;
+    }
+  }
+}

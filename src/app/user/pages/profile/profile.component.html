@@ -1,4 +1,4 @@
-<div class="mini-container">
+<div class="mini-container profile_page">
   <mat-card>
     <div class="form-container">
         <form (ngSubmit)="onSubmit()" [formGroup]="profileForm">
@@ -8,16 +8,18 @@
             <div class="profile-subtitle mat-small" i18n>
                 This information will be display
             </div>
-            <mat-form-field appearance="outline">
-                <mat-label for="firstName" i18n="Username label | it show the user name label" i18n>First Name</mat-label>
-                <input type="text" id="firstName" matInput name="firstName" placeholder="Enter First Name" formControlName="firstName"/>
-                <!-- <mat-icon matSuffix>{{}}</mat-icon> -->
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label for="lastName" i18n="Username label | it show the user name label" i18n>Last Name</mat-label>
-                <input type="text" id="lastName" matInput name="lastName" placeholder="Enter Last Name" formControlName="lastName"/>
-                <!-- <mat-icon matSuffix>email</mat-icon> -->
-            </mat-form-field>
+            <div class="mat-formfield-wrapper">
+              <mat-form-field appearance="outline">
+                  <mat-label for="firstName" i18n="Username label | it show the user name label" i18n>First Name</mat-label>
+                  <input type="text" id="firstName" matInput name="firstName" placeholder="Enter First Name" formControlName="firstName"/>
+                  <!-- <mat-icon matSuffix>{{}}</mat-icon> -->
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                  <mat-label for="lastName" i18n="Username label | it show the user name label" i18n>Last Name</mat-label>
+                  <input type="text" id="lastName" matInput name="lastName" placeholder="Enter Last Name" formControlName="lastName"/>
+                  <!-- <mat-icon matSuffix>email</mat-icon> -->
+              </mat-form-field>
+            </div>
             <mat-form-field appearance="outline">
                 <mat-label for="displayName" i18n="Username label | it show the user name label" i18n>Public Display Name</mat-label>
                 <input type="text" id="displayName" matInput name="displayName" placeholder="Enter Display Name" formControlName="displayName"/>
@@ -49,3 +51,17 @@
     </div>
   </mat-card>
 </div>
+
+<!-- <div class="mat-display-1">mat-display-1</div>
+<div class="mat-display-2">mat-display-2</div>
+<div class="mat-display-3">mat-display-3</div>
+<div class="mat-display-4">mat-display-4</div>
+<div class="mat-headline">mat-headline</div>
+<div class="mat-title">mat-title</div>
+<div class="mat-subheading-1">mat-subheading-1</div>
+<div class="mat-subheading-2">mat-subheading-2</div>
+<div class="mat-body-1">mat-body-1</div>
+<div class="mat-body-2">mat-body-2</div>
+<div class="mat-caption">mat-caption</div>
+<button class="mat-button">button</button>
+<input class="mat-input" value="input"/> -->

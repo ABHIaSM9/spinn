@@ -1,0 +1,65 @@
+<div class="file-upload-model">
+  <div class="mat-h2">File Upload</div>
+  <mat-tab-group>
+    <mat-tab >
+      <ng-template mat-tab-label>
+        <mat-icon>image</mat-icon>
+        image
+      </ng-template>
+      <div class="image-upload-container">
+        <div class="mat-h3">Upload any image through Url and file.</div>
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Uplaod Image</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <input type="file" accept="image/*" (change)="onImageInput($event)" #imageInput />
+            <button mat-stroked-button color="primary" (click)="imageInput.click()">Image</button>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Upload Image Url</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-form-field class="width-100" appearance="outline">
+              <input matInput type="url" pattern="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?" #urlInput/>
+            </mat-form-field>
+            <button mat-stroked-button color="primary" (click)="onUrlInput()">submit</button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Video">
+      <ng-template mat-tab-label>
+        <mat-icon>movie</mat-icon>
+        video
+      </ng-template>
+      <div class="video-upload-container">
+        <div class="mat-h3">Upload any Video through Url and file.</div>
+        <mat-card class="mat-elevation-z4" >
+          <mat-card-header>
+            <mat-card-title>Upload Video</mat-card-title>
+          </mat-card-header>
+          <input type="file" accept="video/*" (change)="onVideoInput($event)" #videoInput />
+          <button mat-raised-button color="primary" (click)="videoInput.click()">video</button>
+        </mat-card>
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>upload Url</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div >
+              <mat-form-field class="width-100" appearance="outline">
+                <input matInput type="url" pattern="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?" #urlInput/>
+              </mat-form-field>
+              <div>
+                <button mat-stroked-button color="primary">submit</button>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

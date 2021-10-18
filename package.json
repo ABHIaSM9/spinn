@@ -34,6 +34,7 @@
     "ng-chartjs": "^0.2.3",
     "ng-otp-input": "^1.7.7",
     "ng2-charts": "^2.4.2",
+    "ngx-avatar": "^4.1.0",
     "ngx-bottom-nav": "^11.0.0",
     "ngx-mat-circle-counter": "^1.0.0",
     "ngx-owl-carousel-o": "^6.0.0",

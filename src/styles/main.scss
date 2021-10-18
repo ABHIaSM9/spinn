@@ -10,7 +10,10 @@
 //component
 @use './components' as *;
 
-//layouts
+//Layout
 @use './layouts' as *;
+
+//pages
+@use './pages/' as *;
 
 

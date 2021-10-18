@@ -1,0 +1,31 @@
+.mini-container{
+      text-align: center;
+  }
+
+  .login-page{
+    .form-container{
+        mat-form-field{
+            width: 100%;
+        }
+        button[type="submit"]{
+            margin-top: 2em;
+            width: 100%;
+        }
+    }
+    .aut-title-container{
+        text-align: left;
+        .auth-title{
+            font-weight:700;
+        }
+    }
+
+    .forget-password-wrapper{
+        text-align: right;
+        .forget-password-link{
+            text-decoration: none;
+        }
+    }
+    .auth-page-link{
+        margin-top:1em;
+    }
+  }

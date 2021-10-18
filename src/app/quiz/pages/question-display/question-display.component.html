@@ -15,73 +15,76 @@
         </button>
     </div>
 </div> -->
-<mat-toolbar>
-    <button mat-icon-button>
-        <mat-icon>
-            arrow_back
-        </mat-icon>
-    </button>
-    <div style="display: flex; flex-direction: column; line-height: 1em;">
-        <div class="mat-h3" style="margin-bottom: 0;" i18n>
-            title
-        </div>
-        <div class="mat-small" style="margin-bottom: 0;">
-            {{quizIndex+1}}/{{quizQuestions.length}}
-        </div>
-    </div>
-    <div class="space-box">
+<div class="question-display">
 
-    </div>
-    <button mat-icon-button>
-        <mat-icon>
-            more_vert
-        </mat-icon>
-    </button>
-</mat-toolbar>
-<div class="mini-container">
-    <div class="question h4">
-        {{quizQuestion.question}}
-    </div>
-    <app-option-list [options]="quizQuestion.answers"  (onSelect)="onClick($event)"></app-option-list>
-</div>
-<!-- <ngx-mat-circle-counter [start]="0" [size]="'s'" [textColor]="''"  [color]="'primary'" [value]="30" [thickness]="20" [mode]="'pageinit'" [speed]="'1000'"></ngx-mat-circle-counter> -->
+  <mat-toolbar>
+      <button mat-icon-button>
+          <mat-icon>
+              arrow_back
+          </mat-icon>
+      </button>
+      <div style="display: flex; flex-direction: column; line-height: 1em;">
+          <div class="mat-h3" style="margin-bottom: 0;" i18n>
+              title
+          </div>
+          <div class="mat-small" style="margin-bottom: 0;">
+              {{quizIndex+1}}/{{quizQuestions.length}}
+          </div>
+      </div>
+      <div class="space-box">
 
-<div class="quiz-bottom-bar-wrapper">
-    <mat-toolbar class="quiz-bottom-bar">
-        <button mat-icon-button (click)='onFlagSelect()'>
-            <mat-icon>
-                flag
-            </mat-icon>
-        </button>
-        <div class="space-box"></div>
-        <div>
-            <app-counter [from]="from" [to]="to" [of]="of" [fontSize]="fontSize" [animationTime]="animationTime"  (finished)="timmerFinished()" #counter></app-counter>
-        </div>
-        <div class="space-box"></div>
-        <button type="button" [disabled]="!isSelectedOption" (click)="isCheckMode?onNext():onCheckAnswer()" mat-icon-button>
-            <mat-icon>
-                {{
-                    isCheckMode?
-                    'arrow_forward':
-                    'fact_check'
-                }}
-            </mat-icon>
-        </button>
-        <!-- <app-counter [from]="0" [to]="30" [of]="30" (finished)="timmerFinished()"></app-counter> -->
-        <!-- <div class="spinner-container">
-            <div class="spinner-wrapper">
-                <mat-progress-spinner
-                color="primary"
-                mode="determinate"
-                diameter="80"
-                [value]="progressValue"
-                #progressSpinner
-                >
-                </mat-progress-spinner>
-                <div class="progress-value">
-                    {{progressSpinner.value}}
-                </div>
-            </div>
-        </div> -->
-    </mat-toolbar>
+      </div>
+      <button mat-icon-button>
+          <mat-icon>
+              more_vert
+          </mat-icon>
+      </button>
+  </mat-toolbar>
+  <div class="mini-container">
+      <div class="question h4">
+          {{quizQuestion.question}}
+      </div>
+      <app-option-list [options]="quizQuestion.answers"  (onSelect)="onClick($event)"></app-option-list>
+  </div>
+  <!-- <ngx-mat-circle-counter [start]="0" [size]="'s'" [textColor]="''"  [color]="'primary'" [value]="30" [thickness]="20" [mode]="'pageinit'" [speed]="'1000'"></ngx-mat-circle-counter> -->
+
+  <div class="quiz-bottom-bar-wrapper">
+      <mat-toolbar class="quiz-bottom-bar">
+          <button mat-icon-button (click)='onFlagSelect()'>
+              <mat-icon>
+                  flag
+              </mat-icon>
+          </button>
+          <div class="space-box"></div>
+          <div>
+              <app-counter [from]="from" [to]="to" [of]="of" [fontSize]="fontSize" [animationTime]="animationTime"  (finished)="timerFinished()" #counter></app-counter>
+          </div>
+          <div class="space-box"></div>
+          <button type="button" [disabled]="!isSelectedOption" (click)="isCheckMode?onNext():onCheckAnswer()" mat-icon-button>
+              <mat-icon>
+                  {{
+                      isCheckMode?
+                      'arrow_forward':
+                      'fact_check'
+                  }}
+              </mat-icon>
+          </button>
+          <!-- <app-counter [from]="0" [to]="30" [of]="30" (finished)="timerFinished()"></app-counter> -->
+          <!-- <div class="spinner-container">
+              <div class="spinner-wrapper">
+                  <mat-progress-spinner
+                  color="primary"
+                  mode="determinate"
+                  diameter="80"
+                  [value]="progressValue"
+                  #progressSpinner
+                  >
+                  </mat-progress-spinner>
+                  <div class="progress-value">
+                      {{progressSpinner.value}}
+                  </div>
+              </div>
+          </div> -->
+      </mat-toolbar>
+  </div>
 </div>

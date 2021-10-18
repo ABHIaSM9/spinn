@@ -16,9 +16,7 @@ export class LoginComponent implements OnInit {
   userListenerSubscription:Subscription;
   isPasswordVisible = false;
   isLoading = false;
-  constructor(public authService:AuthenticationService, private snackbar:MatSnackBar) {
-    console.log('subscribe',this.authService.getUserListener());
-   }
+  constructor(public authService:AuthenticationService, private snackbar:MatSnackBar) {}
 
   ngOnInit(): void {
     this.userListenerSubscription = this.authService.getUserListener()

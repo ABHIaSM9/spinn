@@ -1,3 +1,4 @@
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -14,7 +15,7 @@ describe('OtpverifyComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ OtpverifyComponent ],
-      imports:[RouterTestingModule,NgOtpInputModule],
+      imports:[RouterTestingModule,NgOtpInputModule,MatDialogModule],
       providers:[
         {provide:Router,useValue:routerSpy}
       ]

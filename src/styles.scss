@@ -14,17 +14,36 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;min-height: 
 
 
 
-
+//light theme
 $light-theme-primary: mat.mat-palette(mat.$mat-indigo,500);
 $light-theme-accent: mat.mat-palette(mat.$mat-pink,A200,A100,A400);
+$light-theme: mat.mat-light-theme($light-theme-primary,$light-theme-accent);
 
+//dartktheme
 $dark-theme-primary: mat.mat-palette(mat.$mat-amber,A200);
 $dark-theme-accent: mat.mat-palette(mat.$mat-yellow,900);
-$light-theme: mat.mat-light-theme($light-theme-primary,$light-theme-accent);
 $dark-theme: mat.mat-dark-theme($dark-theme-primary,$dark-theme-accent);
 
 
 
+
+$custom-typography: mat.mat-typography-config(
+  $font-family:'Lato, sans-serif',
+  $title: mat.mat-typography-level(20px,32px,500)
+  );
+
+  // $display-4:
+  // $display-3:
+  // $display-2:
+  // $display-1:
+  // $headine:
+  // $title:
+  // $subheading-2:
+  // $body-2:
+  // $body-1:
+  // $caption:
+  // $button:
+  // $input:
 
 
 
@@ -38,10 +57,17 @@ $dark-theme: mat.mat-dark-theme($dark-theme-primary,$dark-theme-accent);
     left: 0;
     right: 0;
 }
-
-.space-box{
-    flex: 1 1 auto;
+.button-group>*:not(:last-child){
+  margin-right: 0.5em;
 }
+.space-box{
+  flex: 1 1 auto;
+}
+.width-100{
+  width: 100%;
+}
+
+
 
 
 .cst-card-border-radius{
@@ -56,4 +82,5 @@ $dark-theme: mat.mat-dark-theme($dark-theme-primary,$dark-theme-accent);
 .light-theme{
     @include mat.angular-material-theme($light-theme);
 }
+@include mat.mat-core($custom-typography);
 // @include customButtonTheme($light-theme);

@@ -1,0 +1,40 @@
+<mat-card class="file-upload-wrapper mat-elevation-z8">
+  <div class="inner-wrapper">
+    <div class="file-upload-drop-content">
+      <div class="file-upload-title mat-title">Upload Files</div>
+      <div class="file-upload-description mat-small">Upload file for your quize</div>
+      <div class="width-100">
+        <mat-icon>cloud_upload</mat-icon>
+        <div class="file-upload-description mat-small">Drag and drop you file here</div>
+      </div>
+      <!-- <div>
+        <video #video autoplay="true"></video>
+      </div>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="upload by url" (keyup)="onChangeVideoUrl($event)"/>
+      </mat-form-field> -->
+      <div>
+        <img style="width: 100%;" #image alt="">
+      </div>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="upload by url" #urlInput/>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button (click)="onChangeImageUrl()" color="primary" *ngIf="!isSelected">submit</button>
+      </div>
+      <div class="file-upload-action button-group" *ngIf="!isSelected">
+        <input class="video-element" type="file" accept="video/*" (change)="onVideoInput($event)"  #videoInput />
+        <input class="audio-element" type="file" accept="image/*" (change)="onImageInput($event)" #imageInput />
+        <button mat-raised-button color="primary" (click)="videoInput.click()">Video</button>
+        <button mat-raised-button color="primary" (click)="imageInput.click()">Image</button>
+      </div>
+      <button mat-raised-button *ngIf="isSelected" color="primary" (click)="reset()">reset</button>
+    </div>
+    <div class="file-upload-drop-area" *ngIf="isFileOver" [ngClass]="{'file-over':isFileOver==true}">
+      <p>dorp box</p>
+    </div>
+    <!-- <div style="object-fit: cover; position: absolute;top: 0;right: 0;left: 0;bottom:0;" [ngClass]="{'display-none':isSelected}">
+      <img style="width: 100%;height: 100%;" #image alt="">
+    </div> -->
+  </div>
+</mat-card>

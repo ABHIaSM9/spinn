@@ -17,6 +17,16 @@ import { MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTabsModule} from '@angular/material/tabs';
+
+
 
 const materials = [
   CommonModule,
@@ -37,7 +47,15 @@ const materials = [
   MatSlideToggleModule,
   MatListModule,
   MatExpansionModule,
-  MatMenuModule
+  MatMenuModule,
+  MatSelectModule,
+  MatDialogModule,
+  DragDropModule,
+  MatProgressBarModule,
+  MatBadgeModule,
+  MatChipsModule,
+  MatCheckboxModule,
+  MatTabsModule
 ];
 
 @NgModule({

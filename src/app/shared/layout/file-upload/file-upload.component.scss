@@ -1,0 +1,46 @@
+
+.file-upload-wrapper{
+  max-width: 30em;
+  min-height: 300px;
+  text-align: center;
+  position: relative;
+  .inner-wrapper{
+    min-width: 25em
+  }
+  .file-upload-drop-area{
+    background-color: white;
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .file-upload-drop-content{
+
+  }
+  .file-upload-title{
+
+  }
+  .file-upload-description{
+
+  }
+  .file-upload-action{
+    margin-top: 2em;
+  }
+}
+
+.file-over{
+  border: 2px dashed rgb(64, 223, 64);
+}
+
+.audio-element,.video-element{
+  display: none;
+}
+
+.display-none{
+  display: none;
+}

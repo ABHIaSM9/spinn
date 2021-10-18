@@ -1,0 +1,65 @@
+<div class="admin-dashboard">
+  <div class="title-nav">
+    <h1 class="mat-h1">Dashboard</h1>
+    <div class="space-box"></div>
+    <div class="button-group">
+      <button mat-raised-button color="primary" [routerLink]="['/admin/question-list']">My Question</button>
+      <button mat-raised-button color="primary" [routerLink]="['/admin/controller']">My Game</button>
+      <button mat-raised-button color="primary" [routerLink]="['/admin/add-game']"><mat-icon>add</mat-icon></button>
+    </div>
+  </div>
+  <mat-card>
+    <div class="title-wrapper">
+      <h2 class="mat-h2 title">Top Games</h2>
+      <div class="space-box"></div>
+      <mat-form-field appearance="outline">
+        <mat-label>select</mat-label>
+        <mat-select>
+          <mat-option value="a">a</mat-option>
+          <mat-option value="b">b</mat-option>
+          <mat-option value="c">c</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <owl-carousel-o [options]="carouselOptions">
+      <ng-template *ngFor="let l of list" carouselSlide >
+          <div>
+              <div>
+                <app-game-description-card></app-game-description-card>
+              </div>
+          </div>
+      </ng-template>
+    </owl-carousel-o>
+    </mat-card>
+    <mat-card>
+    <div class="title-wrapper">
+      <h2 class="mat-h2 title">Top Users</h2>
+      <div class="space-box"></div>
+      <mat-form-field appearance="outline">
+        <mat-label>select</mat-label>
+        <mat-select>
+          <mat-option value="a">a</mat-option>
+          <mat-option value="b">b</mat-option>
+          <mat-option value="c">c</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <owl-carousel-o [options]="carouselOptions">
+              <ng-template carouselSlide *ngFor="let l of list" >
+                  <div>
+                      <div style="text-align: center;">
+                          <div class="user-game-description-card mat-elevation-z4" style="border-radius: 1em;min-width: 15em;display: flex;justify-content: center;flex-direction: column;align-items: center;padding: 1em;margin: 1em;">
+                              <ngx-avatar [value]="'A'+l"></ngx-avatar>
+                              <div class="name" style="margin-top:1em;">Abcd alsdfjs</div>
+                              <mat-chip-list style="margin-top: 2em">
+                                <mat-chip>3432423 score</mat-chip>
+                              </mat-chip-list>
+                          </div>
+                      </div>
+                  </div>
+              </ng-template>
+    </owl-carousel-o>
+
+  </mat-card>
+</div>
+

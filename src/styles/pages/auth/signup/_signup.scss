@@ -1,0 +1,44 @@
+.mini-container{
+  text-align: center;
+}
+.signup_page{
+.form-container{
+    mat-form-field{
+        width: 100%;
+    }
+    button[type="submit"]{
+        margin-top: 2em;
+    }
+}
+.auth-title{
+    text-align: left;
+    font-weight:700;
+}
+.auth-page-link{
+
+    margin-top:1em;
+    // font-weight: bold;
+}
+
+// .app-footer{
+//     position: fixed;bottom: 0px;z-index:1;
+// }
+
+
+.app-footer{
+  text-align: center;
+  margin-top: 2rem;
+  // padding: 10px;
+  // box-shadow: 1px 0px 2px 1px #d2d2d2;
+}
+
+.mat-formfield-wrapper{
+  display: flex;
+  mat-form-field{
+    min-width: 10em;
+  }
+}
+.mat-formfield-wrapper>*:not(:last-child){
+  margin-right: 1em;
+}
+}

@@ -1,0 +1,111 @@
+<div class="add-game-page">
+  <mat-card style="max-width: 800px">
+    <h2 class="mat-h2">Add Game</h2>
+    <div>
+      <h4 class="mat-h4">basic detail</h4>
+      <div class="mat-formfield-wrapper basic-detail">
+        <mat-form-field appearance="outline">
+          <mat-label for="gameid">GameId</mat-label>
+          <input
+            type="gameid"
+            id="gameid"
+            matInput
+            name="gameid"
+            placeholder="Enter your gameid"
+            #gameid="ngModel"
+            required
+            ngModel
+          />
+        </mat-form-field>
+        <mat-form-field class="width-100" appearance="outline">
+          <mat-label for="gamename">Gamename</mat-label>
+          <input
+            type="gamename"
+            id="gamename"
+            matInput
+            name="gamename"
+            placeholder="Enter your gameid"
+            #gamename="ngModel"
+            required
+            ngModel
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <h4 class="mat-h4">Select Categories</h4>
+      <div class="mat-formfield-wrapper">
+        <mat-form-field appearance="outline">
+          <mat-label>category 1</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>category 2</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>category 3</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>category 4</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <h4 class="mat-h4">
+        Description
+        <div
+          class="description-card"
+        >
+          <div class="image">
+            <img alt="" #image />
+            <!-- <video #video loop
+            src="http://techslides.com/demos/sample-videos/small.webm"
+            autoplay></video> -->
+            <div class="image-overlay" >
+              <input type="file" #file (change)="onChange($event)" />
+              <button
+                mat-mini-fab
+                color="primary"
+                (click)="openDialog()"
+                *ngIf="!isFileSelected"
+              >
+                <!-- (click)="file.click()" -->
+                <mat-icon>add</mat-icon>
+              </button>
+              <div class="edit-options" *ngIf="isFileSelected">
+                <mat-chip-list>
+                  <mat-chip>
+                    <mat-icon (click)="edit()"> edit </mat-icon>
+                    <mat-icon (click)="remove()"> delete </mat-icon>
+                  </mat-chip>
+                </mat-chip-list>
+              </div>
+            </div>
+          </div>
+          <div class="description">
+            <textarea placeholder="add description here ..." ></textarea>
+          </div>
+        </div>
+      </h4>
+    </div>
+    <div class="button-group">
+      <button mat-raised-button color="primary">Question</button>
+      <button mat-raised-button color="primary">User</button>
+    </div>
+  </mat-card>
+</div>

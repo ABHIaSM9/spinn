@@ -12,7 +12,7 @@ export class OptionListComponent implements OnInit,OnChanges {
   correctIndex:number;
   @Output() onSelect = new EventEmitter();
   @Input() options:any[];
-  
+
   isSelected:boolean;
   selectedIndex:number;
 
@@ -77,5 +77,9 @@ export class OptionListComponent implements OnInit,OnChanges {
     this.correctAnswerSubscription?.unsubscribe();
     this.isOptionSelectedSubscription?.unsubscribe();
     this.selectedOptionIndexSubscription?.unsubscribe();
+  }
+  trackByFn(index,item){
+    // console.log('trackByFn',index, item);
+    // return index;
   }
 }

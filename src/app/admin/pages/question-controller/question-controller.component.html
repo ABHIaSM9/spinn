@@ -1,0 +1,134 @@
+<div class="question-controller-page">
+  <div class="controller-panel">
+    <mat-card>
+      <div class="controller-panel-button-group">
+        <button mat-raised-button color="primary">save</button>
+        <button mat-raised-button color="primary">edit</button>
+        <button mat-raised-button color="primary">dublicate</button>
+      </div>
+      <div class="mat-select-wrapper">
+        <mat-form-field appearance="outline">
+          <mat-label>category 1</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>category 2</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>category 3</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>category 4</mat-label>
+          <mat-select>
+            <mat-option>1</mat-option>
+            <mat-option>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-card>
+  </div>
+  <div class="controller-question-box">
+    <mat-card>
+      <div class="question-description-card">
+        <div class="question-id">i454</div>
+        <div class="question-description">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur
+          amet cum laborum modi, quis expedita molestiae fugiat eligendi
+          similique. Cupiditate debitis vero repellat veniam molestias, eum
+          officia illo doloribus similique.
+        </div>
+      </div>
+      <div class="file-upload-wrapper">
+        <div class="uplaod-file">
+          <div
+            class="image-wrapper"
+
+          >
+            <img src="" alt="" #image/>
+            <div
+              class="image-overlay"
+              >
+              <button mat-mini-fab color="primary" (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- <app-file-upload></app-file-upload> -->
+      </div>
+      <div class="options-box">
+        <mat-form-field *ngFor="let l of list" appearance="outline">
+          <textarea matInput placeholder="option-1"></textarea>
+          <!-- <mat-checkbox matPrefix></mat-checkbox> -->
+        </mat-form-field>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <mat-card>
+  <div class="button-group" style="margin-bottom:1rem;">
+    <button mat-raised-button color="primary">save</button>
+    <button mat-raised-button color="primary">edit</button>
+    <button mat-raised-button color="primary">dublicate</button>
+  </div>
+  <div class="mat-select-wrapper" style="margin-bottom:2rem;">
+    <mat-form-field appearance="outline">
+      <mat-label>category 1</mat-label>
+      <mat-select>
+        <mat-option>1</mat-option>
+        <mat-option>2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>category 2</mat-label>
+      <mat-select>
+        <mat-option>1</mat-option>
+        <mat-option>2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>category 3</mat-label>
+      <mat-select>
+        <mat-option>1</mat-option>
+        <mat-option>2</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>category 4</mat-label>
+      <mat-select>
+        <mat-option>1</mat-option>
+        <mat-option>2</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="question-description-card" style="margin-bottom:1rem;border:1px solid rgb(221, 221, 221)">
+    <div class="question-id">
+      id
+    </div>
+    <div class="question-description">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur amet cum laborum modi, quis expedita molestiae fugiat eligendi similique. Cupiditate debitis vero repellat veniam molestias, eum officia illo doloribus similique.
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center;margin-bottom:2rem;">
+    <app-file-upload></app-file-upload>
+  </div>
+  <div >
+    <div style="display: flex;flex-wrap: wrap; justify-content: space-around;">
+        <mat-form-field *ngFor="let l of list" style="width: 45%; margin: 2px;" appearance="outline">
+          <textarea matInput  placeholder="option-1"></textarea>
+        </mat-form-field>
+    </div>
+  </div>
+</mat-card> -->

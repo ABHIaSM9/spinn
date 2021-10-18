@@ -9,20 +9,25 @@ import { Observable } from 'rxjs';
 export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
   isAuth:boolean;
 
-  constructor(private authService:AuthenticationService,private router:Router){}
+  constructor(private authService:AuthenticationService,private router:Router){
+    this.onInitialLoad();
+  }
 
   onInitialLoad(){
     this.isAuth = this.authService.getIsAuth();
     this.authService.getIsAuthListener().subscribe((isAuth:boolean)=>{
       this.isAuth = isAuth;
+      console.log('auth gaurd auth', this.isAuth);
     })
+    console.log('auth gaurd auth', this.isAuth);
   }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(!this.authService.getIsAuth()){
-        this.router.navigate(['/login']);
+      if(!this.isAuth){
+        console.log('isAuth',this.isAuth);
+        this.router.navigate(['/auth/login']);
         return false;
       }
       return true;

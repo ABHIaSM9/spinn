@@ -39,5 +39,8 @@
         <mat-list-item [routerLink]="['/quiz/congrats']" routerLinkActive>
             congrats
         </mat-list-item>
+        <mat-list-item (click)="logout()" routerLinkActive>
+            logout
+        </mat-list-item>
     </mat-nav-list>
 </div>

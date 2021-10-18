@@ -1,0 +1,41 @@
+@use './breakpoints' as *;
+@use '~@angular/material/theming' as mat;
+
+
+// media mixins
+@mixin for-phone-only{
+  @media (max-width: map-get($breakpoints, 'xs')){
+    @content;
+  }
+}
+@mixin for-tablet-portrait-only{
+  @media (max-width: map-get($breakpoints, 'sm')){
+    @content;
+  }
+}
+@mixin for-phone-landscape-only{
+  @media (max-width: map-get($breakpoints, 'lg')){
+    @content;
+  }
+}
+@mixin for-desktop-only{
+  @media (max-width: map-get($breakpoints, 'notebook')){
+    @content;
+  }
+}
+@mixin for-big-desktop-only{
+  @media (max-width: map-get($breakpoints, 'monitor')){
+    @content;
+  }
+}
+
+
+//hover Effect
+@mixin hover-effect {
+  transition: all 150ms ease-in-out;
+  @include mat.mat-elevation(2);
+  &:hover{
+    @include mat.mat-elevation(8);
+  }
+}
+

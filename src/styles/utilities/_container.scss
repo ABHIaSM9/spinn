@@ -1,11 +1,26 @@
-.container{
-    width: 100%;
-    padding-left: 0.75rem;
-    padding-right:0.75rem;
-    padding-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
+@use '../abstracts/mixins' as mixin;
+
+.container {
+  width: 100%;
+  padding-left: 0.75rem;
+  padding-right:0.75rem;
+  padding-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  @include mixin.for-phone-only{
+
+  }
+  @include mixin.for-tablet-portrait-only{
+
+  }
+  @include mixin.for-desktop-only{
+
+  }
+  @include mixin.for-big-desktop-only{
+
+  }
 }
+
 
 .mini-container{
     width: 100%;
@@ -13,6 +28,7 @@
     padding-left: 0.75rem;
     padding-right:0.75rem;
     padding-top: 1em;
+    padding-bottom: 1em;
     margin-left: auto;
     margin-right: auto;
 }

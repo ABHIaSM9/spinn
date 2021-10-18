@@ -88,21 +88,21 @@
               "outputPath": "dis/angular-project/",
               "i18nFile": "xi18n/messages.xlf",
               "localize": ["en"],
-              "i18nMissingTranslation":"error" 
+              "i18nMissingTranslation":"error"
             },
             "hi":{
               "aot":true,
               "outputPath": "dis/angular-project/",
               "i18nFile": "xi18n/messages.hi.xlf",
               "localize": ["hi"],
-              "i18nMissingTranslation":"error" 
+              "i18nMissingTranslation":"error"
             },
             "fr":{
               "aot":true,
               "outputPath": "dis/angular-project/",
               "i18nFile": "xi18n/messages.fr.xlf",
               "localize": ["fr"],
-              "i18nMissingTranslation":"error" 
+              "i18nMissingTranslation":"error"
             }
           }
         },

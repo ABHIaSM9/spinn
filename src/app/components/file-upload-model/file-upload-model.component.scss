@@ -1,0 +1,10 @@
+.file-upload-model{
+  mat-card{
+    margin:1em;
+  }
+  .image-upload-container{
+  }
+  input[type="file"]{
+    display: none;
+  }
+}
