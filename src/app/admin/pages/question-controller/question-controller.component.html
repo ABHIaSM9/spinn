@@ -40,7 +40,7 @@
   </div>
   <div class="controller-question-box">
     <mat-card>
-      <div class="question-description-card">
+      <!-- <div class="question-description-card">
         <div class="question-id">i454</div>
         <div class="question-description">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur
@@ -48,17 +48,16 @@
           similique. Cupiditate debitis vero repellat veniam molestias, eum
           officia illo doloribus similique.
         </div>
-      </div>
+      </div> -->
+      <app-question-display-box
+        [questionId]="'i145'"
+        [question]="'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur amet cum laborum modi, quis expedita molestiae fugiat eligendi similique. Cupiditate debitis vero repellat veniam molestias, eum officia illo doloribus similique.'"
+      ></app-question-display-box>
       <div class="file-upload-wrapper">
         <div class="uplaod-file">
-          <div
-            class="image-wrapper"
-
-          >
-            <img src="" alt="" #image/>
-            <div
-              class="image-overlay"
-              >
+          <div class="image-wrapper">
+            <img src="" alt="" #image />
+            <div class="image-overlay">
               <button mat-mini-fab color="primary" (click)="openDialog()">
                 <mat-icon>add</mat-icon>
               </button>

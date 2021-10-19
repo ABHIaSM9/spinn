@@ -1,10 +1,11 @@
+@use '../../../abstracts/variables';
 
 .activities-page{
 
   .user-activity-card{
       margin: auto;
       padding: 1rem;
-      border-radius: 5px;
+      border-radius: variables.$border-radius;
       max-width: 500px;
       text-align: center;
 

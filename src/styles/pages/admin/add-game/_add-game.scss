@@ -1,4 +1,5 @@
-@use '../../../abstracts/mixins' as mixin;
+@use '../../../abstracts/mixins';
+@use '../../../abstracts/variables';
 
 .add-game-page{
   text-align: left;
@@ -6,7 +7,7 @@
   .description-card{
     border: 1px solid rgb(209, 209, 209);
     max-width: 800px;
-    border-radius: 1em;
+    border-radius: variables.$border-radius;
     overflow: hidden;
     display: flex;
     .image{
@@ -67,7 +68,7 @@
   }
 }
 
-@include mixin.for-phone-only{
+@include mixins.for-phone-only{
   .add-game-page{
     mat-form-field{
       width: 100%;

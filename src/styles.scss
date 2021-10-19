@@ -3,7 +3,7 @@
 @use '~@angular/material/theming' as mat;
 @use '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel' as *;
 @use '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default' as *;
-@use './styles/main';
+@use './styles/main' as *;
 
 @include mat.mat-core();
 

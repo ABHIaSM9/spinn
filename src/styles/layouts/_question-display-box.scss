@@ -1,0 +1,20 @@
+  .question-display-box{
+    margin-bottom:1em;
+    border:1px solid rgb(221, 221, 221);
+    display: flex;
+
+    .question-id{
+      background-color: rgb(120, 118, 247);
+      color: white;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: inherit;
+    }
+    .question-description{
+      padding: 1em;
+      width: 100%;
+    }
+  }

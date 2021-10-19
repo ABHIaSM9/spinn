@@ -14,8 +14,8 @@ export class AuthenticationService {
   private users:AuthUser[] = [];
   private _isAuth = new Subject<boolean>();
   private _user = new Subject<AuthUser>();
-  private timer:NodeJS.Timeout;
-  private expireIn:number;
+  private timer:NodeJS.Timeout|undefined;
+  private expireIn:number | any;
 
   constructor(private router: Router,private http:HttpClient) {
   }
@@ -99,7 +99,7 @@ export class AuthenticationService {
     this.router.navigate(['/auth/login']);
   }
 
-  private saveAuthLocal(isAuth,expireIn){
+  private saveAuthLocal(isAuth:boolean,expireIn:number){
     const authObj = {
       isAuth,
       expireIn
@@ -108,7 +108,7 @@ export class AuthenticationService {
   }
 
   getAuthLocal(){
-    const authObj = JSON.parse(localStorage.getItem('auth'));
+    const authObj = JSON.parse((localStorage.getItem('auth') as any));
     if(authObj){
       this.isAuth = authObj.isAuth;
       this.expireIn = authObj.expireIn;
@@ -126,7 +126,7 @@ export class AuthenticationService {
     this.startTokenExpireTimer(this.expireIn);
   }
 
-  startTokenExpireTimer(expireIn){
+  startTokenExpireTimer(expireIn:number){
     this.timer = setInterval(()=>{
       if(new Date().getTime() > expireIn){
           this.onLogout();

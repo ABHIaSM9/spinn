@@ -13,6 +13,7 @@ import {
   AppMainLogoTitleComponent,
   BottomNavigationComponent,
   AdminNavHeaderComponent,
+  QuestionDisplayBoxComponent
 
 } from './layout';
 import { BottomNavModule } from 'ngx-bottom-nav';
@@ -34,7 +35,7 @@ const declareAndExportModules = [
     BottomNavigationComponent,
     AdminNavHeaderComponent,
     FileUploadComponent,
-
+    QuestionDisplayBoxComponent
 ];
 
 

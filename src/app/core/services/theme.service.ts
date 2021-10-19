@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ThemeService {
-  private isDarkMode;
+  private isDarkMode:boolean | any;
   private _theme = new Subject();
 
   constructor() {
@@ -19,7 +19,7 @@ export class ThemeService {
   }
 
   //locally save theme fuction
-  private saveLocally(value){
+  private saveLocally(value:boolean | any){
     localStorage.setItem('isDarkMode',value);
   }
 

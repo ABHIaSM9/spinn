@@ -6,3 +6,4 @@ export * from './side-nav/side-nav.component';
 export * from './loading-spinner/loading-spinner.component';
 export * from './bottom-navigation/bottom-navigation.component';
 export * from './admin-nav-header/admin-nav-header.component';
+export * from './question-display-box/question-display-box.component';
