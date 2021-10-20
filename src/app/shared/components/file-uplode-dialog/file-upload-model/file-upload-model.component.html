@@ -51,10 +51,10 @@
           <mat-card-content>
             <div >
               <mat-form-field class="width-100" appearance="outline">
-                <input matInput type="url" pattern="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?" #urlInput/>
+                <input matInput type="url" #videoUrlInput pattern="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?"/>
               </mat-form-field>
               <div>
-                <button mat-stroked-button color="primary">submit</button>
+                <button mat-stroked-button color="primary" (click)="onVideoUrl()">submit</button>
               </div>
             </div>
           </mat-card-content>

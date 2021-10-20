@@ -1,6 +1,9 @@
-.logo{
-  width: 65px;
-}
-ngx-avatar{
-  margin: 0 0.5em;
+.admin-nav-header{
+  .logo{
+    width: 65px;
+  }
+  ngx-avatar{
+    cursor: pointer;
+    margin: 0 0.5em;
+  }
 }

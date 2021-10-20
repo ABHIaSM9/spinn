@@ -7,15 +7,19 @@ import { MaterialModule } from '../material/material.module';
 // import { NgxMatCircleCounterModule } from 'ngx-mat-circle-counter/src/lib/ngx-mat-circle-counter.module';
 
 import {
-  LoadingSpinnerComponent,
   FooterComponent,HeaderComponent,
   SideNavComponent,
   AppMainLogoTitleComponent,
   BottomNavigationComponent,
   AdminNavHeaderComponent,
-  QuestionDisplayBoxComponent
 
 } from './layout';
+import {
+  QuestionDisplayBoxComponent,
+  FileUplodeDialogComponent,
+  FileUploadModelComponent,
+  LoadingSpinnerComponent,
+} from './components';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { CounterModule } from 'angular-circle-counter';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -35,14 +39,16 @@ const declareAndExportModules = [
     BottomNavigationComponent,
     AdminNavHeaderComponent,
     FileUploadComponent,
-    QuestionDisplayBoxComponent
+    QuestionDisplayBoxComponent,
+    FileUplodeDialogComponent
 ];
 
 
 
 @NgModule({
   declarations: [
-    ...declareAndExportModules
+    ...declareAndExportModules,
+    FileUploadModelComponent
   ],
   imports: [
     CommonModule,
@@ -54,7 +60,8 @@ const declareAndExportModules = [
     CarouselModule,
     WebcamModule,
     CounterModule,
-    AvatarModule
+    AvatarModule,
+
   ],
   exports:[
     CommonModule,

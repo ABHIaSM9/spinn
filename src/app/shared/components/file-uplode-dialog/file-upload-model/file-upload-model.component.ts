@@ -9,6 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class FileUploadModelComponent implements OnInit {
 
   @ViewChild('urlInput',{static:true}) urlInput:ElementRef;
+  @ViewChild('videoUrlInput',{static:true}) videoUrlInput:ElementRef;
   constructor(public matDialoagRef:MatDialogRef<FileUploadModelComponent>,@Inject(MAT_DIALOG_DATA) public data:any) { }
 
   ngOnInit(): void {
@@ -26,7 +27,7 @@ export class FileUploadModelComponent implements OnInit {
     this.matDialoagRef.close({type:'video',data:event.target.files[0]});
   }
   onVideoUrl(){
-    this.matDialoagRef.close({type:'video-url',data:this.urlInput.nativeElement.value});
+    this.matDialoagRef.close({type:'video-url',data:this.videoUrlInput.nativeElement.value});
   }
 
 }

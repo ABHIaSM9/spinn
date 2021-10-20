@@ -1,0 +1,21 @@
+<div class="file-upload-dialog">
+  <div class="uplaod-file">
+    <div class="image-wrapper" [ngStyle]="{width:width+'em',height:height+'em'}">
+      <img src="" alt="" #image [ngStyle]="{display:isImage?'block':'none'}" />
+      <video #videoEle style="width:100%;height:100%;object-fit:cover;" [ngStyle]="{display:isImage?'none':'block'}" autoplay loop ></video>
+      <div class="image-overlay">
+        <button *ngIf="!isFileSelected" mat-mini-fab color="primary" (click)="openDialog()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <div class="edit-options" *ngIf="isFileSelected">
+          <mat-chip-list>
+            <mat-chip>
+              <mat-icon (click)="edit()"> edit </mat-icon>
+              <mat-icon (click)="remove()"> delete </mat-icon>
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

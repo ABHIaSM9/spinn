@@ -18,17 +18,11 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { FileUploadModelComponent } from './components/file-upload-model/file-upload-model.component';
-
-
-
-
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FileUploadModelComponent,
   ],
   imports: [
     BrowserModule,

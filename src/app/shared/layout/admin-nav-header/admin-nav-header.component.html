@@ -1,11 +1,11 @@
-<mat-toolbar>
+<mat-toolbar class="admin-nav-header">
   <img class="logo" src="https://www.spinn.com/img/logo-spinn-grey-new.png" alt="">
 
   <div class="space-box"></div>
-  <h3 class="mat-h3">User Name</h3>
+  <h3 class="mat-h3">{{'Ajay Kumar' | titlecase}}</h3>
   <!-- <button mat-icon-button [matMenuTriggerFor]="menu"> -->
     <!-- <mat-icon>account_circle</mat-icon> -->
-    <ngx-avatar value="UN" size="30" [matMenuTriggerFor]="menu"></ngx-avatar>
+    <ngx-avatar value="AJ" size="30" [matMenuTriggerFor]="menu"></ngx-avatar>
   <!-- </button> -->
   <mat-menu #menu>
     <button mat-menu-item>item1</button>

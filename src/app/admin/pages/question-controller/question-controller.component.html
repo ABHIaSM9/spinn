@@ -53,19 +53,7 @@
         [questionId]="'i145'"
         [question]="'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur amet cum laborum modi, quis expedita molestiae fugiat eligendi similique. Cupiditate debitis vero repellat veniam molestias, eum officia illo doloribus similique.'"
       ></app-question-display-box>
-      <div class="file-upload-wrapper">
-        <div class="uplaod-file">
-          <div class="image-wrapper">
-            <img src="" alt="" #image />
-            <div class="image-overlay">
-              <button mat-mini-fab color="primary" (click)="openDialog()">
-                <mat-icon>add</mat-icon>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- <app-file-upload></app-file-upload> -->
-      </div>
+      <app-file-uplode-dialog (fileData)="getFileData($event)" width="15"></app-file-uplode-dialog>
       <div class="options-box">
         <mat-form-field *ngFor="let l of list" appearance="outline">
           <textarea matInput placeholder="option-1"></textarea>

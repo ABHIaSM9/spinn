@@ -1,4 +1,4 @@
-import { FileUploadModelComponent } from 'src/app/components/file-upload-model/file-upload-model.component';
+import { FileUploadModelComponent } from 'src/app/shared/components/file-uplode-dialog/file-upload-model/file-upload-model.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -48,5 +48,8 @@ export class QuestionControllerComponent implements OnInit {
   }
   onDublicate(){
 
+  }
+  getFileData(event){
+    console.log('fileData',event);
   }
 }

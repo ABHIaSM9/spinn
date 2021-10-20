@@ -71,32 +71,7 @@
         <div
           class="description-card"
         >
-          <div class="image">
-            <img alt="" #image />
-            <!-- <video #video loop
-            src="http://techslides.com/demos/sample-videos/small.webm"
-            autoplay></video> -->
-            <div class="image-overlay" >
-              <input type="file" #file (change)="onChange($event)" />
-              <button
-                mat-mini-fab
-                color="primary"
-                (click)="openDialog()"
-                *ngIf="!isFileSelected"
-              >
-                <!-- (click)="file.click()" -->
-                <mat-icon>add</mat-icon>
-              </button>
-              <div class="edit-options" *ngIf="isFileSelected">
-                <mat-chip-list>
-                  <mat-chip>
-                    <mat-icon (click)="edit()"> edit </mat-icon>
-                    <mat-icon (click)="remove()"> delete </mat-icon>
-                  </mat-chip>
-                </mat-chip-list>
-              </div>
-            </div>
-          </div>
+          <app-file-uplode-dialog width="10" height="10"></app-file-uplode-dialog>
           <div class="description">
             <textarea matInput placeholder="add description here ..." ></textarea>
           </div>

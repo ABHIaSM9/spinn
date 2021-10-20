@@ -20,6 +20,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatChipsModule } from '@angular/material/chips';
@@ -57,7 +58,8 @@ const materials = [
   MatChipsModule,
   MatCheckboxModule,
   MatTabsModule,
-  MatTableModule
+  MatTableModule,
+  CdkAccordionModule
 ];
 
 @NgModule({

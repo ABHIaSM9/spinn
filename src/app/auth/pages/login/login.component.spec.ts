@@ -1,3 +1,4 @@
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthUser } from './../../../core/schema/AuthUser';
@@ -40,7 +41,6 @@ describe('LoginComponent',()=>{
   // let authenticationService = jasmine.createSpyObj('AuthenticationService',['onLogin','getUserListener']);
 
 
-  let authUser:AuthUser;
 
   //beforceEach run every time before this test.
   beforeEach(async ()=>{
@@ -54,9 +54,21 @@ describe('LoginComponent',()=>{
       imports:[
         FormsModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        MatDialogModule
       ],
       providers:[
+        {
+          provide: MatDialog
+        },
+        {
+          provide: MAT_DIALOG_DATA,
+          useValue: {}
+        },
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        },
         {
           provide: AuthenticationService,
           useClass: AuthenticationServiceMock
@@ -75,7 +87,6 @@ describe('LoginComponent',()=>{
     //get the component using fixture.
     component = fixture.componentInstance;
     fixture.detectChanges();
-    authUser = new AuthUser();
   });
 
   it('should create', () => {

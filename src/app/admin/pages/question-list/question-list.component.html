@@ -3,12 +3,12 @@
     <button mat-raised-button color="primary">Add to Game</button>
     <button mat-raised-button color="primary"><mat-icon>add</mat-icon></button>
   </div>
-  <mat-card style="width: 100%;">
-    <div style="margin-bottom: 1em;">
+  <mat-card>
+    <div class="card-content-wrapper">
       <button mat-raised-button [matMenuTriggerFor]="menu"><mat-icon>tune</mat-icon> filter <mat-icon>arrow_drop_down</mat-icon> </button>
       <mat-menu #menu="matMenu" hasBackdrop="true"  >
         <div class="container" (click)="onClick($event)">
-          <div class="mat-h4" style="margin: 0px ;margin-top: 1em; ">
+          <div class="mat-h4 select-title">
             Select Categories
           </div>
             <mat-form-field appearance="outline">
