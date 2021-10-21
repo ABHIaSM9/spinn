@@ -51,7 +51,7 @@
   <div class="quiz-bottom-bar-wrapper">
       <mat-toolbar class="quiz-bottom-bar">
           <button mat-icon-button (click)='onFlagSelect()'>
-              <mat-icon>
+              <mat-icon color="accent">
                   flag
               </mat-icon>
           </button>
@@ -61,7 +61,7 @@
           </div>
           <div class="space-box"></div>
           <button type="button" [disabled]="!isSelectedOption" (click)="isCheckMode?onNext():onCheckAnswer()" mat-icon-button>
-              <mat-icon>
+              <mat-icon color="primary">
                   {{
                       isCheckMode?
                       'arrow_forward':

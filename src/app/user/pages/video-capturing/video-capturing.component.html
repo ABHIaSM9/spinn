@@ -2,10 +2,10 @@
     <button mat-mini-fab type="button" color="primary" (click)="isVideoRecording?stopVideoRecording():startVideoRecording()">
         <mat-icon>{{isVideoRecording ? 'stop' : 'videocam'}}</mat-icon>
     </button>
-    <button mat-mini-fab type="button" color="primary" (click)="downloadVideo()">
+    <button mat-mini-fab type="button" color="accent" (click)="downloadVideo()">
         <mat-icon>file_download</mat-icon>
     </button>
-    <button mat-mini-fab type="button" color="primary" (click)="deleteRecordedMedia()">
+    <button mat-mini-fab type="button" color="warn" (click)="deleteRecordedMedia()">
         <mat-icon>delete_forever</mat-icon>
     </button>
 </div>

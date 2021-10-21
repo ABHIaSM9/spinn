@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'sass:map';
 
 @use '~@angular/material/theming' as mat;
 @use '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel' as *;
@@ -75,12 +76,54 @@ $custom-typography: mat.mat-typography-config(
 }
 
 
+@mixin sideNav($theme) {
+  $config:  mat.mat-get-color-config($theme);
+  $primary: map-get($config,'primary');
+  $accent: map-get($map: $config, $key: 'accent');
+  $background: map-get($map: $config, $key: 'background');
+  // @debug "config #{$config}";
+
+  .side-nav-container{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: 100%;
+    .user-detail-wrapper{
+      background-color: mat.mat-color($background,hover,0.03);
+      display: flex;
+      padding: 1.5em 1em;
+      align-content: center;
+      vertical-align: middle;
+      align-items: center;
+      .user-image{
+
+      }
+      .user-name{
+        margin-left:1em;
+        margin-bottom:0;
+      }
+    }
+    .navigation-heading{
+      margin: 1em;
+    }
+    .active-link{
+      background-color: mat.mat-color($background,hover,0.02);
+      border-right: 5px solid mat.mat-color($accent);
+      mat-icon{
+        color: mat.mat-color($accent);
+      }
+    }
+  }
+}
+
 
 .dark-theme{
     @include mat.angular-material-theme($dark-theme);
+    @include sideNav($dark-theme);
 }
 .light-theme{
     @include mat.angular-material-theme($light-theme);
+    @include sideNav($light-theme);
 }
 @include mat.mat-core($custom-typography);
 // @include customButtonTheme($light-theme);

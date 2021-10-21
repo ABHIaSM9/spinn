@@ -4,11 +4,45 @@
   <app-admin-nav-header [drawer]="drawer"></app-admin-nav-header>
   <mat-sidenav-container class="drawer-container">
       <mat-sidenav #drawer position="end">
-
+        <div class="side-nav-container" >
+          <div class="user-detail-wrapper">
+            <div class="user-image">
+              <ngx-avatar value="AJ" size="50"></ngx-avatar>
+            </div>
+            <div class="user-name mat-h2">
+              Ajay Kumar
+            </div>
+          </div>
+          <h5 class="mat-small navigation-heading">Navigation</h5>
+          <mat-nav-list>
+            <mat-list-item [routerLink]="['/admin']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+              <mat-icon mat-list-icon>dashboard</mat-icon>
+              <div mat-line>dashboard</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <div mat-line>Reviews</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <div mat-line>Reviews</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <div mat-line>Reviews</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>folder</mat-icon>
+              <div mat-line>Reviews</div>
+            </mat-list-item>
+          </mat-nav-list>
+          <div class="space-box"></div>
+          <button mat-stroked-button>SignOut <mat-icon>logout</mat-icon></button>
+        </div>
       </mat-sidenav>
       <mat-sidenav-content class="drawer-content" >
         <div class="container">
-          <div style="width:100%">
+          <div class="width-100">
             <router-outlet></router-outlet>
           </div>
         </div>

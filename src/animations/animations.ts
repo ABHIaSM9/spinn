@@ -12,3 +12,14 @@ export const markedTrigger = trigger('markedState',[
   }))),
   transition(':leave => enter',animate('200ms ease-out'))
 ]);
+
+export const fadeInFadeOutTrigger = trigger('fadeInFadeOut',[
+  state(':enter',style({
+    opaicty:1
+  })),
+  state(':leave',style({
+    opacity:0
+  })),
+  transition(':enter',animate('200ms ease-in-out')),
+  transition(':leave',animate('200ms ease-in-out'))
+])

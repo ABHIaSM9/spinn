@@ -39,3 +39,38 @@
   }
 }
 
+
+// @mixin sideNav($theme) {
+//   $config:  mat.mat-get-color-config($theme);
+//   $primary: map-get($config,'primary');
+//   $accent: map-get($map: $config, $key: 'accent');
+//   // @debug "config #{$config}";
+
+//   .side-nav-container{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: stretch;
+//     height: 100%;
+//     .user-detail-wrapper{
+//       display: flex;
+//       padding: 1.5em 1em;
+//       align-content: center;
+//       vertical-align: middle;
+//       align-items: center;
+//       .user-image{
+
+//       }
+//       .user-name{
+//         margin-left:1em;
+//         margin-bottom:0;
+//       }
+//     }
+//     .navigation-heading{
+//       margin: 1em;
+//     }
+//     .active-link{
+//       border-right: 5px solid mat.mat-color($accent);
+//     }
+//   }
+
+// }

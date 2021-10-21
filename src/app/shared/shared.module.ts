@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { CstBottomNavComponent } from './layout/cst-bottom-nav/cst-bottom-nav.component';
+
 import { MaterialModule } from '../material/material.module';
 // import { NgxMatCircleCounterModule } from 'ngx-mat-circle-counter/src/lib/ngx-mat-circle-counter.module';
 
@@ -19,6 +19,7 @@ import {
   FileUplodeDialogComponent,
   FileUploadModelComponent,
   LoadingSpinnerComponent,
+  CstBottomNavComponent
 } from './components';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { CounterModule } from 'angular-circle-counter';
