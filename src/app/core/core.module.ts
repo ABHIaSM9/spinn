@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { PageNotFoundComponent } from './layout';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from './interceptors/loader.interceptors';
 
 
 
@@ -20,6 +22,9 @@ import { PageNotFoundComponent } from './layout';
   exports:[
     RouterModule,
     PageNotFoundComponent,
+  ],
+  providers:[
+    {provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptor,multi:true}
   ]
 })
 export class CoreModule {

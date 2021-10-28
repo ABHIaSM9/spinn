@@ -1,7 +1,10 @@
 
 
 <div class="cst-container admin-page">
-  <app-admin-nav-header [drawer]="drawer"></app-admin-nav-header>
+  <app-progress-bar *ngIf="loadingService.isLoading | async" ></app-progress-bar>
+  <div class="mat-elevation-z6">
+    <app-admin-nav-header [drawer]="drawer"></app-admin-nav-header>
+  </div>
   <mat-sidenav-container class="drawer-container">
       <mat-sidenav #drawer position="end">
         <div class="side-nav-container" >

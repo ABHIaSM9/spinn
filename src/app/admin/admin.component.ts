@@ -1,3 +1,4 @@
+import { LoaderService } from './../core/services/loader.service';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AdminService } from '../core/services/admin.service';
@@ -9,7 +10,7 @@ import { AdminService } from '../core/services/admin.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private amdinService:AdminService) { }
+  constructor(private amdinService:AdminService,public loadingService:LoaderService) { }
 
   ngOnInit(): void {
   }

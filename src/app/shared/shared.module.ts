@@ -19,7 +19,8 @@ import {
   FileUplodeDialogComponent,
   FileUploadModelComponent,
   LoadingSpinnerComponent,
-  CstBottomNavComponent
+  CstBottomNavComponent,
+  ProgressBarComponent
 } from './components';
 import { BottomNavModule } from 'ngx-bottom-nav';
 import { CounterModule } from 'angular-circle-counter';
@@ -27,6 +28,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { WebcamModule } from 'ngx-webcam';
 import { FileUploadComponent } from './layout/file-upload/file-upload.component';
 import { AvatarModule } from 'ngx-avatar';
+
 
 
 
@@ -41,7 +43,8 @@ const declareAndExportModules = [
     AdminNavHeaderComponent,
     FileUploadComponent,
     QuestionDisplayBoxComponent,
-    FileUplodeDialogComponent
+    FileUplodeDialogComponent,
+    ProgressBarComponent
 ];
 
 
@@ -49,7 +52,8 @@ const declareAndExportModules = [
 @NgModule({
   declarations: [
     ...declareAndExportModules,
-    FileUploadModelComponent
+    FileUploadModelComponent,
+    ProgressBarComponent
   ],
   imports: [
     CommonModule,

@@ -3,3 +3,4 @@ export * from './file-uplode-dialog/file-upload-model/file-upload-model.componen
 export * from './loading-spinner/loading-spinner.component';
 export * from './question-display-box/question-display-box.component';
 export * from './cst-bottom-nav/cst-bottom-nav.component';
+export * from './progress-bar/progress-bar.component';
