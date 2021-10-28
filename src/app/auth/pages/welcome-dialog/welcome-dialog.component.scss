@@ -1,3 +1,12 @@
 .welcome-container{
   text-align: center;
+  .icon-wrapper{
+    margin: 1em 0em;
+    mat-icon{
+      font-size: 2em;
+    }
+  }
+  button{
+    margin-top: 2em;
+  }
 }

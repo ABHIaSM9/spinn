@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
-import { MatRippleModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
@@ -27,7 +27,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTabsModule} from '@angular/material/tabs';
 import { MatTableModule} from '@angular/material/table';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 const materials = [
@@ -59,7 +60,11 @@ const materials = [
   MatCheckboxModule,
   MatTabsModule,
   MatTableModule,
-  CdkAccordionModule
+  CdkAccordionModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatPaginatorModule
+  // MatMomentDateModule
 ];
 
 @NgModule({

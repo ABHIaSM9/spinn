@@ -1,3 +1,4 @@
+import { MatDialogModule } from '@angular/material/dialog';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FileUplodeDialogComponent } from './file-uplode-dialog.component';
@@ -8,7 +9,8 @@ describe('FileUplodeDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FileUplodeDialogComponent ]
+      declarations: [ FileUplodeDialogComponent ],
+      imports:[MatDialogModule]
     })
     .compileComponents();
   });

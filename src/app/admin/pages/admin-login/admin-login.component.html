@@ -1,0 +1,40 @@
+<div class="admin-login-page">
+  <div class="image-content" >
+    <img src="https://wallpaperaccess.com/full/2384073.jpg" alt="" >
+  </div>
+  <div class="login-container">
+    <div class="login-content-wrapper">
+      <div class="logo"><img class="" src="https://www.spinn.com/img/logo-spinn-grey-new.png" alt=""></div>
+      <h1 class="login-title mat-title">Login</h1>
+      <h4 class="login-subtitle mat-h4">Login to you account</h4>
+      <h5 class="login-description mat-small">Do login with you register email ID and password</h5>
+      <mat-divider></mat-divider>
+      <form action="" class="form">
+        <mat-form-field appearance="outline">
+          <mat-label for="email" i18n="Username label | it show the user name label">Username</mat-label>
+          <input type="email" id="email" matInput name="email" placeholder="Enter your Email" #email="ngModel" required ngModel/>
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-error *ngIf="!email.valid && email.touched" i18n="email error | its a email error"> please enter valid email address</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="width-100">
+            <mat-label for="password"  i18n="Password label | it show the password label">Password</mat-label>
+            <input id="password" [type]="isPasswordVisible?'text':'password'" matInput name="password" placeholder="Enter your password" #password="ngModel" required ngModel/>
+            <mat-icon matSuffix (click)="togglePasswordVisibility()">
+                {{isPasswordVisible ?
+                    "visibility"
+                    : "visibility_off"}}
+            </mat-icon>
+            <mat-error *ngIf="!password.valid && password.touched" i18n="password error | its a pssoword error"> please enter valid password address</mat-error>
+        </mat-form-field>
+        <div class="remember-and-reset-options">
+          <mat-checkbox><span class="mat-small">Remember me</span></mat-checkbox>
+          <a mat-button href="" class="mat-small"> Forget password</a>
+        </div>
+        <button type="submit" mat-raised-button color="primary" class="sign-in-btn">sign in</button>
+        <div class="signup-link mat-h4" >
+          Don't hava a account yet ? sign up here.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

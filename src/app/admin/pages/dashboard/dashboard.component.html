@@ -1,6 +1,6 @@
 <div class="admin-dashboard">
   <div class="title-nav">
-    <h1 class="mat-h1">Dashboard</h1>
+    <h1 class="mat-h1 page-header">Dashboard</h1>
     <div class="space-box"></div>
     <div class="button-group">
       <button mat-raised-button color="primary" [routerLink]="['/admin/question-list']">My Question</button>
@@ -30,8 +30,8 @@
           </div>
       </ng-template>
     </owl-carousel-o>
-    </mat-card>
-    <mat-card>
+    <!-- </mat-card>
+    <mat-card> -->
     <div class="title-wrapper">
       <h2 class="mat-h2 title">Top Users</h2>
       <div class="space-box"></div>
@@ -50,8 +50,8 @@
                       <div style="text-align: center;">
                           <div class="user-game-description-card mat-elevation-z4" style="border-radius: 1em;min-width: 15em;display: flex;justify-content: center;flex-direction: column;align-items: center;padding: 1em;margin: 1em;">
                               <ngx-avatar [value]="'A'+l"></ngx-avatar>
-                              <div class="name" style="margin-top:1em;">Abcd alsdfjs</div>
-                              <mat-chip-list style="margin-top: 2em">
+                              <div class="name" style="margin-top: 0.2em;">Abcd alsdfjs</div>
+                              <mat-chip-list style="margin-top: 1em">
                                 <mat-chip>3432423 score</mat-chip>
                               </mat-chip-list>
                           </div>

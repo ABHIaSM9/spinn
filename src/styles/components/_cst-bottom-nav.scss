@@ -2,18 +2,26 @@
 
 .cst-bottom-nav{
   display: none;
-  // display: flex;
-  margin: 0 1em 0.5em;
-  padding: 0.3em 2em;
-  min-width: 238px;
-  justify-content: space-between;
-  border-radius: 30px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  .bottom-nav-linkwrapper{
+    // display: none;
+    display: flex;
+    margin: 0 1em 0.5em;
+    padding: 0.3em 2em;
+    min-width: 238px;
+    justify-content: space-between;
+    border-radius: 30px;
+  }
 
   .active .mat-icon{
       color: inherit;
   }
   .n-link{
       cursor: pointer;
+      display: none;
       display: flex;
       padding: 5px;
       flex-direction: column;
@@ -24,12 +32,12 @@
 
 @include mixin.for-phone-only{
   .cst-bottom-nav{
-    display: flex;
+    display: block;
   }
 }
 
 @include mixin.for-tablet-portrait-only{
   .cst-bottom-nav{
-    display: flex;
+    display: block;
   }
 }

@@ -4,7 +4,7 @@
       <img src="" alt="" #image [ngStyle]="{display:isImage?'block':'none'}" />
       <video #videoEle style="width:100%;height:100%;object-fit:cover;" [ngStyle]="{display:isImage?'none':'block'}" autoplay loop ></video>
       <div class="image-overlay">
-        <button *ngIf="!isFileSelected" mat-mini-fab color="primary" (click)="openDialog()">
+        <button *ngIf="!isFileSelected" mat-mini-fab color="accent" (click)="openDialog()">
           <mat-icon>add</mat-icon>
         </button>
         <div class="edit-options" *ngIf="isFileSelected">

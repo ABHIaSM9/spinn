@@ -6,15 +6,19 @@
   }
   .title{
     font-weight:bolder;
+    margin: 0;
   }
 
   .title-nav{
     display: flex;
-    margin-bottom: 2em;
-  }
+    margin-bottom: 0.5em;
 
-  mat-card{
-    margin-bottom: 1em;
+    .page-header{
+      margin: 0;
+    }
+  }
+  mat-form-field .mat-form-field-wrapper{
+    padding: 0px;
   }
 
   .user-description{

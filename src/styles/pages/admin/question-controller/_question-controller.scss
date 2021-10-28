@@ -1,36 +1,37 @@
+@use '../../../abstracts/mixins' as mixins;
 .question-controller-page{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 
-  .controller-panel{
-    width: 25%;
-    min-width: 300px;
+  .question-controller-box{
+    width: 100%;
+    text-align: left;
 
-    mat-card{
-      position: sticky;
-      top: 1em;
-    }
-
-    .controller-panel-button-group{
-      margin-bottom:1rem;
-      &>*:not(:last-child){
-          margin-right: 0.5em;
-      }
-    }
-
-    .mat-select-wrapper{
-      margin-bottom:2rem;
+    .categories-wrapper{
       mat-form-field{
-        width: 100%;
-      }
-      &>*{
-        margin-right: 1em;
+      width: 130px;
       }
     }
-  }
-  .controller-question-box{
-    width: 70%;
+
+    .title-wrapper{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .input-field-container{
+      margin-top: 1em;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .number-input-field{
+      width: 80px;
+    }
+
+    .time-input-field{
+      width: 120px;
+    }
 
     .question-description-card{
       margin-bottom:1em;
@@ -58,14 +59,29 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      mat-form-field{
+      .mat-form-wrapper{
         width: 45%;
         margin: 2px;
       }
+      mat-form-field{
+        width: 100%;
+      }
     }
+
   }
 }
 
 
 
 
+@include mixins.for-phone-only{
+  .question-controller-page{
+
+    .title-wrapper{
+      flex-wrap: wrap;
+    }
+    .input-field-container{
+      flex-wrap: wrap;
+    }
+  }
+}

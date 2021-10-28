@@ -61,6 +61,18 @@ $custom-typography: mat.mat-typography-config(
 .button-group>*:not(:last-child){
   margin-right: 0.5em;
 }
+
+.form-field-group>*:not(:last-child){
+  margin-right: 0.5em;
+}
+
+// @include for-phone-only{
+//   .form-field-group>*{
+//     margin: auto;
+//     width: 100%;
+//   }
+// }
+
 .space-box{
   flex: 1 1 auto;
 }

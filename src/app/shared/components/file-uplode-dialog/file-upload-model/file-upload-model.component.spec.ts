@@ -1,15 +1,18 @@
-import { MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { MatDialogRef, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FileUploadModelComponent } from './file-upload-model.component';
 
-fdescribe('FileUploadModelComponent', () => {
+describe('FileUploadModelComponent', () => {
   let component: FileUploadModelComponent;
   let fixture: ComponentFixture<FileUploadModelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ FileUploadModelComponent ],
+      providers:[
+        {provide: MAT_DIALOG_DATA, useValue: {}}
+      ],
       imports:[]
     })
     .compileComponents();

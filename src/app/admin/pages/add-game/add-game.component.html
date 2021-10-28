@@ -1,86 +1,110 @@
 <div class="add-game-page">
-  <mat-card style="max-width: 800px">
-    <h2 class="mat-h2">Add Game</h2>
-    <div>
-      <h4 class="mat-h4">basic detail</h4>
-      <div class="mat-formfield-wrapper basic-detail">
-        <mat-form-field appearance="outline">
-          <mat-label for="gameid">GameId</mat-label>
-          <input
-            type="gameid"
-            id="gameid"
-            matInput
-            name="gameid"
-            placeholder="Enter your gameid"
-            #gameid="ngModel"
-            required
-            ngModel
-          />
-        </mat-form-field>
-        <mat-form-field class="width-100" appearance="outline">
-          <mat-label for="gamename">Gamename</mat-label>
-          <input
-            type="gamename"
-            id="gamename"
-            matInput
-            name="gamename"
-            placeholder="Enter your gameid"
-            #gamename="ngModel"
-            required
-            ngModel
-          />
-        </mat-form-field>
-      </div>
-    </div>
-    <div>
-      <h4 class="mat-h4">Select Categories</h4>
-      <div class="mat-formfield-wrapper">
-        <mat-form-field appearance="outline">
-          <mat-label>category 1</mat-label>
-          <mat-select>
-            <mat-option>1</mat-option>
-            <mat-option>2</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>category 2</mat-label>
-          <mat-select>
-            <mat-option>1</mat-option>
-            <mat-option>2</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>category 3</mat-label>
-          <mat-select>
-            <mat-option>1</mat-option>
-            <mat-option>2</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>category 4</mat-label>
-          <mat-select>
-            <mat-option>1</mat-option>
-            <mat-option>2</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
-    <div>
-      <h4 class="mat-h4">
-        Description
-        <div
-          class="description-card"
-        >
-          <app-file-uplode-dialog width="10" height="10"></app-file-uplode-dialog>
-          <div class="description">
-            <textarea matInput placeholder="add description here ..." ></textarea>
-          </div>
+  <mat-card>
+    <mat-card-title>Add Game</mat-card-title>
+    <!-- <h2 class="mat-h2">Add Game</h2> -->
+    <mat-card-content>
+      <div>
+        <div class="mat-formfield-wrapper basic-detail">
+          <mat-form-field appearance="outline">
+            <mat-label for="gameid">GameId</mat-label>
+            <input
+              type="gameid"
+              id="gameid"
+              matInput
+              name="gameid"
+              placeholder="Enter your gameid"
+              #gameid="ngModel"
+              required
+              ngModel
+            />
+          </mat-form-field>
+          <mat-form-field class="width-100" appearance="outline">
+            <mat-label for="gamename">Gamename</mat-label>
+            <input
+              type="gamename"
+              id="gamename"
+              matInput
+              name="gamename"
+              placeholder="Enter your gameid"
+              #gamename="ngModel"
+              required
+              ngModel
+            />
+          </mat-form-field>
         </div>
-      </h4>
-    </div>
-    <div class="button-group">
-      <button mat-raised-button color="primary">Question</button>
-      <button mat-raised-button color="primary">User</button>
-    </div>
+      </div>
+      <div>
+        <!-- <h4 class="mat-h4">Select Categories</h4> -->
+        <div class="mat-formfield-wrapper">
+          <mat-form-field appearance="outline">
+            <mat-label>category 1</mat-label>
+            <mat-select>
+              <mat-option>1</mat-option>
+              <mat-option>2</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>category 2</mat-label>
+            <mat-select>
+              <mat-option>1</mat-option>
+              <mat-option>2</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>category 3</mat-label>
+            <mat-select>
+              <mat-option>1</mat-option>
+              <mat-option>2</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>category 4</mat-label>
+            <mat-select>
+              <mat-option>1</mat-option>
+              <mat-option>2</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+          <div
+            class="description-card"
+          >
+            <app-file-uplode-dialog width="10" height="10"></app-file-uplode-dialog>
+            <div class="description">
+              <textarea matInput placeholder="add description here ..." ></textarea>
+            </div>
+          </div>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Go Line Date</mat-label>
+          <input matInput [matDatepicker]="picker" disabled>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker disabled="false"></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="button-group">
+        <button mat-raised-button color="primary" [routerLink]="['/admin/question-list']" >Question</button>
+        <button mat-raised-button color="primary" [routerLink]="['/admin/user-list']">User</button>
+      </div>
+    </mat-card-actions>
   </mat-card>
 </div>
+
+
+<!-- //game card -->
+<!-- <div class="game-card" style="max-width: 300px;padding: 1em;background-color: lemonchiffon;display: flex;border-radius: 1em;">
+  <div class="game-image" style="width: 90px;height:120px;">
+    <img src="https://i.pinimg.com/originals/5d/ca/87/5dca87b6088664ae9fa8080986a58b4c.png" style="width: 100%;height:100%;object-fit: cover;border-radius: 1em;" alt="">
+  </div>
+  <div class="game-content" style="flex: 1; text-align: left;padding: 0 1em;">
+    <div class="game-title mat-h4"> asldfjlas d asdlfj lsadfjl;</div>
+    <div class="game-description mat-small">asldjflasjdfl asdlf ;sadjf lasdj flasj dflajs dl</div>
+    <mat-chip-list>
+      <mat-chip type="" style="margin-top:1em;"color="accent">abcd ad</mat-chip>
+    </mat-chip-list>
+  </div>
+</div> -->

@@ -5,8 +5,8 @@
   text-align: left;
 
   .description-card{
+    margin-bottom: 1em;
     border: 1px solid rgb(209, 209, 209);
-    max-width: 800px;
     border-radius: variables.$border-radius;
     overflow: hidden;
     display: flex;

@@ -17,9 +17,6 @@ const data:TableElement[] = [
   {image:'https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__480.jpg',description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',autherImg:'https://www.w3schools.com/howto/img_avatar.png',auther:'name'},
   {image:'https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__480.jpg',description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',autherImg:'https://www.w3schools.com/howto/img_avatar.png',auther:'name'},
   {image:'https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__480.jpg',description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',autherImg:'https://www.w3schools.com/howto/img_avatar.png',auther:'name'},
-  {image:'https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__480.jpg',description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',autherImg:'https://www.w3schools.com/howto/img_avatar.png',auther:'name'},
-  {image:'https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__480.jpg',description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',autherImg:'https://www.w3schools.com/howto/img_avatar.png',auther:'name'},
-  {image:'https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509__480.jpg',description:'Lorem ipsum dolor sit, amet consectetur adipisicing elit.m?',autherImg:'https://www.w3schools.com/howto/img_avatar.png',auther:'name'},
 ]
 
 @Component({
@@ -67,5 +64,12 @@ export class QuestionListComponent implements OnInit {
       return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'}`;
+  }
+
+  onPage(event){
+    console.log('page',event);
+  }
+  applyFilter(event){
+    console.log(event);
   }
 }
